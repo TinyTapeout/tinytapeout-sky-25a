@@ -96,8 +96,8 @@ flow__warnings__count,1
 flow__errors__count,0
 design__instance__count__class:fill_cell,1471
 design__instance__count__class:tap_cell,225
-design__power_grid_violation__count__net:VGND,0
 design__power_grid_violation__count__net:VPWR,0
+design__power_grid_violation__count__net:VGND,0
 design__power_grid_violation__count,0
 timing__drv__floating__nets,0
 timing__drv__floating__pins,0

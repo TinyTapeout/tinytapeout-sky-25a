@@ -1,0 +1,72 @@
+65. Printing statistics.
+
+=== tt_um_rebeccargb_dipped ===
+
+   Number of wires:                587
+   Number of wire bits:            622
+   Number of public wires:          20
+   Number of public wire bits:      55
+   Number of ports:                  8
+   Number of port bits:             43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                603
+     sky130_fd_sc_hd__a211o_2       11
+     sky130_fd_sc_hd__a211oi_2       4
+     sky130_fd_sc_hd__a21bo_2        6
+     sky130_fd_sc_hd__a21boi_2       4
+     sky130_fd_sc_hd__a21o_2        23
+     sky130_fd_sc_hd__a21oi_2       27
+     sky130_fd_sc_hd__a221o_2        9
+     sky130_fd_sc_hd__a221oi_2       1
+     sky130_fd_sc_hd__a22o_2         3
+     sky130_fd_sc_hd__a2bb2o_2       4
+     sky130_fd_sc_hd__a2bb2oi_2      1
+     sky130_fd_sc_hd__a311o_2        2
+     sky130_fd_sc_hd__a31o_2        25
+     sky130_fd_sc_hd__a31oi_2        3
+     sky130_fd_sc_hd__a32o_2         3
+     sky130_fd_sc_hd__a41o_2         2
+     sky130_fd_sc_hd__and2_2        37
+     sky130_fd_sc_hd__and2b_2        3
+     sky130_fd_sc_hd__and3_2        19
+     sky130_fd_sc_hd__and3b_2        2
+     sky130_fd_sc_hd__and4bb_2       2
+     sky130_fd_sc_hd__buf_2          7
+     sky130_fd_sc_hd__dfxtp_2       12
+     sky130_fd_sc_hd__inv_2         22
+     sky130_fd_sc_hd__mux2_1         2
+     sky130_fd_sc_hd__nand2_2       65
+     sky130_fd_sc_hd__nand2b_2       3
+     sky130_fd_sc_hd__nand3_2        4
+     sky130_fd_sc_hd__nand3b_2       2
+     sky130_fd_sc_hd__nor2_2        62
+     sky130_fd_sc_hd__nor3_2         7
+     sky130_fd_sc_hd__o2111a_2       2
+     sky130_fd_sc_hd__o2111ai_2      1
+     sky130_fd_sc_hd__o211a_2       27
+     sky130_fd_sc_hd__o211ai_2       2
+     sky130_fd_sc_hd__o21a_2        20
+     sky130_fd_sc_hd__o21ai_2       20
+     sky130_fd_sc_hd__o21ba_2        2
+     sky130_fd_sc_hd__o221a_2       17
+     sky130_fd_sc_hd__o22a_2         4
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o2bb2a_2       4
+     sky130_fd_sc_hd__o311a_2        2
+     sky130_fd_sc_hd__o311ai_2       1
+     sky130_fd_sc_hd__o31a_2         6
+     sky130_fd_sc_hd__o32a_2         3
+     sky130_fd_sc_hd__o41a_2         1
+     sky130_fd_sc_hd__or2_2         53
+     sky130_fd_sc_hd__or3_2         15
+     sky130_fd_sc_hd__or3b_2         2
+     sky130_fd_sc_hd__or4_2          4
+     sky130_fd_sc_hd__or4b_2         1
+     sky130_fd_sc_hd__xnor2_2       26
+     sky130_fd_sc_hd__xor2_2        12
+
+   Chip area for module '\tt_um_rebeccargb_dipped': 5350.131200
+     of which used for sequential elements: 255.244800 (4.77%)
+

@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 82a6d0f9",
+  "repo": "https://github.com/Tobi-McKellar/ttsky-capacitive-touch",
+  "commit": "a9fc15693717cd09bb2d7153d749297f63e37f72",
+  "workflow_url": "https://github.com/Tobi-McKellar/ttsky-capacitive-touch/actions/runs/16374214705",
+  "sort_id": 1752853608998,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

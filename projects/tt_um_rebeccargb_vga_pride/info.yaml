@@ -102,6 +102,10 @@ project:
     - "flag_unlabeled.v"
     - "flag_uranic.v"
     - "flag_voidpunk.v"
+    - "flag_lesbian_butch_v1.v"
+    - "flag_lesbian_butch_v2.v"
+    - "flag_sapiosexual_v1.v"
+    - "flag_sapiosexual_v2.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).

@@ -98,6 +98,10 @@ Connect to a VGA monitor. Set the following inputs to change the displayed flag:
 | 79    | Unlabeled pride flag                                                 |
 | 80    | Uranic pride flag                                                    |
 | 81    | Voidpunk pride flag                                                  |
+| 82    | Dorian Rutherford butch lesbian pride flag (blue and purple)         |
+| 83    | Butchspace butch lesbian pride flag (orange and yellow)              |
+| 84    | Sapiosexual pride flag (green brown blue)                            |
+| 85    | Sapiosexual pride flag (white pink blue)                             |
 
 ## External hardware
 

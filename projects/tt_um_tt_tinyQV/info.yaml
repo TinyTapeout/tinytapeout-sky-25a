@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "TinyQV SoC with additional peripherals"      # Project title
-  author:       "Michael Bell"      # Your name
+  title:        "TinyQV - Crowdsourced Risc-V SoC"      # Project title
+  author:       "Michael Bell, et al"      # Your name
   discord:      "rebelmike"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "A Risc-V SoC with Tiny Tapeout contributed peripherals"      # One line description of what your project does
+  description:  "A Risc-V SoC with peripherals from the Tiny Tapeout Risc-V challenge"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     64000000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -22,9 +22,22 @@ project:
     - "peri_full_example.v"
     - "peri_byte_example.v"
     - "user_peripherals/edge_counter.v"
+    - "user_peripherals/pwm_sk.v"
     - "user_peripherals/uart/peri_uart.v"
     - "user_peripherals/uart/uart_rx.v"
     - "user_peripherals/uart/uart_tx.v"
+    - "user_peripherals/encoder/debounce.v"
+    - "user_peripherals/encoder/encoder.v"
+    - "user_peripherals/encoder/matt_encoder.v"
+    - "user_peripherals/encoder/strobe_gen.v"
+    - "user_peripherals/impostor_ws2812b/impostor_ws2812b.v"
+    - "user_peripherals/impostor_ws2812b/ws2812b_byte_assembler.v"
+    - "user_peripherals/impostor_ws2812b/ws2812b_demux.v"
+    - "user_peripherals/impostor_ws2812b/ws2812b_idle_detector.v"
+    - "user_peripherals/impostor_ws2812b/ws2812b_pulse_decoder.v"
+    - "user_peripherals/ledstrip/ledstrip.v"
+    - "user_peripherals/ledstrip/ws2812b.v"
+    - "user_peripherals/ledstrip/char_rom.v"
     - "tinyQV/cpu/tinyqv.v"
     - "tinyQV/cpu/alu.v"
     - "tinyQV/cpu/core.v"
@@ -44,7 +57,7 @@ pinout:
   ui[0]: "Interrupt 0"
   ui[1]: "Interrupt 1"
   ui[2]: ""
-  ui[3]: "1 MHz clock for time"
+  ui[3]: ""
   ui[4]: ""
   ui[5]: ""
   ui[6]: ""

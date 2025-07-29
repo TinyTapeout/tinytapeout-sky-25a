@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title:        "Conway's GoL"
+  author:       "nitelich"
+  discord:      ""
+  description:  "Conway's Game of Life with VGA out and GPIO field manip/randomize"
+  language:     "Verilog"
+  clock_hz:     25175000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_".
+  top_module:  "tt_um_nitelich_conway"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "Foreground Next (on rising edge)"
+  ui[1]: "Background Next (on rising edge)"
+  ui[2]: "Free-run Divisor[0]"
+  ui[3]: "Free-run Divisor[1]"
+  ui[4]: "Free-run Divisor[2]"
+  ui[5]: "Free-run Divisor[3]"
+  ui[6]: "External Hold"
+  ui[7]: "External Step (on rising edge)"
+
+  # Outputs
+  uo[0]: "VGA R[1]"
+  uo[1]: "VGA G[1]"
+  uo[2]: "VGA B[1]"
+  uo[3]: "VGA VSync"
+  uo[4]: "VGA R[0]"
+  uo[5]: "VGA G[0]"
+  uo[6]: "VGA B[0]"
+  uo[7]: "VGA HSync"
+
+  # Bidirectional pins
+  uio[0]: "Selection Up (Input, on rising edge)"
+  uio[1]: "Selection Down (Input, on rising edge)"
+  uio[2]: "Selection Left (Input, on rising edge)"
+  uio[3]: "Selection Right (Input, on rising edge)"
+  uio[4]: "Target State (Input)"
+  uio[5]: "Selection to Target State (Input, on rising edge)"
+  uio[6]: "Randomize All (Input, on rising edge)"
+  uio[7]: "Selection to Origin (Input, on rising edge)"
+
+# Do not change!
+yaml_version: 6

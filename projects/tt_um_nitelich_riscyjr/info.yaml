@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "RISCY Jr."
+  author:       "nitelich"
+  discord:      ""
+  description:  "An original, scratch-built 8-bit MCU design"
+  language:     "Verilog"
+  clock_hz:     9216000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_".
+  top_module:  "tt_um_nitelich_riscyjr"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "alu_library.v"
+    - "peripheral_library.v"
+    - "shared_definitions.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "GPI 0/EXT 0"
+  ui[1]: "GPI 1/EXT 1"
+  ui[2]: "GPI 2"
+  ui[3]: "GPI 3"
+  ui[4]: "SPI Clock to CPU Clock Divider LSB"
+  ui[5]: "SPI Clock to CPU Clock Divider MSB"
+  ui[6]: "External Hold"
+  ui[7]: "External Step"
+
+  # Outputs
+  uo[0]: "GPO 0"
+  uo[1]: "GPO 1"
+  uo[2]: "GPO 2"
+  uo[3]: "GPO 3"
+  uo[4]: "PWM 0"
+  uo[5]: "PWM 1"
+  uo[6]: "PSRNG"
+  uo[7]: "CPU Activity Indicator"
+
+  # Bidirectional pins
+  uio[0]: "SPI RAM CS (output to RP2040 GPIO21)"
+  uio[1]: "SPI RAM COPI (output to RP2040 GPIO22)"
+  uio[2]: "SPI RAM CIPO (input from RP2040 GPIO23)"
+  uio[3]: "SPI RAM SCK (output to RP2040 GPIO24)"
+  uio[4]: "UART CTS (input)"
+  uio[5]: "UART TxD (output)"
+  uio[6]: "UART RxD (input)"
+  uio[7]: "UART RTS (output)"
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 3418c570",
+  "repo": "https://github.com/nitelich/ttsky-riscy-jr",
+  "commit": "2adbbdbff9dc8d0d7ce49d097b753240f3d5cde7",
+  "workflow_url": "https://github.com/nitelich/ttsky-riscy-jr/actions/runs/16609536992",
+  "sort_id": 1753832304089,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

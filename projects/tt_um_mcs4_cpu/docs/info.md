@@ -17,7 +17,7 @@ and ultimately recreate the historic Busicom 141-PF calculator.
 <img alt="4004" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/01_BirthOfMicro/Figure/Outline_4004.png" width="25%"><br>
 4004 CPU Chip (http://www.intel-vintage.info/intelmcs.htm)<br>
 
-<img alt="4004 PinOut" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/02_MCS4ChipSet/Figure/Pinout4001.png" width="75%"><br>
+<img alt="4004 PinOut" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/02_MCS4ChipSet/Figure/Pinout4004.png" width="75%"><br>
 4004 CPU Pinout<br>
 
 ### Works with companion FPGA

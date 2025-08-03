@@ -1,0 +1,22 @@
+63. Printing statistics.
+
+=== tt_um_weighted_majority ===
+
+   Number of wires:                 15
+   Number of wire bits:             50
+   Number of public wires:          14
+   Number of public wire bits:      49
+   Number of ports:                  8
+   Number of port bits:             43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 31
+     sky130_fd_sc_hd__a21o_2         1
+     sky130_fd_sc_hd__buf_2          1
+     sky130_fd_sc_hd__conb_1        23
+     sky130_fd_sc_hd__dfrtp_2        6
+
+   Chip area for module '\tt_um_weighted_majority': 257.747200
+     of which used for sequential elements: 157.651200 (61.17%)
+

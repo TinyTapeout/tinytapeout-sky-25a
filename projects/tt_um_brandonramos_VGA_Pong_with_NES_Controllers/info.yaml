@@ -39,15 +39,15 @@ pinout:
   ui[6]: ""
   ui[7]: ""
 
-  # Outputs
+  # Outputs same as Tiny VGA pinout
   uo[0]: "h_sync"
-  uo[1]: "v_sync"
-  uo[2]: "r"
-  uo[3]: "g"
-  uo[4]: "b"
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[1]: "b"
+  uo[2]: "g"
+  uo[3]: "r"
+  uo[4]: "v_sync"
+  uo[5]: "b"
+  uo[6]: "g"
+  uo[7]: "r"
 
   # Bidirectional pins
   uio[0]: "NES_Controller_Left[0]"

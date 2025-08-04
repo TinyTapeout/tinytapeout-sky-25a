@@ -31,11 +31,11 @@ The peripherals making up the SoC are contributed by the Tiny Tapeout community,
 | 0x1000000 - 0x17FFFFF | RAM A |
 | 0x1800000 - 0x1FFFFFF | RAM B |
 | 0x8000000 - 0x8000033 | DEBUG  |
-| 0x8000034 - 0x800003B | TIME |
 | 0x8000040 - 0x800007F | GPIO |
 | 0x8000080 - 0x80000BF | UART  |
 | 0x8000100 - 0x80003FF | User peripherals 4-15 |
 | 0x8000400 - 0x80004FF | Simple user peripherals 0-15 |
+| 0xFFFFF00 - 0xFFFFF07 | TIME |
 
 ### DEBUG
 
@@ -51,8 +51,8 @@ See also [debug docs](debug.md)
 
 | Register | Address | Description |
 | -------- | ------- | ----------- |
-| MTIME    | 0x8000034 (RW) | Get/set the 1MHz time count |
-| MTIMECMP | 0x8000038 (RW) | Get/set the time to trigger the timer interrupt |
+| MTIME    | 0xFFFFF00 (RW) | Get/set the 1MHz time count |
+| MTIMECMP | 0xFFFFF04 (RW) | Get/set the time to trigger the timer interrupt |
 
 This is a simple timer which follows the spirit of the Risc-V timer but using a 32-bit counter instead of 64 to save area.
 In this version the MTIME register is updated at 1/64th of the clock frequency (nominally 1MHz), and MTIMECMP is used to trigger an interrupt.

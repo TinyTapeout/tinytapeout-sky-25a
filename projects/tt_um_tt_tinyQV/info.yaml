@@ -21,6 +21,9 @@ project:
     - "peripherals.v"
     - "peri_full_example.v"
     - "peri_byte_example.v"
+    - "user_peripherals/tqvp_dsatizabal_fpu.sv"
+    - "user_peripherals/fpu/fpu_add.v"
+    - "user_peripherals/fpu/fpu_mult.v"
     - "user_peripherals/edge_counter.v"
     - "user_peripherals/pwm_sk.v"
     - "user_peripherals/uart/peri_uart.v"
@@ -38,6 +41,15 @@ project:
     - "user_peripherals/ledstrip/ledstrip.v"
     - "user_peripherals/ledstrip/ws2812b.v"
     - "user_peripherals/ledstrip/char_rom.v"
+    - "user_peripherals/matt_pwm/matt_pwm.v"
+    - "user_peripherals/matt_pwm/pwm_strobe_gen.v"
+    - "user_peripherals/matt_pwm/pwm.v"
+    - "user_peripherals/spike.v"
+    - "user_peripherals/baby_vga/rot_register.v"
+    - "user_peripherals/baby_vga/rot_register_file.v"
+    - "user_peripherals/baby_vga/framebuffer.v"
+    - "user_peripherals/baby_vga/vga_timing.v"
+    - "user_peripherals/baby_vga/peripheral.v"
     - "tinyQV/cpu/tinyqv.v"
     - "tinyQV/cpu/alu.v"
     - "tinyQV/cpu/core.v"
@@ -50,6 +62,7 @@ project:
     - "tinyQV/cpu/latch_reg.v"
     - "tinyQV/cpu/time.v"
     - "tinyQV/peri/uart/uart_tx.v"
+
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:

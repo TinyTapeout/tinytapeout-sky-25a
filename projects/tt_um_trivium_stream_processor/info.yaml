@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:        "Trivium Stream"     # Project title
+  author:       "Hithesh S, Eresh, Neeshu Yadav, Abhishek M, Venu Kumar Reddy and Shylashree N, of RV College of Engineering, Bangalore"      # Your name
+  discord:      ""                        # Your discord username (optional)
+  description:  "A lightweight, stream cipher using Trivium keystream generation with XOR-based encryption and decryption."  # One line description of what your project does
+  language:     "Verilog"                        # Design language
+  clock_hz:     50000000                         # Clock frequency in Hz (50 kHz)
+
+  # How many tiles your design occupies? A single tile is about 167x108 um.
+  tiles: "1x1"                                   # Single tile
+
+  # Your top module name must start with "tt_um_". 
+  top_module:  "tt_um_trivium_stream_processor"              # Match your module name
+
+  # Source file list
+  source_files:
+    - "project.v"
+
+# Pin mapping: describe your I/O functions
+pinout:
+  # Inputs
+  ui[0]: "Data[0] (Input Byte LSB)"
+  ui[1]: "Data[1]"
+  ui[2]: "Data[2]"
+  ui[3]: "Data[3]"
+  ui[4]: "Data[4]"
+  ui[5]: "Data[5]"
+  ui[6]: "Data[6]"
+  ui[7]: "Data[7] (Input Byte MSB)"
+
+  # Outputs
+  uo[0]: "stream_out[0] (Output Byte LSB)"
+  uo[1]: "stream_out[1]"
+  uo[2]: "stream_out[2]"
+  uo[3]: "stream_out[3]"
+  uo[4]: "stream_out[4]"
+  uo[5]: "stream_out[5]"
+  uo[6]: "stream_out[6]"
+  uo[7]: "stream_out[7] (Output Byte MSB)"
+
+  # Bidirectional pins (used as input controls only)
+  uio[0]: "Control[0] (Seed/Input/Reset LSB)"
+  uio[1]: "Control[1]"
+  uio[2]: "Control[2]"
+  uio[3]: "Control[3]"
+  uio[4]: "Control[4]"
+  uio[5]: "Control[5]"
+  uio[6]: "Control[6]"
+  uio[7]: "Control[7] (Seed/Input/Reset MSB)"
+
+# Do not change!
+yaml_version: 6

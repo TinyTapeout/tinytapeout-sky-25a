@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 484d3c67",
+  "repo": "https://github.com/AriaMitra/ttsky-verilog-submission-ALUish",
+  "commit": "7ef27311500149c5c9b7106fcdc11b30159df332",
+  "workflow_url": "https://github.com/AriaMitra/ttsky-verilog-submission-ALUish/actions/runs/16853595563",
+  "sort_id": 1754773283721,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

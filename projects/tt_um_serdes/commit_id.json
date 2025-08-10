@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 484d3c67",
+  "repo": "https://github.com/RVCE-ECE/TT10_SERDES",
+  "commit": "aa0ea71ca58f4b32875b448d097986f14e3b3cb0",
+  "workflow_url": "https://github.com/RVCE-ECE/TT10_SERDES/actions/runs/16862418438",
+  "sort_id": 1754833511713,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

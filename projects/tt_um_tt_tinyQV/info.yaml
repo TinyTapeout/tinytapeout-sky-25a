@@ -8,7 +8,7 @@ project:
   clock_hz:     64000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "3x4"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "5x4"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_tt_tinyQV"
@@ -50,6 +50,24 @@ project:
     - "user_peripherals/baby_vga/framebuffer.v"
     - "user_peripherals/baby_vga/vga_timing.v"
     - "user_peripherals/baby_vga/peripheral.v"
+    - "user_peripherals/prism/prism_periph.v"
+    - "user_peripherals/prism/latch_shift_reg.v"
+    - "user_peripherals/prism/latch_loader.v"
+    - "user_peripherals/prism/prism.v"
+    - "user_peripherals/prism/prism_sr_sit.v"
+    - "user_peripherals/prism/prism_latch_sit.v"
+    - "user_peripherals/prism/prism_latch_reg.v"
+    - "user_peripherals/pwl_synth/pwl_synth.sv"
+    - "user_peripherals/pwl_synth/pwl_synth_memory.sv"
+    - "user_peripherals/wdt/tqvp_nkanderson_wdt.sv"
+    - "user_peripherals/tqvp_laurie_dwarf_line_table_accelerator.sv"
+    - "user_peripherals/pulse_transmitter/peripheral.v"
+    - "user_peripherals/pulse_transmitter/carrier.v"
+    - "user_peripherals/pulse_transmitter/countdown_timer.v"
+    - "user_peripherals/pulse_transmitter/delay_1.v"
+    - "user_peripherals/pulse_transmitter/delay_2.v"
+    - "user_peripherals/pulse_transmitter/simple_falling_edge_detector.v"
+    - "user_peripherals/pulse_transmitter/simple_rising_edge_detector.v"
     - "tinyQV/cpu/tinyqv.v"
     - "tinyQV/cpu/alu.v"
     - "tinyQV/cpu/core.v"

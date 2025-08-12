@@ -1,0 +1,60 @@
+# Tiny Tapeout project information
+project:
+  title:        "Post's Machine CPU Based"      # Project title
+  author:       "Gerardo Laguna-Sanchez"      # Your name
+  discord:      "galaguna"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A simple RISC CPU, based on machine of Emil L. Post, supported by SPI communication and RAM for both code and data spaces"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     1562500       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "3x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_galaguna_PostSys"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "Post_sys_4Tiny.v"
+    - "post_spi.v"
+    - "one_pulse.v"
+    - "myRAM.v"
+    - "MPM_cpu.v"
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "OUT_CTRL0"
+  ui[1]: "OUT_CTRL1"
+  ui[2]: "OUT_CTRL2"
+  ui[3]: "SPI_SCK"
+  ui[4]: "SPI_MOSI"
+  ui[5]: "SPI_CS"
+  ui[6]: "RUN"
+  ui[7]: "MODE"
+
+  # Outputs
+  uo[0]: "OUT8B0"
+  uo[1]: "OUT8B1"
+  uo[2]: "OUT8B2"
+  uo[3]: "OUT8B3"
+  uo[4]: "OUT8B4"
+  uo[5]: "OUT8B5"
+  uo[6]: "OUT8B6"
+  uo[7]: "OUT8B7"
+
+  # Bidirectional pins
+  uio[0]: "STATE0"
+  uio[1]: "STATE1"
+  uio[2]: "STATE2"
+  uio[3]: "STATE3"
+  uio[4]: "OUT3B0"
+  uio[5]: "OUT3B1"
+  uio[6]: "OUT3B2"
+  uio[7]: "SPI_MISO"
+
+# Do not change!
+yaml_version: 6

@@ -67,7 +67,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 141.070 110.520 141.370 111.520 ;
@@ -76,7 +76,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.159000 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 138.310 110.520 138.610 111.520 ;
@@ -94,7 +94,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN ui_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 132.790 110.520 133.090 111.520 ;
@@ -112,7 +112,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 127.270 110.520 127.570 111.520 ;
@@ -121,7 +121,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 124.510 110.520 124.810 111.520 ;
@@ -130,7 +130,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 121.750 110.520 122.050 111.520 ;
@@ -139,7 +139,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met4 ;
         RECT 118.990 110.520 119.290 111.520 ;
@@ -211,7 +211,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.159000 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 96.910 110.520 97.210 111.520 ;
@@ -357,7 +357,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNADIFFAREA 0.911000 ;
     PORT
       LAYER met4 ;
         RECT 91.390 110.520 91.690 111.520 ;
@@ -366,7 +366,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNADIFFAREA 0.911000 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -393,7 +393,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.643500 ;
+    ANTENNADIFFAREA 0.911000 ;
     PORT
       LAYER met4 ;
         RECT 80.350 110.520 80.650 111.520 ;
@@ -411,7 +411,7 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -423,13 +423,13 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 1.060 158.240 110.800 ;
+        RECT 2.760 2.080 158.240 110.460 ;
       LAYER met2 ;
-        RECT 4.700 1.030 157.220 110.830 ;
+        RECT 4.240 2.050 157.220 110.685 ;
       LAYER met3 ;
-        RECT 6.965 2.555 154.035 110.665 ;
+        RECT 5.125 2.555 156.335 110.665 ;
       LAYER met4 ;
-        RECT 9.495 110.120 30.270 111.170 ;
+        RECT 13.175 110.120 30.270 111.170 ;
         RECT 31.370 110.120 33.030 111.170 ;
         RECT 34.130 110.120 35.790 111.170 ;
         RECT 36.890 110.120 38.550 111.170 ;
@@ -472,16 +472,17 @@ MACRO tt_um_rebeccargb_vga_timing_experiments
         RECT 139.010 110.120 140.670 111.170 ;
         RECT 141.770 110.120 143.430 111.170 ;
         RECT 144.530 110.120 146.190 111.170 ;
-        RECT 9.495 109.440 146.905 110.120 ;
-        RECT 9.495 15.815 17.880 109.440 ;
-        RECT 20.280 15.815 21.180 109.440 ;
-        RECT 23.580 15.815 56.750 109.440 ;
-        RECT 59.150 15.815 60.050 109.440 ;
-        RECT 62.450 15.815 95.620 109.440 ;
-        RECT 98.020 15.815 98.920 109.440 ;
-        RECT 101.320 15.815 134.490 109.440 ;
-        RECT 136.890 15.815 137.790 109.440 ;
-        RECT 140.190 15.815 146.905 109.440 ;
+        RECT 147.290 110.120 151.505 111.170 ;
+        RECT 13.175 109.440 151.505 110.120 ;
+        RECT 13.175 9.015 17.880 109.440 ;
+        RECT 20.280 9.015 21.180 109.440 ;
+        RECT 23.580 9.015 56.750 109.440 ;
+        RECT 59.150 9.015 60.050 109.440 ;
+        RECT 62.450 9.015 95.620 109.440 ;
+        RECT 98.020 9.015 98.920 109.440 ;
+        RECT 101.320 9.015 134.490 109.440 ;
+        RECT 136.890 9.015 137.790 109.440 ;
+        RECT 140.190 9.015 151.505 109.440 ;
   END
 END tt_um_rebeccargb_vga_timing_experiments
 END LIBRARY

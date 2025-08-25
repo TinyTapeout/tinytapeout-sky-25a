@@ -67,7 +67,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.159000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 141.070 110.520 141.370 111.520 ;
@@ -276,8 +276,8 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.358000 ;
-    ANTENNADIFFAREA 2.862000 ;
+    ANTENNAGATEAREA 1.363500 ;
+    ANTENNADIFFAREA 2.673000 ;
     PORT
       LAYER met4 ;
         RECT 72.070 110.520 72.370 111.520 ;
@@ -286,8 +286,8 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.495000 ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNAGATEAREA 1.242000 ;
+    ANTENNADIFFAREA 1.075200 ;
     PORT
       LAYER met4 ;
         RECT 69.310 110.520 69.610 111.520 ;
@@ -296,8 +296,8 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.489500 ;
-    ANTENNADIFFAREA 1.075200 ;
+    ANTENNAGATEAREA 1.611000 ;
+    ANTENNADIFFAREA 2.673000 ;
     PORT
       LAYER met4 ;
         RECT 66.550 110.520 66.850 111.520 ;
@@ -306,7 +306,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.863000 ;
+    ANTENNAGATEAREA 1.741500 ;
     ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
@@ -316,8 +316,8 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.227500 ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNAGATEAREA 2.475000 ;
+    ANTENNADIFFAREA 1.590400 ;
     PORT
       LAYER met4 ;
         RECT 61.030 110.520 61.330 111.520 ;
@@ -326,8 +326,8 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.106000 ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNAGATEAREA 0.868500 ;
+    ANTENNADIFFAREA 1.075200 ;
     PORT
       LAYER met4 ;
         RECT 58.270 110.520 58.570 111.520 ;
@@ -336,7 +336,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.489500 ;
+    ANTENNAGATEAREA 1.237500 ;
     ANTENNADIFFAREA 1.075200 ;
     PORT
       LAYER met4 ;
@@ -346,7 +346,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 3.217500 ;
+    ANTENNAGATEAREA 2.848500 ;
     ANTENNADIFFAREA 1.484000 ;
     PORT
       LAYER met4 ;
@@ -356,7 +356,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.962500 ;
+    ANTENNADIFFAREA 0.462000 ;
     PORT
       LAYER met4 ;
         RECT 94.150 110.520 94.450 111.520 ;
@@ -365,7 +365,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.462000 ;
+    ANTENNADIFFAREA 0.453750 ;
     PORT
       LAYER met4 ;
         RECT 91.390 110.520 91.690 111.520 ;
@@ -374,7 +374,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 88.630 110.520 88.930 111.520 ;
@@ -392,7 +392,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.431000 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 83.110 110.520 83.410 111.520 ;
@@ -401,7 +401,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.495000 ;
+    ANTENNAGATEAREA 0.742500 ;
     ANTENNADIFFAREA 1.242000 ;
     PORT
       LAYER met4 ;
@@ -411,7 +411,7 @@ MACRO tt_um_rebeccargb_colorbars
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.431000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 77.590 110.520 77.890 111.520 ;
@@ -434,9 +434,9 @@ MACRO tt_um_rebeccargb_colorbars
       LAYER met1 ;
         RECT 2.760 2.480 158.240 109.780 ;
       LAYER met2 ;
-        RECT 14.820 2.535 156.300 110.685 ;
+        RECT 15.740 2.535 156.300 110.685 ;
       LAYER met3 ;
-        RECT 17.545 2.555 144.835 110.665 ;
+        RECT 16.165 2.555 144.375 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;

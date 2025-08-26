@@ -32,7 +32,7 @@ pinout:
   ui[4]: "Always: NC"
   ui[5]: "Always: NC"
   ui[6]: "Load: Read / Read: Read / Exe: NC"
-  ui[7]: "Always: Load"
+  ui[7]: "Always: Execution"
 
   # Outputs
   uo[0]: "Load: NC / Read: OpCode(0) / Exe: RegA(0)"

@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Secure SERDES with Integrated FIR Filtering"      # Project title
+  author:       "Yugasni S, Peketi Reshma, Chirukuri Uttam, Kiran Kumar J P, Sree Vidya J, Shylashree N of RV College of Engineering, Banglore"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Efficient Lightweight Encryption Architecture with FIR Filter and SERDES-Based Serial Communication"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     100000000       # Clock frequency in Hz (100MHz)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_serdes"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "serial_in (1-bit serial input data, LSB-first)"
+  ui[1]: "ena (enable the pipeline)"
+  ui[2]: "clk (system clock)"
+  ui[3]: "rst_n (active-low reset)"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "serial_out (1-bit encrypted + FIR-filtered data, MSB-first)"
+  uo[1]: "done (1-cycle pulse after each filtered/encrypted byte is transmitted)"
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "parallel_out[0] (LSB of filtered/encrypted parallel byte)"
+  uio[1]: "parallel_out[1]"
+  uio[2]: "parallel_out[2]"
+  uio[3]: "parallel_out[3]"
+  uio[4]: "parallel_out[4]"
+  uio[5]: "parallel_out[5]"
+  uio[6]: "parallel_out[6]"
+  uio[7]: "parallel_out[7] (MSB of filtered/encrypted parallel byte)"
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a e323cb5c",
+  "repo": "https://github.com/Elettronica-UnivAQ/ttsky_DutyCycleMeter",
+  "commit": "fdf01b256806e698d233974b09dcb48a84035a12",
+  "workflow_url": "https://github.com/Elettronica-UnivAQ/ttsky_DutyCycleMeter/actions/runs/17131591310",
+  "sort_id": 1756305313580,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

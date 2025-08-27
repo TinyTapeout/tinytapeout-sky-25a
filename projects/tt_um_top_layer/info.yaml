@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "Spike Detection and Classification System"
+  author:       "Gabriel Galeote Checa"
+  discord:      "gonsos#2128"
+  description:  "Serialized input buffering with 4 parallel spike detectors + classifiers"
+  language:     "Verilog"
+  clock_hz:     0                                # No fixed frequency (asynch input protocol)
+
+  # Design fits in 1 tile (4 units + RAM + wrapper should fit comfortably if optimized)
+  tiles: "2x2"
+
+  # Top-level module name (must begin with tt_um_)
+  top_module:  "tt_um_top_layer"
+
+  # List of source files (in ./src/)
+  source_files:
+    - "project.v"
+    - "processing_system.v"
+    - "processing_unit.v"
+    - "ado.v"
+    - "aso.v"
+    - "neo.v"
+    - "ed.v"
+    - "ram.v"
+    - "classifier.v"
+
+pinout:
+  # ─── UI : CONTROL INPUTS ────────────────────────────────────────────
+  ui[0]: "unit_sel[0]   (LSB of 2-bit channel selector)"
+  ui[1]: "unit_sel[1]   (MSB of 2-bit channel selector)"
+  ui[2]: "byte_valid    (strobe, 1 clk-wide when uio contains a byte)"
+  ui[3]: "reserved      (drive 0 externally)"
+  ui[4]: "reserved"
+  ui[5]: "reserved"
+  ui[6]: "reserved"
+  ui[7]: "reserved"
+
+  # ─── UO : STATUS OUTPUTS ────────────────────────────────────────────
+  #   uo_out = { 5'b00000 , event[1:0] , spike }
+  uo[0]: "spike          (spike of the SELECTED unit)"
+  uo[1]: "event[0]       (LSB of 2-bit event code)"
+  uo[2]: "event[1]       (MSB of 2-bit event code)"
+  uo[3]: "const0         (always 0)"
+  uo[4]: "const0         (always 0)"
+  uo[5]: "const0         (always 0)"
+  uo[6]: "const0         (always 0)"
+  uo[7]: "const0         (always 0)"
+
+  # ─── UIO : 8-BIT SAMPLE DATA BUS (INPUT ONLY) ──────────────────────
+  uio[0]: "sample_byte[0]  (LSB)"
+  uio[1]: "sample_byte[1]"
+  uio[2]: "sample_byte[2]"
+  uio[3]: "sample_byte[3]"
+  uio[4]: "sample_byte[4]"
+  uio[5]: "sample_byte[5]"
+  uio[6]: "sample_byte[6]"
+  uio[7]: "sample_byte[7]  (MSB)"
+
+# Do not change!
+yaml_version: 6

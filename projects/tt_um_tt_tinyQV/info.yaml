@@ -8,7 +8,7 @@ project:
   clock_hz:     64000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "6x4"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "8x4"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_tt_tinyQV"
@@ -20,6 +20,8 @@ project:
     - "project.v"
     - "peripherals.v"
     - "peri_full_example.v"
+    - "peri_full_empty.v"
+    - "peri_full_example_no_irq.v"
     - "peri_byte_example.v"
     - "user_peripherals/tqvp_dsatizabal_fpu.sv"
     - "user_peripherals/fpu/fpu_add.v"
@@ -43,6 +45,9 @@ project:
     - "user_peripherals/ledstrip/ledstrip.v"
     - "user_peripherals/ledstrip/ws2812b.v"
     - "user_peripherals/ledstrip/char_rom.v"
+    - "user_peripherals/vgaconsole/vgaconsole.v"
+    - "user_peripherals/vgaconsole/vga_timing.v"
+    - "user_peripherals/vgaconsole/char_rom.v"
     - "user_peripherals/matt_pwm/matt_pwm.v"
     - "user_peripherals/matt_pwm/pwm_strobe_gen.v"
     - "user_peripherals/matt_pwm/pwm.v"
@@ -74,6 +79,7 @@ project:
     - "user_peripherals/pulse_transmitter/delay_2.v"
     - "user_peripherals/pulse_transmitter/simple_falling_edge_detector.v"
     - "user_peripherals/pulse_transmitter/simple_rising_edge_detector.v"
+    - "user_peripherals/crc32.v"
     - "user_peripherals/hardware_utf8/hardware_utf8.v"
     - "user_peripherals/waveforms/font.sv"
     - "user_peripherals/waveforms/peripheral.sv"
@@ -86,6 +92,33 @@ project:
     - "user_peripherals/ubcd/ubcd.v"
     - "user_peripherals/analog_toolkit/fp_counter.v"
     - "user_peripherals/analog_toolkit/peripheral.v"
+    - "user_peripherals/rsa/full_adder.sv"
+    - "user_peripherals/rsa/half_adder.sv"
+    - "user_peripherals/rsa/mmm_unit.sv"
+    - "user_peripherals/rsa/mux1_unit.sv"
+    - "user_peripherals/rsa/mux2_unit.sv"
+    - "user_peripherals/rsa/mux3_unit.sv"
+    - "user_peripherals/rsa/processing_element_mux.sv"
+    - "user_peripherals/rsa/processing_element_mux_right_border.sv"
+    - "user_peripherals/rsa/register_crypt.sv"
+    - "user_peripherals/rsa/ripple_carry_adder.sv"
+    - "user_peripherals/rsa/rsa_control.sv"
+    - "user_peripherals/rsa/rsa_en_logic.sv"
+    - "user_peripherals/rsa/rsa_unit.sv"
+    - "user_peripherals/rsa/shiftreg1.sv"
+    - "user_peripherals/rsa/shiftreg2.sv"
+    - "user_peripherals/rsa/shiftreg3.sv"
+    - "user_peripherals/rsa/tqvp_alonso_rsa.v"
+    - "user_peripherals/intercal_alu/intercal-alu.v"
+    - "user_peripherals/intercal_alu/peripheral.v"
+    - "user_peripherals/CORDIC/tqvp_CORDIC.v"
+    - "user_peripherals/CORDIC/CORDIC_angles_ROM_comb.v"
+    - "user_peripherals/CORDIC/CORDIC_atanh_ROM_comb.v"
+    - "user_peripherals/CORDIC/CORDIC_iteration.v"
+    - "user_peripherals/CORDIC/CORDIC.v"
+    - "user_peripherals/CORDIC/defines.v"
+    - "user_peripherals/npu/peripheral.v"
+    - "user_peripherals/vga_tester/peripheral.v"
     - "tinyQV/cpu/tinyqv.v"
     - "tinyQV/cpu/alu.v"
     - "tinyQV/cpu/core.v"
@@ -98,6 +131,8 @@ project:
     - "tinyQV/cpu/latch_reg.v"
     - "tinyQV/cpu/time.v"
     - "tinyQV/peri/uart/uart_tx.v"
+    - "user_peripherals/affinex/mul.sv"
+    - "user_peripherals/affinex/tqvp_affinex.sv"
 
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.

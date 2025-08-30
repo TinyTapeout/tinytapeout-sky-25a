@@ -1,0 +1,46 @@
+# Tiny Tapeout project information
+project:
+  title:        "8-bit Pipelined ALU"
+  author:       "Pathan Rehman Ahmed Khan"
+  discord:      ""
+  description:  "A 8-bit fully pipelined ALU with multiply/divide, barrel shifter, and advanced flag/pipeline logic"
+  language:     "Verilog"
+  clock_hz:     0
+  tiles: "1x1"
+  top_module:  "tt_um_8bitalu"
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "ALU_DATA_0"
+  ui[1]: "ALU_DATA_1" 
+  ui[2]: "ALU_DATA_2"
+  ui[3]: "ALU_DATA_3"
+  ui[4]: "ALU_DATA_4"
+  ui[5]: "ALU_DATA_5"
+  ui[6]: "ALU_DATA_6"
+  ui[7]: "ALU_DATA_7"
+  # Outputs
+  uo[0]: "RESULT_0"
+  uo[1]: "RESULT_1"
+  uo[2]: "RESULT_2"
+  uo[3]: "RESULT_3"
+  uo[4]: "RESULT_4"
+  uo[5]: "RESULT_5"
+  uo[6]: "RESULT_6"
+  uo[7]: "RESULT_7"
+  # Bidirectional pins
+  uio[0]: "OPERAND_B_0"
+  uio[1]: "OPERAND_B_1"
+  uio[2]: "OPERAND_B_2"
+  uio[3]: "ALU_OP_0"
+  uio[4]: "ALU_OP_1"
+  uio[5]: "ALU_OP_2"
+  uio[6]: "FLAGS_OUT"
+  uio[7]: "PIPELINE_EN"
+
+# Do not change!
+yaml_version: 6

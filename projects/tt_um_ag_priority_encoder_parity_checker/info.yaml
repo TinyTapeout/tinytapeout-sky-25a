@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Priority Encoder with Parity Checker"      # Project title
+  author:       "arun-goud"             # Your name
+  discord:      "arungoud0130"          # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "9-to-4 priority encoder with parity checker and 7-seg display output"      # One line description of what your project does
+  language:     "Verilog"      # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     66000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_ag_priority_encoder_parity_checker"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "tt_um_ag_priority_encoder_parity_checker.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "in_a[0] / IN0"
+  ui[1]: "in_a[1] / IN1"
+  ui[2]: "in_a[2] / IN2"
+  ui[3]: "in_a[3] / IN3"
+  ui[4]: "in_a[4] / IN4"
+  ui[5]: "in_a[5] / IN5"
+  ui[6]: "in_a[6] / IN6"
+  ui[7]: "in_a[7] / IN7"
+
+  # Outputs
+  uo[0]: "output[0] / SEG_A"
+  uo[1]: "output[1] / SEG_B"
+  uo[2]: "output[2] / SEG_C"
+  uo[3]: "output[3] / SEG_D"
+  uo[4]: "output[4] / SEG_E"
+  uo[5]: "output[5] / SEG_F"
+  uo[6]: "output[6] / SEG_G"
+  uo[7]: "output[7] / SEG_DP"
+
+  # Bidirectional pins
+  uio[0]: "in_b[0] / IN8"
+  uio[1]: "in_b[1] / MSB_HIGHPRMODE_n"
+  uio[2]: "in_b[2] / EVENPARITY_MODE_n"
+  uio[3]: "out_b[3] / PARITY_OUT"
+  uio[4]: "out_b[4] / PRCODE[0]"
+  uio[5]: "out_b[5] / PRCODE[1]"
+  uio[6]: "out_b[6] / PRCODE[2]"
+  uio[7]: "out_b[7] / PRCODE[3]"
+
+# Do not change!
+yaml_version: 6

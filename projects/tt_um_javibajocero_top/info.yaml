@@ -44,8 +44,8 @@ pinout:
   uo[3]: "trigger_send"
   uo[4]: "uartTxbusy"
   uo[5]: "led_data_out"
-  uo[6]: "1"
-  uo[7]: "1"
+  uo[6]: "0"
+  uo[7]: "0"
 
   # Bidirectional pins
   uio[0]: "unused"

@@ -1,0 +1,66 @@
+65. Printing statistics.
+
+=== cinv ===
+
+   Number of wires:                  2
+   Number of wire bits:              2
+   Number of public wires:           2
+   Number of public wire bits:       2
+   Number of ports:                  2
+   Number of port bits:              2
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     sky130_fd_sc_hd__inv_2          1
+
+   Chip area for module '\cinv': 3.753600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== tt_um_delaychain ===
+
+   Number of wires:               5840
+   Number of wire bits:           5875
+   Number of public wires:        5768
+   Number of public wire bits:    5803
+   Number of ports:                  8
+   Number of port bits:             43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5856
+     cinv                         5616
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        16
+     sky130_fd_sc_hd__dfrtp_2      144
+     sky130_fd_sc_hd__mux2_1        72
+
+   Area for cell type \cinv is unknown!
+
+   Chip area for module '\tt_um_delaychain': 4694.502400
+     of which used for sequential elements: 3783.628800 (80.60%)
+
+=== design hierarchy ===
+
+   tt_um_delaychain                  1
+     cinv                         5616
+
+   Number of wires:              17072
+   Number of wire bits:          17107
+   Number of public wires:       17000
+   Number of public wire bits:   17035
+   Number of ports:              11240
+   Number of port bits:          11275
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5856
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        16
+     sky130_fd_sc_hd__dfrtp_2      144
+     sky130_fd_sc_hd__inv_2       5616
+     sky130_fd_sc_hd__mux2_1        72
+
+   Chip area for top module '\tt_um_delaychain': 25774.720000
+     of which used for sequential elements: 0.000000 (0.00%)
+

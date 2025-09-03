@@ -1,0 +1,65 @@
+# Tiny Tapeout project information
+project:
+  title:        "Design and Implementation of R-2R Ladder DAC"      # Project title
+  author:       "CUTM"      # Your name
+  discord:      ""       # Discord username (optional)
+  description:  "A simple 8 bit DAC with a sine waveform driver and 3.3v output" # One line description
+  language:     "Verilog"        
+  clock_hz:     0                # Set clock freq if you use a clock, else 0
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"
+
+  # How many analog pins does your project use?
+  analog_pins: 1
+  uses_3v3: true                 # ✅ You’re using 3.3V output
+
+  # Your top module name must start with "tt_um_". Must match your Verilog top module exactly!
+  top_module:  "tt_um_dac_test3v3"
+
+  # List your project's source files here. Source files must be in ./src
+  source_files:        
+    - "project.v"
+
+# Pinout of your project
+pinout:
+  # Inputs
+  ui[0]: "bit 0"
+  ui[1]: "bit 1"
+  ui[2]: "bit 2"
+  ui[3]: "bit 3"
+  ui[4]: "bit 4"
+  ui[5]: "bit 5"
+  ui[6]: "bit 6"
+  ui[7]: "bit 7"
+
+  # Outputs
+  uo[0]: "count zero"
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "external data"
+  uio[1]: "load divider"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  # Analog pins
+  ua[0]: "DAC output"
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,64 @@
+65. Printing statistics.
+
+=== cinv ===
+
+   Number of wires:                  2
+   Number of wire bits:              2
+   Number of public wires:           2
+   Number of public wire bits:       2
+   Number of ports:                  2
+   Number of port bits:              2
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     sky130_fd_sc_hd__inv_2          1
+
+   Chip area for module '\cinv': 3.753600
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== tt_um_regfield ===
+
+   Number of wires:               1928
+   Number of wire bits:           1963
+   Number of public wires:        1928
+   Number of public wire bits:    1963
+   Number of ports:                  8
+   Number of port bits:             43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1944
+     cinv                         1280
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        16
+     sky130_fd_sc_hd__dfrtp_2      640
+
+   Area for cell type \cinv is unknown!
+
+   Chip area for module '\tt_um_regfield': 16916.224000
+     of which used for sequential elements: 16816.128000 (99.41%)
+
+=== design hierarchy ===
+
+   tt_um_regfield                    1
+     cinv                         1280
+
+   Number of wires:               4488
+   Number of wire bits:           4523
+   Number of public wires:        4488
+   Number of public wire bits:    4523
+   Number of ports:               2568
+   Number of port bits:           2603
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1944
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        16
+     sky130_fd_sc_hd__dfrtp_2      640
+     sky130_fd_sc_hd__inv_2       1280
+
+   Chip area for top module '\tt_um_regfield': 21720.832000
+     of which used for sequential elements: 0.000000 (0.00%)
+

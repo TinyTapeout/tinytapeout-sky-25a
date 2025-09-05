@@ -51,6 +51,7 @@ See also [debug docs](debug.md)
 
 | Register | Address | Description |
 | -------- | ------- | ----------- |
+| MTIME_DIVIDER | 0x800002C | MTIME counts at clock / (MTIME_DIVIDER + 1).  Bits 0 and 1 are fixed at 1, so multiples of 4MHz are supported. |
 | MTIME    | 0xFFFFF00 (RW) | Get/set the 1MHz time count |
 | MTIMECMP | 0xFFFFF04 (RW) | Get/set the time to trigger the timer interrupt |
 
@@ -64,6 +65,7 @@ If MTIME is after MTIMECMP (by less than 2^30 microseconds to deal with wrap), t
 | -------- | ------- | ----------- |
 | OUT | 0x8000040 (RW) | Control for out0-7 if the GPIO peripheral is selected |
 | IN  | 0x8000044 (R) | Reads the current state of in0-7 |
+| AUDIO_FUNC_SEL | 0x8000050 (RW) | Audio function select for uo7 |
 | FUNC_SEL | 0x8000060 - 0x800007F (RW) | Function select for out0-7 |
 
 | Function Select | Peripheral |
@@ -71,9 +73,21 @@ If MTIME is after MTIMECMP (by less than 2^30 microseconds to deal with wrap), t
 | 0               | Disabled   |
 | 1               | GPIO       |
 | 2               | UART       |
-| 3               | Disabled   |
-| 4 - 15          | User peripheral 4-15 |
+| 3 - 15          | User peripheral 3-15 |
 | 16 - 31         | User byte peripheral 0-15 |
+| 32 - 39         | User peripheral 16-23 |
+
+| Audio function select | Peripheral |
+| --------------------- | ---------- |
+| 0-7                   | PSRAM B enabled |
+| 8                     | 33 PWL Synth out 7 |
+| 9                     | 11 Pulse Transmitter out 7 |
+| 10                    | 20 PWM out 0 |
+| 11                    | 21 Matt PWM out 7 |
+| 12                    | 08 Prism out 7 |
+| 13                    | 11 Analog toolkit out 7 |
+| 14                    | 20 PWL Synth out 6 |
+| 15                    | 21 Matt PWM out 7 |
 
 ### UART
 

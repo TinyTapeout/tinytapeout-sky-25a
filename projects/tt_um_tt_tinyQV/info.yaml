@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "TinyQV - Crowdsourced Risc-V SoC"      # Project title
+  title:        "TinyQV 'Asteroids' - Crowdsourced Risc-V SoC"      # Project title
   author:       "Michael Bell, et al"      # Your name
   discord:      "rebelmike"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "A Risc-V SoC with peripherals from the Tiny Tapeout Risc-V challenge"      # One line description of what your project does
+  description:  "A Risc-V SoC with peripherals from the Tiny Tapeout Risc-V challenge, codename 'Asteroids'"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     64000000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -33,6 +33,7 @@ project:
     - "user_peripherals/uart/uart_tx.v"
     - "user_peripherals/spi.v"
     - "user_peripherals/game_pmod.v"
+    - "user_peripherals/tt_um_tqv_jesari_CAN.v"
     - "user_peripherals/encoder/debounce.v"
     - "user_peripherals/encoder/encoder.v"
     - "user_peripherals/encoder/matt_encoder.v"
@@ -69,8 +70,9 @@ project:
     - "user_peripherals/pwl_synth/pwl_synth.sv"
     - "user_peripherals/pwl_synth/pwl_synth_memory.sv"
     - "user_peripherals/wdt/tqvp_nkanderson_wdt.sv"
-    - "user_peripherals/RV2A03/apu.v"
-    - "user_peripherals/RV2A03/peripheral.v"
+    - "user_peripherals/vga_gfx/peripheral.v"
+    - "user_peripherals/vga_gfx/vga_timing.v"
+    - "user_peripherals/vga_gfx/latch_config.v"
     - "user_peripherals/tqvp_laurie_dwarf_line_table_accelerator.sv"
     - "user_peripherals/pulse_transmitter/peripheral.v"
     - "user_peripherals/pulse_transmitter/carrier.v"
@@ -81,6 +83,7 @@ project:
     - "user_peripherals/pulse_transmitter/simple_rising_edge_detector.v"
     - "user_peripherals/crc32.v"
     - "user_peripherals/hardware_utf8/hardware_utf8.v"
+    - "user_peripherals/tiny-tone/mkTinyTone_Peripheral.v"
     - "user_peripherals/waveforms/font.sv"
     - "user_peripherals/waveforms/peripheral.sv"
     - "user_peripherals/pdm/cic3_pdm.v"
@@ -119,6 +122,7 @@ project:
     - "user_peripherals/CORDIC/defines.v"
     - "user_peripherals/npu/peripheral.v"
     - "user_peripherals/vga_tester/peripheral.v"
+    - "user_peripherals/hamming_7_4/hamming_7_4.v"
     - "tinyQV/cpu/tinyqv.v"
     - "tinyQV/cpu/alu.v"
     - "tinyQV/cpu/core.v"

@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a e323cb5c",
+  "repo": "https://github.com/tapeoutcutm/PLC-HMI-based-EV-Motor-Control-System-using-VERILOG",
+  "commit": "11dcd3fa2a56f04580642300ec323096217526a1",
+  "workflow_url": "https://github.com/tapeoutcutm/PLC-HMI-based-EV-Motor-Control-System-using-VERILOG/actions/runs/17188946376",
+  "sort_id": 1757040550280,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

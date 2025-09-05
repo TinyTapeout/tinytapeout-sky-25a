@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:       "Low-Power 8×8 Braun Array Multiplier for Fast Computing"           # Project title
+  author:      "Rakesh"                               # Your name (based on GitHub)
+  discord:     "rakesh_999"                           # Your Discord handle (optional)
+  description: "An 8x8 unsigned Braun array multiplier that computes the product of two 8-bit numbers, producing a 16-bit result using a systematic array of full and half adders"
+  language:    "Verilog"                              # Language used
+  clock_hz:    10000000                               # Clock frequency in Hz (10 MHz)
+  
+  # Tile usage (single tile of about 160 x 100 um)
+  tiles: "1x1"                                       # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 8x2
+  
+  # Top module (must start with "tt_um_")
+  top_module: "tt_um_braun_mult"
+  
+  # Source files in ./src directory
+  source_files:
+    - project.v
+
+# Pinout configuration
+pinout:
+  # Dedicated inputs - Multiplicand A[7:0]
+  ui[0]: "Multiplicand A[0] - Input A bit 0"
+  ui[1]: "Multiplicand A[1] - Input A bit 1"
+  ui[2]: "Multiplicand A[2] - Input A bit 2"
+  ui[3]: "Multiplicand A[3] - Input A bit 3"
+  ui[4]: "Multiplicand A[4] - Input A bit 4"
+  ui[5]: "Multiplicand A[5] - Input A bit 5"
+  ui[6]: "Multiplicand A[6] - Input A bit 6"
+  ui[7]: "Multiplicand A[7] - Input A bit 7"
+  
+  # Dedicated outputs - Product P[7:0] (Lower byte)
+  uo[0]: "Product P[0] - Product bit 0 (LSB)"
+  uo[1]: "Product P[1] - Product bit 1"
+  uo[2]: "Product P[2] - Product bit 2"
+  uo[3]: "Product P[3] - Product bit 3"
+  uo[4]: "Product P[4] - Product bit 4"
+  uo[5]: "Product P[5] - Product bit 5"
+  uo[6]: "Product P[6] - Product bit 6"
+  uo[7]: "Product P[7] - Product bit 7"
+  
+  # Bidirectional pins - Multiplier B[7:0] input, Product P[15:8] output
+  uio[0]: "Multiplier B[0] / Product P[8] - Input B bit 0 / Output P bit 8"
+  uio[1]: "Multiplier B[1] / Product P[9] - Input B bit 1 / Output P bit 9"
+  uio[2]: "Multiplier B[2] / Product P[10] - Input B bit 2 / Output P bit 10"
+  uio[3]: "Multiplier B[3] / Product P[11] - Input B bit 3 / Output P bit 11"
+  uio[4]: "Multiplier B[4] / Product P[12] - Input B bit 4 / Output P bit 12"
+  uio[5]: "Multiplier B[5] / Product P[13] - Input B bit 5 / Output P bit 13"
+  uio[6]: "Multiplier B[6] / Product P[14] - Input B bit 6 / Output P bit 14"
+  uio[7]: "Multiplier B[7] / Product P[15] - Input B bit 7 / Output P bit 15 (MSB)"
+
+# Do not change this version number!
+yaml_version: 6

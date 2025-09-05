@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/tapeoutcutm/Optimized-Braun-Array-Multiplier-Architecture-for-Digital-Systems",
+  "commit": "00531401172a8bdcfccee53df83c2ad6ac412e9c",
+  "workflow_url": "https://github.com/tapeoutcutm/Optimized-Braun-Array-Multiplier-Architecture-for-Digital-Systems/actions/runs/17494892860",
+  "sort_id": 1757080335224,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

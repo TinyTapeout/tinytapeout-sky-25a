@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "32-bit floating point ALU"      # Project title
+  author:       "Sean and Maxwell"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Support 32-bit add and subtract"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     20000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_32_bit_fp_ALU_S_M"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "alu_top.v"
+    - "fp_addsub.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "input_byte[0]"
+  ui[1]: "input_byte[1]"
+  ui[2]: "input_byte[2]"
+  ui[3]: "input_byte[3]"
+  ui[4]: "input_byte[4]"
+  ui[5]: "input_byte[5]"
+  ui[6]: "input_byte[6]"
+  ui[7]: "input_byte[7]"
+
+  # Outputs
+  uo[0]: "output_byte[0]"
+  uo[1]: "output_byte[1]"
+  uo[2]: "output_byte[2]"
+  uo[3]: "output_byte[3]"
+  uo[4]: "output_byte[4]"
+  uo[5]: "output_byte[5]"
+  uo[6]: "output_byte[6]"
+  uo[7]: "output_byte[7]"
+
+  # Bidirectional pins
+  uio[0]: "(input)  op_code[0]"
+  uio[1]: "(input)  op_code[1]"
+  uio[2]: "(input)  start"
+  uio[3]: "(output) done"
+  uio[4]: "(output) state[0]"
+  uio[5]: "(output) state[1]"
+  uio[6]: "(output) state[2]"
+  uio[7]: "(output) state[3]"
+
+# Do not change!
+yaml_version: 6

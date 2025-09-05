@@ -1,0 +1,47 @@
+# Tiny Tapeout project information
+project:
+  title:        "UART Controller with FIFO and Interrupts"
+  author:       "Jagadish"
+  discord:      "your_discord"
+  description:  "Full-featured UART with configurable baud rate, FIFO buffering, and interrupt generation"
+  language:     "Verilog"
+  clock_hz:     50000000
+  tiles:        "1x1"
+  top_module:   "tt_um_uart"
+  source_files:
+    - "project.v"
+    - "uart_top.v"
+
+pinout:
+  # Inputs
+  ui[0]: "TR_EN"
+  ui[1]: "MODE_OSL"
+  ui[2]: "CLK_SEL"
+  ui[3]: "TX_WR_EN"
+  ui[4]: "TR_DATA_LOAD"
+  ui[5]: "RX_RD_EN"
+  ui[6]: ""
+  ui[7]: ""
+  
+  # Outputs
+  uo[0]: "RX_DATA[0]"
+  uo[1]: "RX_DATA[1]"
+  uo[2]: "RX_DATA[2]"
+  uo[3]: "RX_DATA[3]"
+  uo[4]: "RX_DATA[4]"
+  uo[5]: "RX_DATA[5]"
+  uo[6]: "RX_DATA[6]"
+  uo[7]: "RX_DATA[7]"
+  
+  # Bidirectional pins
+  uio[0]: "RX_IN/TX_OUT"
+  uio[1]: "TX_FIFO[1]/TX_I_INT"
+  uio[2]: "TX_FIFO[2]/RX_I_INT"
+  uio[3]: "TX_FIFO[3]/TX_O_INT"
+  uio[4]: "TX_FIFO[4]/RX_O_INT"
+  uio[5]: "TX_FIFO[5]/TR_BUSY"
+  uio[6]: "TX_FIFO[6]"
+  uio[7]: "TX_FIFO[7]"
+
+# Do not change!
+yaml_version: 6

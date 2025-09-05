@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title:        "IZ_RG_22"      # Project title
+  author:       "Torres"      # Your name
+  discord:      "bondrewd117"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Modified Izhikevich Equation Implemented in 22-Bit for Capturing All Original Izhikevich Behaviors"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "3x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_IZ_RG_22"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "IZ_RG_22.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "select0"
+  ui[1]: "select1"
+  ui[2]: "select2"
+  ui[3]: "I0"
+  ui[4]: "I1"
+  ui[5]: "I2"
+  ui[6]: "I3"
+  ui[7]: "I4"
+
+  # Outputs
+  uo[0]: "V_out0"
+  uo[1]: "V_out1"
+  uo[2]: "V_out2"
+  uo[3]: "V_out3"
+  uo[4]: "V_out4"
+  uo[5]: "V_out5"
+  uo[6]: "V_out6"
+  uo[7]: "V_out7"
+
+  # Bidirectional pins
+  uio[0]: "U_out0"
+  uio[1]: "U_out1"
+  uio[2]: "U_out2"
+  uio[3]: "U_out3"
+  uio[4]: "U_out4"
+  uio[5]: "U_out5"
+  uio[6]: "U_out6"
+  uio[7]: "U_out7"
+
+# Do not change!
+yaml_version: 6

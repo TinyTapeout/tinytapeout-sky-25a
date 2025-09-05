@@ -1,0 +1,60 @@
+# Tiny Tapeout project information
+project:
+  title:        "Games (Tic Tac Toe and Rock Paper Scissors)"      # Project title
+  author:       "Aria Mitra"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "This is a chip that can allow people to play one of two games: tic tac toe or rock paper scissors"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_AriaMitraGames"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "DFF.v"
+    - "LFSR_3.v"
+    - "rock_paper.v"
+    - "tic_tac_toe.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "Game Type (0 is tic tactoe, 1 is rock paper scissors)"
+  ui[1]: "User Input for Rock Paper Scissors"
+  ui[2]: "User Input for Rock Paper Scissors"
+  ui[3]: "Move Position (index of spot)"
+  ui[4]: "Move Position (index of spot)"
+  ui[5]: "Move Position (index of spot)"
+  ui[6]: "Move Position (index of spot)"
+  ui[7]: "Move Valid"
+
+  # Outputs
+  uo[0]: "Rock Paper Scissors Winner"
+  uo[1]: "Rock Paper Scissors Winner"
+  uo[2]: "Current Player (TTT)"
+  uo[3]: "Current Player (TTT)"
+  uo[4]: "Tic Tac Toe Winner"
+  uo[5]: "Tic Tac Toe Winner"
+  uo[6]: "Tic Tac Toe Draw"
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6

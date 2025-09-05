@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:       "8-bit MIPS Single Cycle Processor"     # Fixed: Changed to 8-bit
+  author:      "Kishore Netheti"                      # Your name
+  discord:     "kishore_netheti"                      # Your Discord handle (optional)
+  description: "A complete 8-bit MIPS single-cycle processor with 8 instruction types including arithmetic, logical, memory, and jump operations"  # Fixed description
+  language:    "Verilog"                              # Language used
+  clock_hz:    10000000                               # Clock frequency in Hz (10 MHz)
+
+  # Tile usage (single tile of about 160 x 100 um)
+  tiles: "1x1"                                       # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 8x2
+
+  # Top module (must start with "tt_um_")
+  top_module: "tt_um_kishorenetheti_tt16_mips"
+
+  # Source files in ./src directory
+  source_files:
+    - project.v
+
+# Pinout configuration
+pinout:
+  # Inputs (unused in this design)
+  ui[0]: "Unused Input"
+  ui[1]: "Unused Input"
+  ui[2]: "Unused Input"
+  ui[3]: "Unused Input"
+  ui[4]: "Unused Input"
+  ui[5]: "Unused Input"
+  ui[6]: "Unused Input"
+  ui[7]: "Unused Input"
+
+  # Outputs (8-bit ALU output)
+  uo[0]: "ALU_out[0] - ALU Output Bit 0"
+  uo[1]: "ALU_out[1] - ALU Output Bit 1"
+  uo[2]: "ALU_out[2] - ALU Output Bit 2"
+  uo[3]: "ALU_out[3] - ALU Output Bit 3"
+  uo[4]: "ALU_out[4] - ALU Output Bit 4"
+  uo[5]: "ALU_out[5] - ALU Output Bit 5"
+  uo[6]: "ALU_out[6] - ALU Output Bit 6"
+  uo[7]: "ALU_out[7] - ALU Output Bit 7"
+
+  # Bidirectional pins (Program Counter lower 4 bits + unused)
+  uio[0]: "PC[0] - Program Counter Bit 0"
+  uio[1]: "PC[1] - Program Counter Bit 1"
+  uio[2]: "PC[2] - Program Counter Bit 2"
+  uio[3]: "PC[3] - Program Counter Bit 3"
+  uio[4]: "Unused Output (tied to 0)"
+  uio[5]: "Unused Output (tied to 0)"
+  uio[6]: "Unused Output (tied to 0)"
+  uio[7]: "Unused Output (tied to 0)"
+
+# Do not change this version number!
+yaml_version: 6

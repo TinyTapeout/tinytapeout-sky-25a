@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/Ctr-cv/ECE298A_BNN_2",
+  "commit": "0ae3b06b3955c5c680240f925b2aa843d2f1465d",
+  "workflow_url": "https://github.com/Ctr-cv/ECE298A_BNN_2/actions/runs/17529940760",
+  "sort_id": 1757256656465,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

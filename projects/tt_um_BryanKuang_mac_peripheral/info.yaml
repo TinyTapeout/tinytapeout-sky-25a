@@ -1,0 +1,62 @@
+# Tiny Tapeout project information
+project:
+  title: "8-bit Multiply-Accumulate (MAC) with 2-Cycle Serial Interface" # Project title
+  author: "Bryan Kuang" # Your name
+  discord: "bk233" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "An 8×8→16-bit multiply-accumulate unit with 2-cycle 8-bit serial interface, supporting signed/unsigned operations with overflow detection and clear functionality" # One line description of what your project does
+  language: "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 50000000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_BryanKuang_mac_peripheral"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "nibble_interface.v"
+    - "MAC_simple.v"
+    - "components/input_registers.v"
+    - "components/change_detector.v"
+    - "components/pipeline_registers.v"
+    - "components/accumulator_16p1bit.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[1]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[2]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[3]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[4]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[5]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[6]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+  ui[7]: "Data[7:0] - 8-bit data input (Cycle 1: Data A, Cycle 2: Data B)"
+
+  # Outputs
+  uo[0]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[1]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[2]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[3]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[4]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[5]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[6]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+  uo[7]: "Result[7:0] - 8-bit data output (cycles between low/high bytes)"
+
+  # Bidirectional pins
+  uio[0]: "Clear_and_Mult (IN) / Overflow (OUT) - Control input or overflow flag output"
+  uio[1]: "Enable (IN) / Data_Ready (OUT) - Interface enable input or data ready output"
+  uio[2]: "Signed_Mode (IN) - Signed mode control (0=unsigned, 1=signed)"
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6

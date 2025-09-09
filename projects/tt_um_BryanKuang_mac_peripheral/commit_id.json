@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/Bryan-Kuang/ECE298A-sky130",
+  "commit": "a67ef5fe8a08b0b50a697239661fac50869fca13",
+  "workflow_url": "https://github.com/Bryan-Kuang/ECE298A-sky130/actions/runs/17558265771",
+  "sort_id": 1757377796795,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

@@ -1,0 +1,97 @@
+# Tiny Tapeout project information
+project:
+  title:        "Open FGPA 2x2 design"      # Project title
+  author:       "Zhenyuan Liu"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A small 2x2 CLB fpga"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     1000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "3x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_openfpga22"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "./rtl/dff.v"
+    - "./rtl/gpio.v"
+    - "./rtl/SRC/fpga_defines.v"
+    - "./rtl/SRC/sub_module/inv_buf_passgate.v"
+    - "./rtl/SRC/sub_module/arch_encoder.v"
+    - "./rtl/SRC/sub_module/local_encoder.v"
+    - "./rtl/SRC/sub_module/mux_primitives.v"
+    - "./rtl/SRC/sub_module/muxes.v"
+    - "./rtl/SRC/sub_module/luts.v"
+    - "./rtl/SRC/sub_module/wires.v"
+    - "./rtl/SRC/sub_module/memories.v"
+    - "./rtl/SRC/sub_module/shift_register_banks.v"
+    - "./rtl/SRC/lb/logical_tile_io_mode_physical__iopad.v"
+    - "./rtl/SRC/lb/logical_tile_io_mode_io_.v"
+    - "./rtl/SRC/lb/logical_tile_clb_mode_default__fle_mode_n1_lut4__ble4_mode_default__lut4.v"
+    - "./rtl/SRC/lb/logical_tile_clb_mode_default__fle_mode_n1_lut4__ble4_mode_default__ff.v"
+    - "./rtl/SRC/lb/logical_tile_clb_mode_default__fle_mode_n1_lut4__ble4.v"
+    - "./rtl/SRC/lb/logical_tile_clb_mode_default__fle.v"
+    - "./rtl/SRC/lb/logical_tile_clb_mode_clb_.v"
+    - "./rtl/SRC/lb/grid_io_top.v"
+    - "./rtl/SRC/lb/grid_io_right.v"
+    - "./rtl/SRC/lb/grid_io_bottom.v"
+    - "./rtl/SRC/lb/grid_io_left.v"
+    - "./rtl/SRC/lb/grid_clb.v"
+    - "./rtl/SRC/routing/sb_0__0_.v"
+    - "./rtl/SRC/routing/sb_0__1_.v"
+    - "./rtl/SRC/routing/sb_0__2_.v"
+    - "./rtl/SRC/routing/sb_1__0_.v"
+    - "./rtl/SRC/routing/sb_1__1_.v"
+    - "./rtl/SRC/routing/sb_1__2_.v"
+    - "./rtl/SRC/routing/sb_2__0_.v"
+    - "./rtl/SRC/routing/sb_2__1_.v"
+    - "./rtl/SRC/routing/sb_2__2_.v"
+    - "./rtl/SRC/routing/cbx_1__0_.v"
+    - "./rtl/SRC/routing/cbx_1__1_.v"
+    - "./rtl/SRC/routing/cbx_1__2_.v"
+    - "./rtl/SRC/routing/cby_0__1_.v"
+    - "./rtl/SRC/routing/cby_1__1_.v"
+    - "./rtl/SRC/routing/cby_2__1_.v"
+    - "./rtl/SRC/fpga_top.v"
+    - "./rtl/SRC/top.v"
+    - "./rtl/SRC/project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "gfpga_pad_GPIO_PAD_fm[35]"
+  ui[1]: "gfpga_pad_GPIO_PAD_fm[41]"
+  ui[2]: "gfpga_pad_GPIO_PAD_fm[34]"
+  ui[3]: "gfpga_pad_GPIO_PAD_fm[42]"
+  ui[4]: "gfpga_pad_GPIO_PAD_fm[28]"
+  ui[5]: "gfpga_pad_GPIO_PAD_fm[55]"
+  ui[6]: "gfpga_pad_GPIO_PAD_fm[33]"
+  ui[7]: "gfpga_pad_GPIO_PAD_fm[40]"
+
+  # Outputs
+  uo[0]: "gfpga_pad_GPIO_PAD_fm[48]"
+  uo[1]: "gfpga_pad_GPIO_PAD_fm[26]"
+  uo[2]: "ccff_tail_fm"
+  uo[3]: "gfpga_pad_GPIO_PAD_fm[11]"
+  uo[4]: "gfpga_pad_GPIO_PAD_fm[22]"
+  uo[5]: "gfpga_pad_GPIO_PAD_fm[36]"
+  uo[6]: "gfpga_pad_GPIO_PAD_fm[45]"
+  uo[7]: "gfpga_pad_GPIO_PAD_fm[63]"
+
+  # Bidirectional pins
+  uio[0]: "gfpga_pad_GPIO_PAD_fm[47]"
+  uio[1]: "gfpga_pad_GPIO_PAD_fm[31]"
+  uio[2]: "ccff_head_fm"
+  uio[3]: "prog_clk_fm"
+  uio[4]: "set_fm"
+  uio[5]: "gfpga_pad_GPIO_PAD_fm[0]"
+  uio[6]: "gfpga_pad_GPIO_PAD_fm[30]"
+  uio[7]: "gfpga_pad_GPIO_PAD_fm[50]"
+
+# Do not change!
+yaml_version: 6

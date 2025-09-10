@@ -1,0 +1,62 @@
+# Tiny Tapeout project information
+project:
+  title:        "SPI flash raid controller"      # Project title
+  author:       "Kobi Moneh"      # Your name (please fill this in)
+  discord:      "kobimoneh"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A simple SPI flash controller that allow 2 hosts to control 2 flashes with address based routing"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (50 MHz system clock)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_flash_raid_controller"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "flash_mux_miso.v"
+    - "flash_mux_no_miso.v"
+    - "host_mux.v"
+    - "instruction_decoder.v"
+    - "raider.v"
+    - "serial_interface.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "main_host_sclk"     # Main host SPI clock
+  ui[1]: "main_host_cs_n"     # Main host chip select (active low)
+  ui[2]: "main_host_mosi"     # Main host MOSI (data from host)
+  ui[3]: "secondary_host_sclk" # Secondary host SPI clock
+  ui[4]: "secondary_host_cs_n" # Secondary host chip select (active low)
+  ui[5]: "secondary_host_mosi" # Secondary host MOSI (data from host)
+  ui[6]: "mgmt_sclk"          # Management interface SPI clock
+  ui[7]: "mgmt_cs_n"          # Management interface chip select (active low)
+
+  # Outputs
+  uo[0]: "main_host_miso"     # Main host MISO (data to host)
+  uo[1]: "secondary_host_miso" # Secondary host MISO (data to host)
+  uo[2]: "mgmt_miso"          # Management interface MISO
+  uo[3]: "main_flash_sclk"    # Main flash SPI clock
+  uo[4]: "main_flash_cs_n"    # Main flash chip select (active low)
+  uo[5]: "main_flash_mosi"    # Main flash MOSI (data to flash)
+  uo[6]: "secondary_flash_sclk" # Secondary flash SPI clock
+  uo[7]: "secondary_flash_cs_n" # Secondary flash chip select (active low)
+
+  # Bidirectional pins
+  uio[0]: "mgmt_mosi"         # Management interface MOSI (input)
+  uio[1]: "main_flash_miso"   # Main flash MISO (input)
+  uio[2]: "secondary_flash_miso" # Secondary flash MISO (input)
+  uio[3]: "secondary_flash_mosi" # Secondary flash MOSI (output)
+  uio[4]: "secondary_flash_wp_n" # Secondary flash write protect (output, active low)
+  uio[5]: ""                  # Unused
+  uio[6]: ""                  # Unused
+  uio[7]: ""                  # Unused
+
+# Do not change!
+yaml_version: 6

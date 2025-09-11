@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "TensorFlowE"      # Project title
+  author:       "Torres"      # Your name
+  discord:      "bondrewd117"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Multplicador tpu"      # One line description of what your project does
+  language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL,Verilog etc
+  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_TensorFlowE"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.sv"
+    - "four_palabras.sv" 
+    - "matrix_multiply_unit.sv" 
+    - "matrix_accumulate_unit.sv" 
+    - "TensorFlowE.sv"
+    - "uart_tx_4in4.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "Datos_in_0"
+  ui[1]: "Datos_in_1"
+  ui[2]: "Datos_in_2"
+  ui[3]: "Datos_in_3"
+  ui[4]: "Datos_in_4"
+  ui[5]: "Datos_in_5"
+  ui[6]: "Datos_in_6"
+  ui[7]: "Datos_in_7"
+
+  # Outputs
+  uo[0]: "Datos_out_0"
+  uo[1]: "Datos_out_1"
+  uo[2]: "Datos_out_2"
+  uo[3]: "Datos_out_3"
+  uo[4]: "Datos_out_4"
+  uo[5]: "Datos_out_5"
+  uo[6]: "Datos_out_6"
+  uo[7]: "Datos_out_7"
+
+  # Bidirectional pins
+  uio[0]: "Ena_write"
+  uio[1]: "Ena_read"
+  uio[2]: "clear"
+  uio[3]: "enable_accu"
+  uio[4]: "Ena_out"
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title:        "Sky130 Digital Playground"      # Project title
+  author:       "Eduardo Holguin"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Select and test eight classic digital blocks (gates, mux/demux, PWM, 7-seg, 4-bit ALU, FDC, 16×4 RAM, and turn signals) on a single TinyTapeout Sky130 tile."      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_digital_playground"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "modules.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "MODE_SEL0"
+  ui[1]: "MODE_SEL1"
+  ui[2]: "MODE_SEL2"
+  ui[3]: "AUX0 / SEL_MUX / RAM_A0 / ALU_OP0 / DIR0"
+  ui[4]: "AUX1 / SEL_DEMUX0 / RAM_A1 / ALU_OP1 / DIR1"
+  ui[5]: "AUX2 / SEL_DEMUX1 / RAM_A2 / ALU_OP2"
+  ui[6]: "AUX3 / RAM_A3"
+  ui[7]: "RAM_WE"
+
+  # Outputs
+  uo[0]: "OUT0 (mode-dep: GATES_AND | MXD_Y_MUX | PWM_OUT | HEX7_SEG_G | ALU_Y0 | FDC_D0 | RAM_Q0 | DIR_IZQ0)"
+  uo[1]: "OUT1 (mode-dep: GATES_OR | MXD_Y0 | PWM_DUTY1 | HEX7_SEG_F | ALU_Y1 | FDC_D1 | RAM_Q1 | DIR_IZQ1)"
+  uo[2]: "OUT2 (mode-dep: GATES_XOR | MXD_Y1 | PWM_DUTY2 | HEX7_SEG_E | ALU_Y2 | FDC_D2 | RAM_Q2 | DIR_IZQ2)"
+  uo[3]: "OUT3 (mode-dep: GATES_NAND | MXD_Y2 | PWM_DUTY3 | HEX7_SEG_D | ALU_Y3 | FDC_D3)"
+  uo[4]: "OUT4 (mode-dep: GATES_NOR | MXD_Y3 | PWM_DUTY4 | HEX7_SEG_C | ALU_FLAG | FDC_D4 | DIR_DER0)"
+  uo[5]: "OUT5 (mode-dep: GATES_NOT_A | PWM_DUTY5 | HEX7_SEG_B | DIR_DER1)"
+  uo[6]: "OUT6 (mode-dep: PWM_DUTY6 | HEX7_SEG_A | DIR_DER2)"
+  uo[7]: "OUT7 (mode-dep: PWM_DUTY7)"
+
+  # Bidirectional pins
+  uio[0]: "GEN0: GATES_A / MXD_D0 / FDC_VCO / PWM_DUTY0 / HEX_X0 / ALU_A0"
+  uio[1]: "GEN1: GATES_B / MXD_D1 / PWM_DUTY1 / HEX_X1 / ALU_A1"
+  uio[2]: "GEN2: MXD_DIN / PWM_DUTY2 / HEX_X2 / ALU_A2"
+  uio[3]: "GEN3: PWM_DUTY3 / HEX_X3 / ALU_A3"
+  uio[4]: "GEN4: PWM_DUTY4 / ALU_B0"
+  uio[5]: "GEN5: PWM_DUTY5 / ALU_B1"
+  uio[6]: "GEN6: PWM_DUTY6 / ALU_B2"
+  uio[7]: "GEN7: PWM_DUTY7 / ALU_B3"
+
+# Do not change!
+yaml_version: 6

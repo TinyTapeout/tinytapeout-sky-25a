@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/jedicomo/IPN_Abril_1",
+  "commit": "6d967fdf8d82d35220b5fb072e88796a64ba4584",
+  "workflow_url": "https://github.com/jedicomo/IPN_Abril_1/actions/runs/17599037203",
+  "sort_id": 1757614322867,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

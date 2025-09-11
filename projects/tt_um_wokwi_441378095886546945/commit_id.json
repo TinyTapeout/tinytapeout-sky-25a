@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/kevinandrelopezarellano-collab/sky130-sequentialcircuit",
+  "commit": "35b6e259559bc10a73e3726d594fa6ada87101f2",
+  "workflow_url": "https://github.com/kevinandrelopezarellano-collab/sky130-sequentialcircuit/actions/runs/17656040907",
+  "sort_id": 1757629878529,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

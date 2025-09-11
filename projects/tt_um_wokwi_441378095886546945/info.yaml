@@ -1,0 +1,49 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id:     441378095886546945       # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title:        "Sequential Circuit for 7-Segment Display"      # Project title
+  author:       "Kevin Andre Lopez Arellano"      # Your name
+  discord:      "kevsito"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Sequential Circuit shows name Andre on 7 segment display"      # One line description of what your project does
+  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     1       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "7A"
+  uo[1]: "7B"
+  uo[2]: "7C"
+  uo[3]: "7D"
+  uo[4]: "7E"
+  uo[5]: "7F"
+  uo[6]: "7G"
+  uo[7]: "7DP"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6

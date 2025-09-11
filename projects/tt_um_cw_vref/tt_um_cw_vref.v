@@ -21,12 +21,16 @@ module tt_um_cw_vref (
 );
 
 
-wire [2:0] uio_hv ;
-wire [7:0] ui_in_hv ;
-wire vbg ;
-wire vsw ;
-wire iout ;
-wire vbuf ;
+wire [2:0] uio_hv;
+wire [7:0] ui_in_hv;
+wire vbg;
+wire vsw;
+wire iout;
+wire vbuf;
+wire [2:0] w_reg_pointer;
+wire [63:0] w_trim;
+wire [7:0] w_data;
+wire w_miso;
 
 
 bandgap
@@ -181,22 +185,43 @@ xlvl2_0 (
  .out( uio_hv[0] )
 );
 
+spi_trim xspt (
+ .vddl( VDPWR ),
+ .vss( VGND ),
+ .clk( clk ),
+ .rst_n( rst_n ),
+ .i_sclk( uio_in[6] ),
+ .i_cs_n( uio_in[5] ),
+ .i_mosi( uio_in[3] ),
+ .o_miso( w_miso ),
+ .o_reg_pointer( w_reg_pointer ),
+ .o_trim( w_trim ) 
+);
 
-// Grounded as per instruction
-assign uo_out[1] = VGND;
-assign uo_out[2] = VGND;
-assign uo_out[3] = VGND;
-assign uo_out[4] = VGND;
-assign uo_out[5] = VGND;
-assign uo_out[6] = VGND;
-assign uo_out[7] = VGND;
+mux xmux (
+ .vddl( VDPWR ),
+ .vss( VGND ),
+ .i_sel( w_reg_pointer ),
+ .i_data( w_trim ),
+ .o_data( w_data )
+);
+
+
+assign uo_out[0] = w_data[0];
+assign uo_out[1] = w_data[1];
+assign uo_out[2] = w_data[2];
+assign uo_out[3] = w_data[3];
+assign uo_out[4] = w_data[4];
+assign uo_out[5] = w_data[5];
+assign uo_out[6] = w_data[6];
+assign uo_out[7] = w_data[7];
 
 // Grounded as per instruction
 assign uio_out[0] = VGND;
 assign uio_out[1] = VGND;
 assign uio_out[2] = VGND;
 assign uio_out[3] = VGND;
-assign uio_out[4] = VGND;
+assign uio_out[4] = w_miso;
 assign uio_out[5] = VGND;
 assign uio_out[6] = VGND;
 assign uio_out[7] = VGND;
@@ -206,7 +231,7 @@ assign uio_oe[0] = VGND;
 assign uio_oe[1] = VGND;
 assign uio_oe[2] = VGND;
 assign uio_oe[3] = VGND;
-assign uio_oe[4] = VGND;
+assign uio_oe[4] = VDPWR;
 assign uio_oe[5] = VGND;
 assign uio_oe[6] = VGND;
 assign uio_oe[7] = VGND;

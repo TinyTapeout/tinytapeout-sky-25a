@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/arfanghani/ttsky25a_RAK_verilog_design2",
+  "commit": "8aa48274ddef21f2fe6f1837862d5170ac54d500",
+  "workflow_url": "https://github.com/arfanghani/ttsky25a_RAK_verilog_design2/actions/runs/17602596884",
+  "sort_id": 1757667984786,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

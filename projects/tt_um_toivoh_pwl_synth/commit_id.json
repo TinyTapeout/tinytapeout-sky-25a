@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/toivoh/ttsky25a-pwl-synth",
+  "commit": "c58e5ef4c282c7e4fe922f2a9b799a20faa7e527",
+  "workflow_url": "https://github.com/toivoh/ttsky25a-pwl-synth/actions/runs/17664385679",
+  "sort_id": 1757651340231,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

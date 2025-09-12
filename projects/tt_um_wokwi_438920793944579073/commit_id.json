@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/arfanghani/ttsky25a_RAK_design2",
+  "commit": "8cc3c4b63264fd6519379f8b850ee288145b4500",
+  "workflow_url": "https://github.com/arfanghani/ttsky25a_RAK_design2/actions/runs/17602374862",
+  "sort_id": 1757668213217,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

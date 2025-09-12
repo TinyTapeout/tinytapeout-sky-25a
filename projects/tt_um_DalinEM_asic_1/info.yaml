@@ -1,0 +1,66 @@
+# Tiny Tapeout project information
+project:
+  title:        "ASIC"      # Project title
+  author:       "Dalin"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "ASIC"      # One line description of what your project does
+  language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"          # Valid values for analog projects: 1x2, 2x2
+
+  # How many analog pins does your project use?
+  analog_pins: 6        # Valid values: 0 to 6
+  uses_3v3: True       # Set to true if your project uses 3.3V (VAPWR) in addition to 1.8V (VDPWR)
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_DalinEM_asic_1"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "VGND"
+  uo[1]: "VGND"
+  uo[2]: "VGND"
+  uo[3]: "VGND"
+  uo[4]: "VGND"
+  uo[5]: "VGND"
+  uo[6]: "VGND"
+  uo[7]: "VGND"
+
+  # Bidirectional pins
+  uio[0]: "VGND"
+  uio[1]: "VGND"
+  uio[2]: "VGND"
+  uio[3]: "VGND"
+  uio[4]: "VGND"
+  uio[5]: "VGND"
+  uio[6]: "VGND"
+  uio[7]: "VGND"
+
+  # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
+  ua[0]: "LED"
+  ua[1]: "vsen"
+  ua[2]: "Vled"
+  ua[3]: "S1"
+  ua[4]: "S0"
+  ua[5]: "S"
+
+# Do not change!
+yaml_version: 6

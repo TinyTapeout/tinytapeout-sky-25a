@@ -1,9 +1,8 @@
 {
   "app": "custom_gds action",
   "repo": "https://github.com/andrewkkang/ttsky25a-minimosbius",
-  "commit": "5d786c962fba3c4b7a451720437a01aa5a0311a7",
-  "workflow_url": "https://github.com/andrewkkang/ttsky25a-minimosbius/actions/runs/17690525210",
+  "commit": "cfccc0edef23d26abc23f99665dc7c0686fa4ccd",
+  "workflow_url": "https://github.com/andrewkkang/ttsky25a-minimosbius/actions/runs/17700464952",
   "sort_id": 1757775064854,
-  "skip": true,
   "analog": true
 }

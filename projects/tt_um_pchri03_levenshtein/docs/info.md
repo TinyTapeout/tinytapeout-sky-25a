@@ -1,6 +1,6 @@
 ## How it works
 
-tt09-levenshtein is a fuzzy search engine which can find the best matching word in a dictionary based on levenshtein distance.
+sky25a-levenshtein is a fuzzy search engine which can find the best matching word in a dictionary based on levenshtein distance.
 
 Fundamentally its an implementation of the bit-vector levenshtein algorithm from Heikki Hyyrö's 2003 paper with the title *A Bit-Vector Algorithm for Computing Levenshtein and Damerau Edit Distances*.
 
@@ -56,9 +56,7 @@ AD 00   1 01011010 00000000
 
 ### Memory Layout
 
-As indicated by the SPI protocol, the address space is 23 bits.
-
-The address space is basically as follows:
+The address space is 23 bits and is organized as follows:
 
 | Address  | Size | Access | Identifier   |
 |----------|------|--------|--------------|
@@ -109,7 +107,7 @@ The chip select flag controls which chip select is used on the PMOD when accessi
 | 0-7  | 8    | R/W    | Word length minus 1                                         |
 
 Used to indicate the length of the search word. Note that the word cannot be empty and it cannot
-exceed 16 characters.
+exceed the maximum length as indicated by the `MAX_LENGTH` field.
 
 **MAX_LENGTH**
 
@@ -117,7 +115,7 @@ exceed 16 characters.
 |------|------|--------|-----------------------------------|
 | 0-7  | 8    | R/O    | Max word length supported minus 1 |
 
-This field allows for applications to dynamically detect the size of the bit vector.
+This field indicates the maximum supported length of the engine.
 
 **DISTANCE**
 
@@ -145,9 +143,9 @@ If the search word is `application`, the bit vectors will look as follows:
 | `n`    | `0x6E` | `16'b00000100_00000000` (`__________n`) |
 | *      | *      | `16'b00000000_00000000` (`___________`) |
 
-Each vector is 16 bits in bit endian byte order.
+The size of the vectors is `MAX_LENGTH` bits rounded up to the nearest 8. The vectors are stored in big endian order.
 
-The vectormap is stored in SRAM so the values are indetermined at power up and must be cleared.
+The vector map is stored in SRAM so the values are indetermined at power up and must be cleared.
 
 **DICT**
 
@@ -157,6 +155,71 @@ The word list is stored of a sequence of words, each encoded as a sequence of 8-
 
 Note that the algorithm doesn't care about the particular characters. It only cares if they are identical or not, so even though the algorithm doesn't support UTF-8 and is limited to a character set of 254 characters,
 ignoring Asian alphabets, a list of words usually don't contain more than 254 distinct characters, so you can practially just map lettters to a value between 2 and 255.
+
+## Levenshtein module
+
+The levenshtein module is a state machine with 8 states:
+
+![image](statemachine.png)
+
+### `STATE_READ_DICT_BASE + n`
+
+At these states, four dictionary bytes are read from the PMOD PSRAM via the wishbone bus as indicated by `dict_address`.
+
+The bytes are stored in a `symbols` buffer.
+
+### `STATE_PROCESS`
+
+At this state each symbol in the `symbols` buffer is processed one byte per cycle. The symbol being processed is indicated by `symbol_idx`.
+
+If the symbol processed is `WORD_TERMINATOR` (`0x00`) the `best_idx` and `best_distance` variables are updated and the bitvector engine is reset. If it was the last symbol, state changes to `STATE_READ_DICT_BASE + 0`.
+
+If the symbol processed is `DICT_TERMINATOR` (`0x01`), the engine disables itself.
+
+If the symbol is neigher `WORD_TERMINATOR` or `DICT_TERMINATOR`, the state changes to `STATE_READ_VECTOR_BASE + 0`.
+
+### `STATE_READ_VECTOR_BASE + n`
+
+At these states a 16-bit vector is read from the PMOD SRAM in 8-bit chunks, representing the symbol being processed.
+
+When both bytes has been read, state changes to `STATE_LEVENSHTEIN`
+
+### `STATE_LEVENSHTEIN`
+
+At this state, the bitvector based levenshtein algorithm is run.
+
+If it was the last symbol in the symbol buffer, state changes to `STATE_READ_DICT_BASE + 0` - otherwise, state changes to `STATE_PROCESS`.
+
+### Summary
+
+Unless the terminator symbols are reached, the states are:
+
+* `STATE_READ_DICT_BASE + 0`
+* `STATE_READ_DICT_BASE + 1`
+* `STATE_READ_DICT_BASE + 2`
+* `STATE_READ_DICT_BASE + 3`
+* `STATE_PROCESS, symbol_idx=0`
+* `STATE_READ_VECTOR_BASE + 0`
+* `STATE_READ_VECTOR_BASE + 1`
+* `STATE_LEVENSHTEIN`
+* `STATE_PROCESS, symbol_idx=1`
+* `STATE_READ_VECTOR_BASE + 0`
+* `STATE_READ_VECTOR_BASE + 1`
+* `STATE_LEVENSHTEIN`
+* `STATE_PROCESS, symbol_idx=2`
+* `STATE_READ_VECTOR_BASE + 0`
+* `STATE_READ_VECTOR_BASE + 1`
+* `STATE_LEVENSHTEIN`
+* `STATE_PROCESS, symbol_idx=3`
+* `STATE_READ_VECTOR_BASE + 0`
+* `STATE_READ_VECTOR_BASE + 1`
+* `STATE_LEVENSHTEIN`
+* `STATE_READ_DICT_BASE + 0`
+* ...
+
+Reading from the PMOD PSRAM is done at half the frequency in 1S-4S-4S mode with 6 wait cycles, so going from `STATE_READ_x_BASE + 0` to `STATE_READ_x_BASE + 1` takes 44 cycles (`(8 + 24/4 + 6 + 8/4) * 2 = 44`) and the remaining states takes 4 cycles (`(8 / 4) * 2 = 4`). So processing 4 bytes of dictionary symbols takes 256 cycles (`44 + 4 + 4 + 4 + (1 + 44 + 4 + 1) * 4 = 256`) or 64 cycles/symbol.
+
+Assuming a 512KiB dictionary and 50MHz clock, searching takes up to 671ms.
 
 ## How to test
 

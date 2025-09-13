@@ -1,11 +1,11 @@
 # Tiny Tapeout project information
 project:
-  title:       "Glyph Mode"
+  title:       "VGA Glyph Mode"
   author:      "James Ross"
   discord:     "jar#1709"
-  description: "New & Improved! Submission for VGA Demoscene"
+  description: "Improved Matrix digital rain animation with 4 VGA modes"
   language:    "Verilog"
-  clock_hz:    40000000
+  clock_hz:    25175000
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2

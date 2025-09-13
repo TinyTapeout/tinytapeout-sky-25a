@@ -1,0 +1,60 @@
+project:
+  title:        "Simple audio player"
+  author:       "Michael Bikovitsky"
+  discord:      "biko1311"
+  description:  "Plays audio from an SPI flash chip"
+  language:     "Analog"
+  clock_hz:     1536000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+
+  analog_pins: 2
+  uses_3v3: false
+
+  top_module:  "tt_um_mbikovitsky_audio_player"
+
+  source_files:
+    - "project.v"
+
+pinout:
+  # Inputs
+  ui[0]: "Play/pause (DAC passthrough / SPI address)"
+  ui[1]: "(DAC passthrough / SPI address)"
+  ui[2]: "(DAC passthrough / SPI address)"
+  ui[3]: "(DAC passthrough / SPI address)"
+  ui[4]: "(DAC passthrough / SPI address)"
+  ui[5]: "(DAC passthrough / SPI address)"
+  ui[6]: "(DAC passthrough / SPI address)"
+  ui[7]: "(DAC passthrough / SPI address)"
+
+  # Outputs
+  uo[0]: "Channel passthrough (SPI data output)"
+  uo[1]: "Channel passthrough (SPI data output)"
+  uo[2]: "Channel passthrough (SPI data output)"
+  uo[3]: "Channel passthrough (SPI data output)"
+  uo[4]: "Channel passthrough (SPI data output)"
+  uo[5]: "Channel passthrough (SPI data output)"
+  uo[6]: "Channel passthrough (SPI data output)"
+  uo[7]: "Channel passthrough (SPI data output)"
+
+  # Bidirectional pins
+  uio[0]: "CS#"
+  uio[1]: "COPI"
+  uio[2]: "CIPO"
+  uio[3]: "SCLK"
+  uio[4]: "Mode select [0]"
+  uio[5]: "Mode select [1]"
+  uio[6]: "Playing indication (SPI read enable)"
+  uio[7]: "(SPI data valid)"
+
+  # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
+  ua[0]: "Right channel"
+  ua[1]: "Left channel"
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6

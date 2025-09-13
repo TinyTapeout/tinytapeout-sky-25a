@@ -23,6 +23,8 @@ module tt_um_tnt_mosbius (
 	wire [191:0] ctrl;
 	wire [6:1] bus_A;
 	wire [6:1] bus_B;
+	wire k_one;
+	wire k_zero;
 
 	// Control
 	ctrl_top ctrl_I (
@@ -106,9 +108,18 @@ module tt_um_tnt_mosbius (
 	assign ua[5] = bus_B[4];
 
 	// Tie off unused outputs
-	assign uio_out = {8{VGND}};
-	assign uio_oe  = {8{VGND}};
+	sky130_fd_sc_hd__conb_1 tie_I (
+		.HI   (k_one),
+		.LO   (k_zero),
+		.VPWR (VDPWR),
+		.VGND (VGND),
+		.VPB  (VDPWR),
+		.VNB  (VGND)
+	);
 
-	assign uo_out[7:1] = {7{VGND}};
+	assign uio_out = {8{k_zero}};
+	assign uio_oe  = {8{k_zero}};
+
+	assign uo_out[7:1] = {7{k_zero}};
 
 endmodule /* tt_um_tnt_mosbius */

@@ -2,7 +2,7 @@
 project:
   title:        "Manchester Baby"      # Project title
   author:       "Kristaps Jurkans"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  discord:      "kris____"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Modern Manchester Baby computer implementation"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     1000       # Clock frequency in Hz (or 0 if not applicable)

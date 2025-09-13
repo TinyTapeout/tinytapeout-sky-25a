@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/htfab/ttsky25a-split-flops",
+  "commit": "43baec6c3367d2f46030309e7e9003435af8fe16",
+  "workflow_url": "https://github.com/htfab/ttsky25a-split-flops/actions/runs/17660659855",
+  "sort_id": 1757763429881,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

@@ -1,18 +1,12 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
+# Stochastic add and multiply dual signal encoding
 ## How it works
-Having trouble with docs failing on old run.  Just a check
+
+The data is converted from binary-weighted to a serial probability code data stream with two signals, allowing negative numbers to be processed by a stochastic computer.  Then multiple and add operations are computed and converted back into a serial binary weighted stream.
 
 ## How to test
 
-Wire up to ADALM and run test .
+Input two serial binary weighted serial streams in 2-complement format. Begin reading the data when the serial clock signal goes high.  
 
 ## External hardware
-ADLAM2000
+
+ADALM2000 and Python to set up the serial data stream and to analyze the data coming out.

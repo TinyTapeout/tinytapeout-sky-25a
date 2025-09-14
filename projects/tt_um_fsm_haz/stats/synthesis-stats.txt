@@ -1,0 +1,38 @@
+63. Printing statistics.
+
+=== tt_um_fsm_haz ===
+
+   Number of wires:                 37
+   Number of wire bits:             72
+   Number of public wires:          15
+   Number of public wire bits:      50
+   Number of ports:                  8
+   Number of port bits:             43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 53
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2        1
+     sky130_fd_sc_hd__a211oi_2       1
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a31o_2         1
+     sky130_fd_sc_hd__a32o_2         1
+     sky130_fd_sc_hd__and2_2         1
+     sky130_fd_sc_hd__and2b_2        2
+     sky130_fd_sc_hd__and3_2         3
+     sky130_fd_sc_hd__and3b_2        1
+     sky130_fd_sc_hd__buf_2          3
+     sky130_fd_sc_hd__conb_1        21
+     sky130_fd_sc_hd__dfxtp_2        6
+     sky130_fd_sc_hd__inv_2          2
+     sky130_fd_sc_hd__nand2_2        2
+     sky130_fd_sc_hd__o211a_2        1
+     sky130_fd_sc_hd__o21a_2         1
+     sky130_fd_sc_hd__o21ai_2        2
+     sky130_fd_sc_hd__or2_2          1
+     sky130_fd_sc_hd__or4_2          1
+
+   Chip area for module '\tt_um_fsm_haz': 416.649600
+     of which used for sequential elements: 127.622400 (30.63%)
+

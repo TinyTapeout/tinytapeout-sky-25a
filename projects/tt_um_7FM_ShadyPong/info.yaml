@@ -5,7 +5,7 @@ project:
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Shady Pong implementation"      # One line description of what your project does
   language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     31500000       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     25175000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -37,7 +37,7 @@ pinout:
   ui[1]: "Player1Down"
   ui[2]: "Player2Up"
   ui[3]: "Player2Down"
-  ui[4]: ""
+  ui[4]: "ForceFallbackSpeed"
   ui[5]: ""
   ui[6]: ""
   ui[7]: ""
@@ -53,14 +53,14 @@ pinout:
   uo[7]: "HSync"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: "R3"
-  uio[3]: "G3"
-  uio[4]: "B3"
-  uio[5]: "R2"
-  uio[6]: "G2"
-  uio[7]: "B2"
+  uio[0]: "ballSpeed[0]"
+  uio[1]: "ballSpeed[1]"
+  uio[2]: "ballSpeed[2]"
+  uio[3]: "ballSpeed[3]"
+  uio[4]: "playerSpeed[0]"
+  uio[5]: "playerSpeed[1]"
+  uio[6]: "playerSpeed[2]"
+  uio[7]: "playerSpeed[3]"
 
 # Do not change!
 yaml_version: 6

@@ -107,25 +107,25 @@
 
 === tt_um_wokwi_414123795172381697 ===
 
-   Number of wires:                294
-   Number of wire bits:            329
-   Number of public wires:         258
-   Number of public wire bits:     293
+   Number of wires:                812
+   Number of wire bits:            847
+   Number of public wires:         766
+   Number of public wire bits:     801
    Number of ports:                  8
    Number of port bits:             43
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                284
-     and_cell                       76
-     dff_cell                       12
-     dffsr_cell                     36
-     mux_cell                       33
-     not_cell                       10
-     or_cell                        46
-     sky130_fd_sc_hd__buf_2          7
-     sky130_fd_sc_hd__conb_1        53
-     xor_cell                       11
+   Number of cells:                794
+     and_cell                      264
+     dff_cell                      156
+     dffsr_cell                     46
+     mux_cell                       48
+     not_cell                       17
+     or_cell                       181
+     sky130_fd_sc_hd__buf_2         10
+     sky130_fd_sc_hd__conb_1        60
+     xor_cell                       12
 
    Area for cell type \dffsr_cell is unknown!
    Area for cell type \mux_cell is unknown!
@@ -135,7 +135,7 @@
    Area for cell type \xor_cell is unknown!
    Area for cell type \dff_cell is unknown!
 
-   Chip area for module '\tt_um_wokwi_414123795172381697': 233.974400
+   Chip area for module '\tt_um_wokwi_414123795172381697': 275.264000
      of which used for sequential elements: 0.000000 (0.00%)
 
 === xor_cell ===
@@ -158,35 +158,35 @@
 === design hierarchy ===
 
    tt_um_wokwi_414123795172381697      1
-     and_cell                       76
-     dff_cell                       12
-     dffsr_cell                     36
-     mux_cell                       33
-     not_cell                       10
-     or_cell                        46
-     xor_cell                       11
+     and_cell                      264
+     dff_cell                      156
+     dffsr_cell                     46
+     mux_cell                       48
+     not_cell                       17
+     or_cell                       181
+     xor_cell                       12
 
-   Number of wires:               1217
-   Number of wire bits:           1252
-   Number of public wires:        1073
-   Number of public wire bits:    1108
-   Number of ports:                823
-   Number of port bits:            858
+   Number of wires:               3447
+   Number of wire bits:           3482
+   Number of public wires:        3263
+   Number of public wire bits:    3298
+   Number of ports:               2505
+   Number of port bits:           2540
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                404
-     sky130_fd_sc_hd__and2_2        76
-     sky130_fd_sc_hd__buf_2          7
-     sky130_fd_sc_hd__conb_1        53
-     sky130_fd_sc_hd__dfbbn_2       36
-     sky130_fd_sc_hd__dfxtp_2       12
-     sky130_fd_sc_hd__inv_2         94
-     sky130_fd_sc_hd__mux2_1        33
-     sky130_fd_sc_hd__nand2b_2      36
-     sky130_fd_sc_hd__or2_2         46
-     sky130_fd_sc_hd__xor2_2        11
+   Number of cells:               1088
+     sky130_fd_sc_hd__and2_2       264
+     sky130_fd_sc_hd__buf_2         10
+     sky130_fd_sc_hd__conb_1        60
+     sky130_fd_sc_hd__dfbbn_2       46
+     sky130_fd_sc_hd__dfxtp_2      156
+     sky130_fd_sc_hd__inv_2        265
+     sky130_fd_sc_hd__mux2_1        48
+     sky130_fd_sc_hd__nand2b_2      46
+     sky130_fd_sc_hd__or2_2        181
+     sky130_fd_sc_hd__xor2_2        12
 
-   Chip area for top module '\tt_um_wokwi_414123795172381697': 3827.420800
+   Chip area for top module '\tt_um_wokwi_414123795172381697': 10452.524800
      of which used for sequential elements: 0.000000 (0.00%)
 

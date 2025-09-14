@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout tt10 3e79f13a",
+  "repo": "https://github.com/rejunity/tt10-lgn-mnist",
+  "commit": "6b8622a01da697d810369d81458af8d3ac967bbd",
+  "workflow_url": "https://github.com/rejunity/tt10-lgn-mnist/actions/runs/17423620363",
+  "sort_id": 1757890414036,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

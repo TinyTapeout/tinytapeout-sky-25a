@@ -15,8 +15,8 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: "speed[0]"
-  ui[1]: "speed[1]"
+  ui[0]: "speed[0]/prism_enable"
+  ui[1]: "speed[1]/prism_cfg_data"
   ui[2]: "speed[2]"
   ui[3]: "speed[3]"
   ui[4]: "speed[4]"
@@ -32,17 +32,17 @@ pinout:
   uo[4]: "seg_e"
   uo[5]: "seg_f"
   uo[6]: "seg_g"
-  uo[7]: ""
+  uo[7]: "prism_debug"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "prism_in[0]"
+  uio[1]: "prism_in[1]"
+  uio[2]: "prism_in[2]"
+  uio[3]: "prism_out[0]"
+  uio[4]: "prism_out[1]"
+  uio[5]: "prism_out[2]"
+  uio[6]: "prism_out[3]"
+  uio[7]: "prism_cfg_clk"
 
 # Do not change!
 yaml_version: 6

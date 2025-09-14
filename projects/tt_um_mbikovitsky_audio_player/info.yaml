@@ -40,13 +40,13 @@ pinout:
 
   # Bidirectional pins
   uio[0]: "CS#"
-  uio[1]: "COPI"
-  uio[2]: "CIPO"
+  uio[1]: "IO0"
+  uio[2]: "IO1"
   uio[3]: "SCLK"
-  uio[4]: "Mode select [0]"
-  uio[5]: "Mode select [1]"
-  uio[6]: "Playing indication (SPI read enable)"
-  uio[7]: "(SPI data valid)"
+  uio[4]: "IO2 / Playback indication (SPI data valid)"
+  uio[5]: "IO3 (SPI read enable)"
+  uio[6]: "Mode select [0]"
+  uio[7]: "Mode select [1]"
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
   ua[0]: "Right channel"

@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/SemiQa/ttsky25a-tv-b-gone-eu",
+  "commit": "9b8c06b73f6a0d6e5dc26bf2c49e674ce5531b49",
+  "workflow_url": "https://github.com/SemiQa/ttsky25a-tv-b-gone-eu/actions/runs/17704363717",
+  "sort_id": 1757860521040,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

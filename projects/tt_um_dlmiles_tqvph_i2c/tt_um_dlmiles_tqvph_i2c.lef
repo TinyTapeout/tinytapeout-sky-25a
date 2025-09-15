@@ -148,6 +148,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 116.230 224.760 116.530 225.760 ;
@@ -156,6 +157,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 113.470 224.760 113.770 225.760 ;
@@ -164,6 +166,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 110.710 224.760 111.010 225.760 ;
@@ -172,6 +175,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 107.950 224.760 108.250 225.760 ;
@@ -207,6 +211,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 96.910 224.760 97.210 225.760 ;
@@ -215,6 +220,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 49.990 224.760 50.290 225.760 ;
@@ -223,6 +229,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 47.230 224.760 47.530 225.760 ;
@@ -231,6 +238,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 44.470 224.760 44.770 225.760 ;
@@ -239,6 +247,8 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.813000 ;
+    ANTENNADIFFAREA 0.924000 ;
     PORT
       LAYER met4 ;
         RECT 41.710 224.760 42.010 225.760 ;
@@ -247,6 +257,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 38.950 224.760 39.250 225.760 ;
@@ -255,6 +266,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 36.190 224.760 36.490 225.760 ;
@@ -263,6 +275,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 33.430 224.760 33.730 225.760 ;
@@ -271,6 +284,8 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_oe[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.636000 ;
+    ANTENNADIFFAREA 0.924000 ;
     PORT
       LAYER met4 ;
         RECT 30.670 224.760 30.970 225.760 ;
@@ -279,7 +294,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 72.070 224.760 72.370 225.760 ;
@@ -288,6 +303,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 69.310 224.760 69.610 225.760 ;
@@ -296,6 +312,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 66.550 224.760 66.850 225.760 ;
@@ -304,7 +321,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 63.790 224.760 64.090 225.760 ;
@@ -313,6 +330,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 61.030 224.760 61.330 225.760 ;
@@ -321,6 +339,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 58.270 224.760 58.570 225.760 ;
@@ -329,6 +348,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 55.510 224.760 55.810 225.760 ;
@@ -337,6 +357,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.643500 ;
     PORT
       LAYER met4 ;
         RECT 52.750 224.760 53.050 225.760 ;
@@ -345,7 +366,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 94.150 224.760 94.450 225.760 ;
@@ -381,7 +402,7 @@ MACRO tt_um_dlmiles_tqvph_i2c
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.159000 ;
+    ANTENNAGATEAREA 0.247500 ;
     ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
@@ -426,9 +447,9 @@ MACRO tt_um_dlmiles_tqvph_i2c
       LAYER met1 ;
         RECT 2.760 2.480 158.240 223.280 ;
       LAYER met2 ;
-        RECT 18.310 2.535 156.760 224.925 ;
+        RECT 18.310 2.535 148.480 224.925 ;
       LAYER met3 ;
-        RECT 18.290 2.555 150.355 224.905 ;
+        RECT 18.290 2.555 144.375 224.905 ;
       LAYER met4 ;
         RECT 31.370 224.360 33.030 224.905 ;
         RECT 34.130 224.360 35.790 224.905 ;
@@ -471,15 +492,14 @@ MACRO tt_um_dlmiles_tqvph_i2c
         RECT 136.250 224.360 137.910 224.905 ;
         RECT 139.010 224.360 140.670 224.905 ;
         RECT 141.770 224.360 143.430 224.905 ;
-        RECT 144.530 224.360 145.985 224.905 ;
-        RECT 30.655 223.680 145.985 224.360 ;
-        RECT 30.655 56.615 56.750 223.680 ;
-        RECT 59.150 56.615 60.050 223.680 ;
-        RECT 62.450 56.615 95.620 223.680 ;
-        RECT 98.020 56.615 98.920 223.680 ;
-        RECT 101.320 56.615 134.490 223.680 ;
-        RECT 136.890 56.615 137.790 223.680 ;
-        RECT 140.190 56.615 145.985 223.680 ;
+        RECT 30.655 223.680 144.145 224.360 ;
+        RECT 30.655 41.655 56.750 223.680 ;
+        RECT 59.150 41.655 60.050 223.680 ;
+        RECT 62.450 41.655 95.620 223.680 ;
+        RECT 98.020 41.655 98.920 223.680 ;
+        RECT 101.320 41.655 134.490 223.680 ;
+        RECT 136.890 41.655 137.790 223.680 ;
+        RECT 140.190 41.655 144.145 223.680 ;
   END
 END tt_um_dlmiles_tqvph_i2c
 END LIBRARY

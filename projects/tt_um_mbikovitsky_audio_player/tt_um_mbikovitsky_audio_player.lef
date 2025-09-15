@@ -102,7 +102,7 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.126000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 138.310 224.760 138.610 225.760 ;
@@ -233,7 +233,7 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 96.910 224.760 97.210 225.760 ;
@@ -282,8 +282,8 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN uio_oe[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 3.376500 ;
-    ANTENNADIFFAREA 1.336500 ;
+    ANTENNAGATEAREA 0.159000 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 36.190 224.760 36.490 225.760 ;
@@ -308,7 +308,7 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 72.070 224.760 72.370 225.760 ;
@@ -317,7 +317,7 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 69.310 224.760 69.610 225.760 ;
@@ -334,7 +334,7 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
         RECT 63.790 224.760 64.090 225.760 ;
@@ -343,7 +343,7 @@ MACRO tt_um_mbikovitsky_audio_player
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.795200 ;
+    ANTENNADIFFAREA 1.484000 ;
     PORT
       LAYER met4 ;
         RECT 61.030 224.760 61.330 225.760 ;
@@ -468,7 +468,7 @@ MACRO tt_um_mbikovitsky_audio_player
       LAYER li1 ;
         RECT 10.710 7.700 149.840 205.095 ;
       LAYER met1 ;
-        RECT 7.500 2.660 149.980 205.990 ;
+        RECT 7.500 2.660 149.980 205.650 ;
       LAYER met2 ;
         RECT 9.090 2.690 152.350 224.355 ;
       LAYER met3 ;

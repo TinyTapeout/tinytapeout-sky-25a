@@ -420,7 +420,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 2.001000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 72.070 510.360 72.370 511.360 ;
@@ -429,7 +429,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.971000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 69.310 510.360 69.610 511.360 ;
@@ -447,7 +447,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.971000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 63.790 510.360 64.090 511.360 ;
@@ -456,7 +456,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.971000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 61.030 510.360 61.330 511.360 ;
@@ -465,7 +465,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.971000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 58.270 510.360 58.570 511.360 ;
@@ -474,7 +474,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.484000 ;
+    ANTENNADIFFAREA 0.904000 ;
     PORT
       LAYER met4 ;
         RECT 55.510 510.360 55.810 511.360 ;
@@ -491,7 +491,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.462000 ;
+    ANTENNADIFFAREA 0.452000 ;
     PORT
       LAYER met4 ;
         RECT 94.150 510.360 94.450 511.360 ;
@@ -509,7 +509,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNADIFFAREA 1.431000 ;
     PORT
       LAYER met4 ;
         RECT 88.630 510.360 88.930 511.360 ;
@@ -518,7 +518,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.462000 ;
+    ANTENNADIFFAREA 0.452000 ;
     PORT
       LAYER met4 ;
         RECT 85.870 510.360 86.170 511.360 ;
@@ -527,7 +527,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.288000 ;
+    ANTENNADIFFAREA 1.443500 ;
     PORT
       LAYER met4 ;
         RECT 83.110 510.360 83.410 511.360 ;
@@ -536,7 +536,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.462000 ;
+    ANTENNADIFFAREA 0.452000 ;
     PORT
       LAYER met4 ;
         RECT 80.350 510.360 80.650 511.360 ;
@@ -545,7 +545,7 @@ MACRO tt_um_rejunity_lgn_mnist
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 1.431000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 77.590 510.360 77.890 511.360 ;
@@ -566,13 +566,13 @@ MACRO tt_um_rejunity_lgn_mnist
       LAYER li1 ;
         RECT 2.760 2.635 853.760 508.725 ;
       LAYER met1 ;
-        RECT 1.450 0.720 856.450 511.320 ;
+        RECT 1.450 0.040 855.070 510.640 ;
       LAYER met2 ;
-        RECT 1.470 0.155 856.420 511.350 ;
+        RECT 1.470 0.010 855.050 511.205 ;
       LAYER met3 ;
-        RECT 1.445 0.175 855.535 511.185 ;
+        RECT 1.445 0.175 855.075 511.185 ;
       LAYER met4 ;
-        RECT 4.895 509.960 30.270 510.505 ;
+        RECT 3.975 509.960 30.270 510.505 ;
         RECT 31.370 509.960 33.030 510.505 ;
         RECT 34.130 509.960 35.790 510.505 ;
         RECT 36.890 509.960 38.550 510.505 ;
@@ -616,8 +616,8 @@ MACRO tt_um_rejunity_lgn_mnist
         RECT 141.770 509.960 143.430 510.505 ;
         RECT 144.530 509.960 146.190 510.505 ;
         RECT 147.290 509.960 850.705 510.505 ;
-        RECT 4.895 509.280 850.705 509.960 ;
-        RECT 4.895 2.080 17.880 509.280 ;
+        RECT 3.975 509.280 850.705 509.960 ;
+        RECT 3.975 2.080 17.880 509.280 ;
         RECT 20.280 2.080 21.180 509.280 ;
         RECT 23.580 2.080 56.750 509.280 ;
         RECT 59.150 2.080 60.050 509.280 ;
@@ -662,7 +662,7 @@ MACRO tt_um_rejunity_lgn_mnist
         RECT 800.980 2.080 834.150 509.280 ;
         RECT 836.550 2.080 837.450 509.280 ;
         RECT 839.850 2.080 850.705 509.280 ;
-        RECT 4.895 0.175 850.705 2.080 ;
+        RECT 3.975 0.855 850.705 2.080 ;
   END
 END tt_um_rejunity_lgn_mnist
 END LIBRARY

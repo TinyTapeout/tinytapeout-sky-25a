@@ -2322,8 +2322,8 @@
     {
       "type": "wokwi-text",
       "id": "text28",
-      "top": -441.6,
-      "left": -2745.6,
+      "top": -422.4,
+      "left": -2707.2,
       "attrs": { "text": "Compare Val" }
     },
     {
@@ -4479,12 +4479,6 @@
     [ "or225:OUT", "and316:A", "green", [ "v0" ] ],
     [ "cmp_eq_reg:Q", "or225:A", "green", [ "v-38.4", "h-403.2", "v19.2" ] ],
     [
-      "flop238:D",
-      "debug_reg:Q",
-      "green",
-      [ "v-19.2", "h288", "v2304", "h172.8", "v211.2", "h3369.6" ]
-    ],
-    [
       "and282:OUT",
       "not11:IN",
       "green",
@@ -4582,12 +4576,6 @@
     [ "flop118:Q", "flop123:D", "green", [ "v0", "h19.2", "v57.6", "h-115.2" ] ],
     [ "flop141:CLK", "debug_reg:CLK", "green", [ "h-19.2" ] ],
     [
-      "flop39:CLK",
-      "flop252:CLK",
-      "green",
-      [ "h-19.2", "v-259.2", "h-211.2", "v-240", "h-432", "v-700.8" ]
-    ],
-    [
       "cmp_eq_reg:CLK",
       "flop24:CLK",
       "magenta",
@@ -4671,7 +4659,19 @@
       "green",
       [ "v-9.6", "h3907.2", "v1651.2", "h192", "v220.8", "h-57.6", "v374.4" ]
     ],
-    [ "flop252:Q", "split_cnt:D", "green", [ "v0", "h9.6", "v124.8", "h-105.6" ] ]
+    [ "flop252:Q", "split_cnt:D", "green", [ "v0", "h9.6", "v124.8", "h-105.6" ] ],
+    [
+      "ttin:IN3",
+      "flop238:CLK",
+      "green",
+      [ "h48", "v134.4", "h-2256", "v-470.4", "h-1075.2", "v144" ]
+    ],
+    [
+      "ttin:IN1",
+      "flop238:D",
+      "green",
+      [ "h28.8", "v134.4", "h-268.8", "v0", "h-1948.8", "v-460.8", "h-1075.2" ]
+    ]
   ],
   "dependencies": {}
 }

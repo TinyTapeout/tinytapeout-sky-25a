@@ -2,25 +2,38 @@
 
 === tt_um_SNPU ===
 
-   Number of wires:                739
-   Number of wire bits:            774
-   Number of public wires:         520
-   Number of public wire bits:     555
+   Number of wires:                894
+   Number of wire bits:            929
+   Number of public wires:         552
+   Number of public wire bits:     587
    Number of ports:                  8
    Number of port bits:             43
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                755
-     sky130_fd_sc_hd__a21o_2        16
-     sky130_fd_sc_hd__and2b_2       16
+   Number of cells:                910
+     sky130_fd_sc_hd__a211o_2        8
+     sky130_fd_sc_hd__a21o_2        10
+     sky130_fd_sc_hd__a221o_2       28
+     sky130_fd_sc_hd__a22o_2         5
+     sky130_fd_sc_hd__a31o_2         9
+     sky130_fd_sc_hd__a32o_2        20
+     sky130_fd_sc_hd__and2_2        12
+     sky130_fd_sc_hd__and2b_2        2
+     sky130_fd_sc_hd__and3_2         1
      sky130_fd_sc_hd__conb_1         8
-     sky130_fd_sc_hd__inv_2          1
-     sky130_fd_sc_hd__mux2_1        47
-     sky130_fd_sc_hd__mux4_2       139
-     sky130_fd_sc_hd__nand2b_2     512
-     sky130_fd_sc_hd__o22a_2        16
+     sky130_fd_sc_hd__inv_2          3
+     sky130_fd_sc_hd__mux2_1        83
+     sky130_fd_sc_hd__mux4_2        94
+     sky130_fd_sc_hd__nand2b_2     544
+     sky130_fd_sc_hd__nor2_2         1
+     sky130_fd_sc_hd__nor3_2         1
+     sky130_fd_sc_hd__nor3b_2        1
+     sky130_fd_sc_hd__o211a_2       18
+     sky130_fd_sc_hd__o221a_2        1
+     sky130_fd_sc_hd__or2_2         47
+     sky130_fd_sc_hd__or3_2         14
 
-   Chip area for module '\tt_um_SNPU': 8618.265600
+   Chip area for module '\tt_um_SNPU': 9429.043200
      of which used for sequential elements: 0.000000 (0.00%)
 

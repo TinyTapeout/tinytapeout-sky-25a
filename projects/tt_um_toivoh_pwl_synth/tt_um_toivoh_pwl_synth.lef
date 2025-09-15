@@ -112,6 +112,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 138.310 224.760 138.610 225.760 ;
@@ -120,6 +121,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 135.550 224.760 135.850 225.760 ;
@@ -128,6 +130,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 132.790 224.760 133.090 225.760 ;
@@ -136,6 +139,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 130.030 224.760 130.330 225.760 ;
@@ -144,6 +148,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 127.270 224.760 127.570 225.760 ;
@@ -152,6 +157,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 124.510 224.760 124.810 225.760 ;
@@ -160,6 +166,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 121.750 224.760 122.050 225.760 ;
@@ -168,6 +175,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 118.990 224.760 119.290 225.760 ;
@@ -176,6 +184,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 116.230 224.760 116.530 225.760 ;
@@ -184,6 +193,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 113.470 224.760 113.770 225.760 ;
@@ -192,6 +202,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 110.710 224.760 111.010 225.760 ;
@@ -200,6 +211,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 107.950 224.760 108.250 225.760 ;
@@ -208,7 +220,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 224.760 105.490 225.760 ;
@@ -217,7 +229,6 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 102.430 224.760 102.730 225.760 ;
@@ -226,7 +237,6 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 99.670 224.760 99.970 225.760 ;
@@ -315,7 +325,6 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 69.310 224.760 69.610 225.760 ;
@@ -332,7 +341,6 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 63.790 224.760 64.090 225.760 ;
@@ -349,6 +357,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 58.270 224.760 58.570 225.760 ;
@@ -357,6 +366,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 55.510 224.760 55.810 225.760 ;
@@ -365,6 +375,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 52.750 224.760 53.050 225.760 ;
@@ -373,7 +384,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 94.150 224.760 94.450 225.760 ;
@@ -382,7 +393,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 91.390 224.760 91.690 225.760 ;
@@ -391,7 +402,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 88.630 224.760 88.930 225.760 ;
@@ -400,7 +411,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 85.870 224.760 86.170 225.760 ;
@@ -409,7 +420,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.445500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 83.110 224.760 83.410 225.760 ;
@@ -427,8 +438,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.477000 ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNADIFFAREA 0.934000 ;
     PORT
       LAYER met4 ;
         RECT 77.590 224.760 77.890 225.760 ;
@@ -437,8 +447,7 @@ MACRO tt_um_toivoh_pwl_synth
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.477000 ;
-    ANTENNADIFFAREA 0.891000 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 74.830 224.760 75.130 225.760 ;
@@ -450,13 +459,12 @@ MACRO tt_um_toivoh_pwl_synth
       LAYER li1 ;
         RECT 2.760 2.635 332.120 223.125 ;
       LAYER met1 ;
-        RECT 2.760 2.480 332.120 223.280 ;
+        RECT 2.760 2.480 332.420 224.700 ;
       LAYER met2 ;
         RECT 5.160 2.535 331.560 224.925 ;
       LAYER met3 ;
-        RECT 7.425 2.555 330.830 224.905 ;
+        RECT 7.885 2.555 330.830 224.905 ;
       LAYER met4 ;
-        RECT 29.735 224.360 30.270 224.905 ;
         RECT 31.370 224.360 33.030 224.905 ;
         RECT 34.130 224.360 35.790 224.905 ;
         RECT 36.890 224.360 38.550 224.905 ;
@@ -499,23 +507,23 @@ MACRO tt_um_toivoh_pwl_synth
         RECT 139.010 224.360 140.670 224.905 ;
         RECT 141.770 224.360 143.430 224.905 ;
         RECT 144.530 224.360 146.190 224.905 ;
-        RECT 147.290 224.360 313.425 224.905 ;
-        RECT 29.735 223.680 313.425 224.360 ;
-        RECT 29.735 42.335 56.750 223.680 ;
-        RECT 59.150 42.335 60.050 223.680 ;
-        RECT 62.450 42.335 95.620 223.680 ;
-        RECT 98.020 42.335 98.920 223.680 ;
-        RECT 101.320 42.335 134.490 223.680 ;
-        RECT 136.890 42.335 137.790 223.680 ;
-        RECT 140.190 42.335 173.360 223.680 ;
-        RECT 175.760 42.335 176.660 223.680 ;
-        RECT 179.060 42.335 212.230 223.680 ;
-        RECT 214.630 42.335 215.530 223.680 ;
-        RECT 217.930 42.335 251.100 223.680 ;
-        RECT 253.500 42.335 254.400 223.680 ;
-        RECT 256.800 42.335 289.970 223.680 ;
-        RECT 292.370 42.335 293.270 223.680 ;
-        RECT 295.670 42.335 313.425 223.680 ;
+        RECT 147.290 224.360 312.505 224.905 ;
+        RECT 30.655 223.680 312.505 224.360 ;
+        RECT 30.655 29.415 56.750 223.680 ;
+        RECT 59.150 29.415 60.050 223.680 ;
+        RECT 62.450 29.415 95.620 223.680 ;
+        RECT 98.020 29.415 98.920 223.680 ;
+        RECT 101.320 29.415 134.490 223.680 ;
+        RECT 136.890 29.415 137.790 223.680 ;
+        RECT 140.190 29.415 173.360 223.680 ;
+        RECT 175.760 29.415 176.660 223.680 ;
+        RECT 179.060 29.415 212.230 223.680 ;
+        RECT 214.630 29.415 215.530 223.680 ;
+        RECT 217.930 29.415 251.100 223.680 ;
+        RECT 253.500 29.415 254.400 223.680 ;
+        RECT 256.800 29.415 289.970 223.680 ;
+        RECT 292.370 29.415 293.270 223.680 ;
+        RECT 295.670 29.415 312.505 223.680 ;
   END
 END tt_um_toivoh_pwl_synth
 END LIBRARY

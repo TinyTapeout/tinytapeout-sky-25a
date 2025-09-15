@@ -1,8 +1,8 @@
 {
   "app": "Tiny Tapeout ttsky25a 5c12dd81",
-  "repo": "https://github.com/maximeborges/ttsky-spi2ws2811x16",
-  "commit": "9cf1a8a2491c9857a81adc44f93d19d2efbf0009",
-  "workflow_url": "https://github.com/maximeborges/ttsky-spi2ws2811x16/actions/runs/17743377891",
+  "repo": "https://github.com/maximeborges/ttsky-spi2ws2811x8",
+  "commit": "acf9a5e5b22cae0928a1204efddb8fc94c5c83aa",
+  "workflow_url": "https://github.com/maximeborges/ttsky-spi2ws2811x8/actions/runs/17744814301",
   "sort_id": 1757962654127,
   "openlane_version": "OpenLane2 2.2.9",
   "pdk_name": "open_pdks",

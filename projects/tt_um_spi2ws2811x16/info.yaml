@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "spi2ws2811x16"      # Project title
+  title:        "spi2ws2811x8"      # Project title
   author:       "Maxime Borges <contact@maximeborg.es>"      # Your name
   discord:      "mborges."      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Translate SPI to 16x WS2811 LED strips "      # One line description of what your project does
+  description:  "Translate SPI to 8x WS2811 LED strips "      # One line description of what your project does
   language:     "VHDL" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     14000000       # Clock frequency in Hz (or 0 if not applicable)
 

@@ -1,0 +1,48 @@
+# Tiny Tapeout project information
+project:
+  title:        "PWM Generator"
+  author:       "pravinbaalaa91"
+  discord:      ""  # optional
+  description:  "PWM generator with duty cycle control via ui_in[6:0]"
+  language:     "Verilog"
+  clock_hz:     0
+  tiles:        "1x1"
+  top_module:   "tt_um_TT06_pwm"
+
+  source_files:
+    - "tt_um_TT06_pwm.v"
+    - "pwm.v"
+
+pinout:
+  # Inputs
+  ui[0]: "Duty cycle bit 0"
+  ui[1]: "Duty cycle bit 1"
+  ui[2]: "Duty cycle bit 2"
+  ui[3]: "Duty cycle bit 3"
+  ui[4]: "Duty cycle bit 4"
+  ui[5]: "Duty cycle bit 5"
+  ui[6]: "Duty cycle bit 6"
+  ui[7]: "Unused"
+
+  # Outputs
+  uo[0]: "PWM output"
+  uo[1]: "PWM output copy"
+  uo[2]: "Unused"
+  uo[3]: "Unused"
+  uo[4]: "Unused"
+  uo[5]: "Unused"
+  uo[6]: "Unused"
+  uo[7]: "Unused"
+
+  # Bidirectional pins
+  uio[0]: "Unused"
+  uio[1]: "Unused"
+  uio[2]: "Unused"
+  uio[3]: "Unused"
+  uio[4]: "Unused"
+  uio[5]: "Unused"
+  uio[6]: "Unused"
+  uio[7]: "Unused"
+
+# Do not change!
+yaml_version: 6

@@ -15,9 +15,10 @@ Displays a bouncing 64x64x6bpp Tiny Tapeout logo on the screen:
 
 ## How to test
 
-Connect to a VGA monitor. Set the following input to configure the design:
+Connect to a VGA monitor. Set the following inputs to configure the design:
 
 - `tile` (ui_in[0]) to repeat the logo and tile it across the screen
+- `double` (ui_in[1]) to double the logo size to 128x128
 
 If you have a Gamepad Pmod connected, you can also use the following controls:
 

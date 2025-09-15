@@ -26,7 +26,7 @@ project:
 pinout:
   # Inputs
   ui[0]: "tile"
-  ui[1]: ""
+  ui[1]: "double"
   ui[2]: ""
   ui[3]: ""
   ui[4]: "gamepad_latch"

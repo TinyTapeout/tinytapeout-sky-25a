@@ -67,7 +67,7 @@ MACRO tt_um_digital_playground
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 141.070 110.520 141.370 111.520 ;
@@ -76,7 +76,7 @@ MACRO tt_um_digital_playground
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.159000 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 138.310 110.520 138.610 111.520 ;
@@ -85,7 +85,7 @@ MACRO tt_um_digital_playground
   PIN ui_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.159000 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 135.550 110.520 135.850 111.520 ;
@@ -103,7 +103,7 @@ MACRO tt_um_digital_playground
   PIN ui_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met4 ;
         RECT 130.030 110.520 130.330 111.520 ;
@@ -112,7 +112,7 @@ MACRO tt_um_digital_playground
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 127.270 110.520 127.570 111.520 ;
@@ -121,7 +121,7 @@ MACRO tt_um_digital_playground
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.196500 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 124.510 110.520 124.810 111.520 ;
@@ -130,7 +130,7 @@ MACRO tt_um_digital_playground
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.126000 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 121.750 110.520 122.050 111.520 ;
@@ -148,7 +148,7 @@ MACRO tt_um_digital_playground
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 116.230 110.520 116.530 111.520 ;
@@ -184,7 +184,7 @@ MACRO tt_um_digital_playground
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 110.520 105.490 111.520 ;
@@ -193,7 +193,7 @@ MACRO tt_um_digital_playground
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 102.430 110.520 102.730 111.520 ;
@@ -211,7 +211,7 @@ MACRO tt_um_digital_playground
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.159000 ;
     PORT
       LAYER met4 ;
         RECT 96.910 110.520 97.210 111.520 ;
@@ -384,7 +384,7 @@ MACRO tt_um_digital_playground
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.462000 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 83.110 110.520 83.410 111.520 ;
@@ -411,7 +411,7 @@ MACRO tt_um_digital_playground
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.643500 ;
+    ANTENNADIFFAREA 0.891000 ;
     PORT
       LAYER met4 ;
         RECT 74.830 110.520 75.130 111.520 ;
@@ -423,11 +423,11 @@ MACRO tt_um_digital_playground
       LAYER li1 ;
         RECT 2.760 2.635 158.240 108.885 ;
       LAYER met1 ;
-        RECT 2.760 2.480 158.240 110.800 ;
+        RECT 2.760 2.480 158.240 110.120 ;
       LAYER met2 ;
-        RECT 7.000 2.535 156.310 111.365 ;
+        RECT 18.310 2.535 156.300 110.685 ;
       LAYER met3 ;
-        RECT 18.290 2.555 156.335 111.345 ;
+        RECT 18.290 2.555 152.195 110.665 ;
       LAYER met4 ;
         RECT 31.370 110.120 33.030 110.665 ;
         RECT 34.130 110.120 35.790 110.665 ;
@@ -471,13 +471,13 @@ MACRO tt_um_digital_playground
         RECT 139.010 110.120 140.670 110.665 ;
         RECT 141.770 110.120 143.430 110.665 ;
         RECT 30.655 109.440 144.145 110.120 ;
-        RECT 30.655 57.975 56.750 109.440 ;
-        RECT 59.150 57.975 60.050 109.440 ;
-        RECT 62.450 57.975 95.620 109.440 ;
-        RECT 98.020 57.975 98.920 109.440 ;
-        RECT 101.320 57.975 134.490 109.440 ;
-        RECT 136.890 57.975 137.790 109.440 ;
-        RECT 140.190 57.975 144.145 109.440 ;
+        RECT 30.655 72.255 56.750 109.440 ;
+        RECT 59.150 72.255 60.050 109.440 ;
+        RECT 62.450 72.255 95.620 109.440 ;
+        RECT 98.020 72.255 98.920 109.440 ;
+        RECT 101.320 72.255 134.490 109.440 ;
+        RECT 136.890 72.255 137.790 109.440 ;
+        RECT 140.190 72.255 144.145 109.440 ;
   END
 END tt_um_digital_playground
 END LIBRARY

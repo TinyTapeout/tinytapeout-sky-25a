@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/RVCE-ECE/TTSKY25A_CustomALU",
+  "commit": "6337ed0beecfaaa5decffaf45c33a49038532764",
+  "workflow_url": "https://github.com/RVCE-ECE/TTSKY25A_CustomALU/actions/runs/17728514595",
+  "sort_id": 1757930160367,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

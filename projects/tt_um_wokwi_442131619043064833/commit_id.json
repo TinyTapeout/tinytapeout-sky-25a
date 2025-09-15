@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/felipe-SD/Encoder-7-segment-display",
+  "commit": "1ba218c196ce4a80da69e89b6097e6f7532f7af4",
+  "workflow_url": "https://github.com/felipe-SD/Encoder-7-segment-display/actions/runs/17722370406",
+  "sort_id": 1757942863200,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "spi2ws2811x16"      # Project title
+  author:       "Maxime Borges <contact@maximeborg.es>"      # Your name
+  discord:      "mborges."      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Translate SPI to 16x WS2811 LED strips "      # One line description of what your project does
+  language:     "VHDL" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     14000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_spi2ws2811x16"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "top.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "cs"
+  ui[1]: "copi"
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "led_0"
+  uo[1]: "led_1"
+  uo[2]: "led_2"
+  uo[3]: "led_3"
+  uo[4]: "led_4"
+  uo[5]: "led_5"
+  uo[6]: "led_6"
+  uo[7]: "led_7"
+
+  # Bidirectional pins
+  uio[0]: "led_8"
+  uio[1]: "led_9"
+  uio[2]: "led_10"
+  uio[3]: "led_11"
+  uio[4]: "led_12"
+  uio[5]: "led_13"
+  uio[6]: "led_14"
+  uio[7]: "led_15"
+
+# Do not change!
+yaml_version: 6

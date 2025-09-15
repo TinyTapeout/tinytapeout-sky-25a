@@ -1,8 +1,8 @@
 {
   "app": "Tiny Tapeout ttsky25a 5c12dd81",
   "repo": "https://github.com/EduHolg/sky130-digital-playground",
-  "commit": "7fdaf7b6416f4e0482dcd8e7d46c71df8b8dc78d",
-  "workflow_url": "https://github.com/EduHolg/sky130-digital-playground/actions/runs/17722354755",
+  "commit": "12adedd529eb1362cc352ac1d9a3487f14ad0c1d",
+  "workflow_url": "https://github.com/EduHolg/sky130-digital-playground/actions/runs/17723040285",
   "sort_id": 1757565539640,
   "openlane_version": "OpenLane2 2.2.9",
   "pdk_name": "open_pdks",

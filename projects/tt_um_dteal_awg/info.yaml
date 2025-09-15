@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Arbitrary Waveform Generator" # Project title
+  author:       "Daniel Teal"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Streams waveforms. Needs external R-2R ladder." # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_dteal_awg"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "sclk"
+  ui[1]: "mosi"
+  ui[2]: "load"
+  ui[3]: "enable"
+  ui[4]: "div_2"
+  ui[5]: "div_4"
+  ui[6]: "div_16"
+  ui[7]: "div_256"
+
+  # Outputs
+  uo[0]: "wave out 0"
+  uo[1]: "wave out 1"
+  uo[2]: "wave out 2"
+  uo[3]: "wave out 3"
+  uo[4]: "wave out 4"
+  uo[5]: "wave out 5"
+  uo[6]: "wave out 6"
+  uo[7]: "wave out 7"
+
+  # Bidirectional pins
+  uio[0]: "n/c"
+  uio[1]: "n/c"
+  uio[2]: "n/c"
+  uio[3]: "n/c"
+  uio[4]: "n/c"
+  uio[5]: "n/c"
+  uio[6]: "n/c"
+  uio[7]: "n/c"
+
+# Do not change!
+yaml_version: 6

@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/dteal/ttsky-awg",
+  "commit": "31999308f98b9fcfb9b960c6713f0dceb7252b58",
+  "workflow_url": "https://github.com/dteal/ttsky-awg/actions/runs/17739210148",
+  "sort_id": 1757952941500,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

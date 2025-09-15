@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/Molidier/bitty-tt-sky130",
+  "commit": "4559fd1c23c3049c4c99ec7b60924d9a456e023f",
+  "workflow_url": "https://github.com/Molidier/bitty-tt-sky130/actions/runs/17743058305",
+  "sort_id": 1757960612898,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

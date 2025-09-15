@@ -116,9 +116,8 @@
     {
       "type": "board-tt-block-bidirectional-io",
       "id": "ttio7",
-      "top": 2825.78,
-      "left": -2290,
-      "rotate": 180,
+      "top": 3591.42,
+      "left": 2126.4,
       "attrs": { "verilogRole": "bidirectional", "verilogBit": "7" }
     },
     {
@@ -1191,7 +1190,6 @@
     { "type": "wokwi-flip-flop-d", "id": "flop62", "top": 4051.2, "left": -2092.8, "attrs": {} },
     { "type": "wokwi-flip-flop-d", "id": "flop63", "top": 4281.6, "left": -2092.8, "attrs": {} },
     { "type": "wokwi-flip-flop-d", "id": "flop64", "top": 4204.8, "left": -2092.8, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd18", "top": 2870.4, "left": -2170.2, "attrs": {} },
     { "type": "wokwi-gate-and-2", "id": "and78", "top": 2822.4, "left": -1910.4, "attrs": {} },
     { "type": "wokwi-gate-and-2", "id": "and79", "top": 2899.2, "left": -1910.4, "attrs": {} },
     { "type": "wokwi-gate-and-2", "id": "and80", "top": 2976, "left": -1910.4, "attrs": {} },
@@ -1662,7 +1660,7 @@
       "left": -844.8,
       "attrs": {}
     },
-    { "type": "wokwi-gnd", "id": "gnd23", "top": 1939.2, "left": -1709.4, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd23", "top": 1958.4, "left": -1661.4, "attrs": {} },
     { "type": "wokwi-mux-2", "id": "mux46", "top": 1977.6, "left": -1920, "attrs": {} },
     { "type": "wokwi-mux-2", "id": "mux47", "top": 1977.6, "left": -1468.8, "attrs": {} },
     { "type": "wokwi-mux-2", "id": "mux48", "top": 1977.6, "left": -950.4, "attrs": {} },
@@ -2123,9 +2121,9 @@
     {
       "type": "wokwi-gate-not",
       "id": "not11",
-      "top": 1833.8,
-      "left": -2102.6,
-      "rotate": 270,
+      "top": 2026,
+      "left": -2188.8,
+      "rotate": 180,
       "attrs": {}
     },
     {
@@ -2240,8 +2238,8 @@
       "rotate": 90,
       "attrs": {}
     },
-    { "type": "wokwi-flip-flop-d", "id": "cmp_eq_reg", "top": 1824, "left": -2198.4, "attrs": {} },
-    { "type": "wokwi-gate-and-2", "id": "and316", "top": 1814.4, "left": -2304, "attrs": {} },
+    { "type": "wokwi-flip-flop-d", "id": "cmp_eq_reg", "top": 1824, "left": -2121.6, "attrs": {} },
+    { "type": "wokwi-gate-and-2", "id": "and316", "top": 1814.4, "left": -2332.8, "attrs": {} },
     { "type": "wokwi-gate-or-2", "id": "or225", "top": 1804.8, "left": -2428.8, "attrs": {} },
     {
       "type": "wokwi-gate-not",
@@ -2317,8 +2315,8 @@
     {
       "type": "wokwi-text",
       "id": "text27",
-      "top": 1881.6,
-      "left": -2236.8,
+      "top": 1795.2,
+      "left": -2256,
       "attrs": { "text": "Count GTE Compare" }
     },
     {
@@ -2425,7 +2423,13 @@
       "top": 2793.6,
       "left": 1065.6,
       "attrs": { "text": "STEW 7" }
-    }
+    },
+    { "type": "wokwi-flip-flop-dsr", "id": "flop97", "top": 3590.4, "left": 1958.4, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd18", "top": 3648, "left": 2034.6, "attrs": {} },
+    { "type": "wokwi-flip-flop-d", "id": "flop98", "top": 1737.6, "left": -2736, "attrs": {} },
+    { "type": "wokwi-mux-2", "id": "mux59", "top": 1977.6, "left": -2256, "attrs": {} },
+    { "type": "wokwi-gate-and-2", "id": "and322", "top": 2073.6, "left": -2582.4, "attrs": {} },
+    { "type": "wokwi-gate-and-2", "id": "and323", "top": 1824, "left": -2227.2, "attrs": {} }
   ],
   "connections": [
     [ "pwr1:VCC", "sw1:8a", "red", [ "v0" ] ],
@@ -2985,7 +2989,7 @@
     [ "and62:OUT", "or41:B", "green", [ "v0" ] ],
     [ "or41:OUT", "or42:B", "green", [ "h144", "v-9.6" ] ],
     [ "or40:OUT", "or42:A", "green", [ "h96", "h48", "v9.6" ] ],
-    [ "and75:OUT", "or43:A", "green", [ "v57.6", "h220.8", "v278.4" ] ],
+    [ "and75:OUT", "or43:A", "green", [ "v57.6", "h268.8", "v278.4" ] ],
     [ "and70:OUT", "or43:B", "green", [ "v28.8", "h566.4", "v326.4" ] ],
     [ "or42:OUT", "or23:A", "green", [ "v0", "h76.8" ] ],
     [ "or43:OUT", "or23:B", "green", [ "v0", "h76.8" ] ],
@@ -3036,7 +3040,6 @@
     [ "flop63:CLK", "flop64:CLK", "green", [ "h-19.2", "v-76.8" ] ],
     [ "flop44:Q", "flop58:D", "green", [ "h19.2", "v57.6", "h-115.2" ] ],
     [ "flop58:CLK", "flop44:CLK", "green", [ "h-19.2", "v-76.8" ] ],
-    [ "gnd18:GND", "ttio7:OE", "black", [ "v0" ] ],
     [ "flop39:Q", "and78:A", "green", [ "v0" ] ],
     [ "flop38:Q", "and79:A", "green", [ "v0" ] ],
     [ "flop41:Q", "and80:A", "green", [ "v0" ] ],
@@ -3644,9 +3647,9 @@
     [ "loop_reg_1:R", "loop_reg_0:R", "green", [ "v19.2", "h518.4" ] ],
     [ "loop_reg_1:CLK", "loop_reg_0:CLK", "magenta", [ "v48", "h518.4" ] ],
     [ "loop_reg_1:CLK", "loop_reg_2:CLK", "magenta", [ "v48", "h-460.8", "v-48" ] ],
-    [ "gnd23:GND", "loop_reg_2:S", "black", [ "v0", "h-67.2" ] ],
-    [ "gnd23:GND", "loop_reg_1:S", "black", [ "h384", "v38.4" ] ],
-    [ "gnd23:GND", "loop_reg_0:S", "black", [ "v0", "h902.4" ] ],
+    [ "gnd23:GND", "loop_reg_2:S", "black", [ "v-9.6", "h-115.2" ] ],
+    [ "gnd23:GND", "loop_reg_1:S", "black", [ "v-9.6", "h336", "v28.8" ] ],
+    [ "gnd23:GND", "loop_reg_0:S", "black", [ "v0", "v-9.6", "h854.4" ] ],
     [ "mux46:OUT", "loop_reg_2:D", "green", [ "v0" ] ],
     [ "mux47:OUT", "loop_reg_1:D", "green", [ "v0" ] ],
     [ "mux48:OUT", "loop_reg_0:D", "green", [ "v0" ] ],
@@ -3713,7 +3716,6 @@
     [ "gnd22:GND", "ttio2:OUT", "black", [ "v0" ] ],
     [ "gnd22:GND", "ttio1:OUT", "black", [ "v0" ] ],
     [ "gnd22:GND", "ttio0:OUT", "black", [ "v0" ] ],
-    [ "gnd18:GND", "ttio7:OUT", "black", [ "v0" ] ],
     [ "and93:B", "and128:B", "green", [ "h-19.2", "v76.8" ] ],
     [ "and132:B", "and125:B", "green", [ "h-19.2", "v-76.8" ] ],
     [ "and109:B", "and148:B", "green", [ "h-19.2", "v76.8" ] ],
@@ -4361,7 +4363,7 @@
     [ "flop248:Q", "xor23:B", "green", [ "v0", "h38.4" ] ],
     [ "flop249:Q", "xor24:B", "green", [ "v0", "h38.4" ] ],
     [ "flop250:CLK", "flop251:CLK", "magenta", [ "h-19.2", "v153.6" ] ],
-    [ "flop251:CLK", "flop252:CLK", "magenta", [ "h-19.2", "v144" ] ],
+    [ "flop251:CLK", "flop252:CLK", "green", [ "h-19.2", "v144" ] ],
     [ "flop250:Q", "flop251:D", "green", [ "v0", "h19.2", "v38.4", "h-115.2" ] ],
     [ "flop251:Q", "flop252:D", "green", [ "v0", "h19.2", "v38.4", "h-115.2" ] ],
     [ "flop250:Q", "xor25:B", "green", [ "v0", "h38.4" ] ],
@@ -4386,7 +4388,6 @@
     [ "xor25:A", "mux22:A", "green", [ "v-9.6", "h144", "v-9.6" ] ],
     [ "xor26:A", "mux23:A", "green", [ "v0", "h48", "v-19.2" ] ],
     [ "xor27:A", "mux24:A", "green", [ "v0", "h316.8" ] ],
-    [ "not11:OUT", "and315:B", "green", [ "h0", "v-86.4" ] ],
     [ "xor13:OUT", "or211:A", "green", [ "v0", "h76.8" ] ],
     [ "xor14:OUT", "or211:B", "green", [ "v0", "h38.4", "v-67.2" ] ],
     [ "xor15:OUT", "or212:A", "green", [ "v9.6", "h76.8", "v9.6" ] ],
@@ -4418,9 +4419,7 @@
     [ "or224:OUT", "not12:IN", "green", [ "v0", "h57.6" ] ],
     [ "not12:OUT", "or225:B", "green", [ "h0", "v-86.4", "h9.6" ] ],
     [ "or225:OUT", "and316:A", "green", [ "v0" ] ],
-    [ "and316:OUT", "cmp_eq_reg:D", "green", [ "v0" ] ],
-    [ "cmp_eq_reg:Q", "or225:A", "green", [ "v-38.4", "h-326.4", "v19.2" ] ],
-    [ "not11:OUT", "and316:B", "green", [ "h0", "v-28.8", "h-268.8", "v67.2" ] ],
+    [ "cmp_eq_reg:Q", "or225:A", "green", [ "v-38.4", "h-403.2", "v19.2" ] ],
     [
       "flop238:D",
       "debug_reg:Q",
@@ -4529,19 +4528,18 @@
     [ "mux10:A", "and321:A", "green", [ "h-38.4", "v134.4", "h-115.2", "v38.4" ] ],
     [ "flop95:Q", "flop105:D", "green", [ "v0", "h19.2", "v57.6", "h-115.2" ] ],
     [ "flop118:Q", "flop123:D", "green", [ "v0", "h19.2", "v57.6", "h-115.2" ] ],
-    [ "ttio7:IN", "flop39:CLK", "green", [ "h0" ] ],
     [ "flop141:CLK", "debug_reg:CLK", "green", [ "h-19.2" ] ],
     [
       "flop39:CLK",
       "flop252:CLK",
       "green",
-      [ "h-19.2", "v-259.2", "h-230.4", "v-508.8", "h-412.8", "v-432" ]
+      [ "h-19.2", "v-259.2", "h-211.2", "v-403.2", "h-432", "v-537.6" ]
     ],
     [
       "cmp_eq_reg:CLK",
       "flop24:CLK",
       "magenta",
-      [ "h0", "v28.8", "h240", "v-86.4", "h38.4", "v-67.2" ]
+      [ "v28.8", "h163.2", "v-86.4", "h38.4", "v-67.2" ]
     ],
     [ "gnd26:GND", "debug_reg:R", "black", [ "v-86.4" ] ],
     [ "or123:OUT", "mux34:B", "green", [ "v19.2" ] ],
@@ -4553,7 +4551,42 @@
     [ "or126:OUT", "mux49:B", "green", [ "v28.8" ] ],
     [ "or204:OUT", "mux49:A", "green", [ "v0", "h38.4", "v-374.4" ] ],
     [ "or127:OUT", "mux58:B", "green", [ "v0", "h96", "v38.4" ] ],
-    [ "or205:OUT", "mux58:A", "green", [ "v0", "h48", "v-364.8" ] ]
+    [ "or205:OUT", "mux58:A", "green", [ "v0", "h48", "v-364.8" ] ],
+    [
+      "ttin:IN2",
+      "flop39:CLK",
+      "green",
+      [
+        "h38.4",
+        "v134.4",
+        "h-595.2",
+        "v67.2",
+        "h-326.4",
+        "v1929.6",
+        "h-1968",
+        "v652.8",
+        "h211.2",
+        "v259.2"
+      ]
+    ],
+    [ "gnd18:GND", "flop97:S", "black", [ "v-57.6" ] ],
+    [ "flop219:R", "flop97:R", "green", [ "h-28.8", "v163.2" ] ],
+    [ "flop219:CLK", "flop97:CLK", "green", [ "h-9.6", "v172.8" ] ],
+    [ "and300:OUT", "flop97:D", "green", [ "v0", "h19.2" ] ],
+    [ "flop97:Q", "ttio7:OUT", "green", [ "v0" ] ],
+    [ "vcc3:VCC", "ttio7:OE", "red", [ "v0" ] ],
+    [ "flop252:CLK", "flop98:CLK", "green", [ "h-19.2", "v115.2" ] ],
+    [ "flop252:NOTQ", "flop98:D", "green", [ "h0", "v67.2", "h-96" ] ],
+    [ "flop98:Q", "and322:A", "green", [ "v0", "h19.2", "v336" ] ],
+    [ "and218:B", "and322:B", "green", [ "h-19.2", "v-172.8", "h-355.2" ] ],
+    [ "and322:OUT", "mux59:SEL", "green", [ "v0", "h316.8" ] ],
+    [ "or224:OUT", "mux59:B", "green", [ "v0", "h259.2" ] ],
+    [ "not11:OUT", "mux59:A", "green", [ "v0", "h-76.8", "v-57.6" ] ],
+    [ "mux59:OUT", "and315:B", "green", [ "h172.8", "v-278.4" ] ],
+    [ "mux59:OUT", "and316:B", "green", [ "v-28.8", "h-144" ] ],
+    [ "and316:OUT", "and323:A", "green", [ "v0" ] ],
+    [ "and323:OUT", "cmp_eq_reg:D", "green", [ "v0" ] ],
+    [ "and322:B", "and323:B", "green", [ "h0", "v28.8", "h345.6", "v-278.4", "h9.6" ] ]
   ],
   "dependencies": {}
 }

@@ -10,7 +10,7 @@ MACRO tt_um_rebelmike_register
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.022000 ;
+    ANTENNAGATEAREA 1.917000 ;
     ANTENNADIFFAREA 0.795200 ;
     PORT
       LAYER met4 ;
@@ -97,8 +97,7 @@ MACRO tt_um_rebelmike_register
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.022000 ;
-    ANTENNADIFFAREA 0.795200 ;
+    ANTENNAGATEAREA 0.318000 ;
     PORT
       LAYER met4 ;
         RECT 118.990 110.520 119.290 111.520 ;
@@ -408,7 +407,7 @@ MACRO tt_um_rebelmike_register
       LAYER met1 ;
         RECT 5.400 50.300 40.360 99.740 ;
       LAYER met2 ;
-        RECT 6.220 50.370 39.790 99.670 ;
+        RECT 5.810 50.370 39.790 99.670 ;
       LAYER met3 ;
         RECT 6.220 50.370 144.210 109.820 ;
       LAYER met4 ;

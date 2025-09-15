@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "SNPU"      # Project title
-  author:       "Laurent Roro"      # Your name
-  discord:      "blargosaure"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Secret Nigon Processing Unit is a chip to play this very specific board game"      # One line description of what your project does
+  title:        "random_latch" # Project title
+  author:       "Laurent Roro" # Your name
+  discord:      "blargosaure" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A potentially working random number generator using the unstable state of a latch" # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -23,34 +23,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "cmd0"
-  ui[1]: "cmd1"
-  ui[2]: "cmd2"
-  ui[3]: "arg0"
-  ui[4]: "arg1"
-  ui[5]: "arg2"
-  ui[6]: "arg3"
-  ui[7]: "arg4"
+  ui[0]: "freeze"
+  ui[1]: "unused_1"
+  ui[2]: "unused_2"
+  ui[3]: "unused_3"
+  ui[4]: "unused_4"
+  ui[5]: "unused_5"
+  ui[6]: "unused_6"
+  ui[7]: "unused_7"
 
   # Outputs
-  uo[0]: "out0"
-  uo[1]: "out1"
-  uo[2]: "out2"
-  uo[3]: "out3"
-  uo[4]: "out4"
-  uo[5]: "out5"
-  uo[6]: "out6"
-  uo[7]: "out7"
+  uo[0]: "pssshhh"
+  uo[1]: "randooom"
+  uo[2]: "BRRRRRR"
+  uo[3]: "often"
+  uo[4]: "lottery_winning_number"
+  uo[5]: "0or1"
+  uo[6]: "1or0"
+  uo[7]: "maybe"
 
   # Bidirectional pins
-  uio[0]: "io0"
-  uio[1]: "io1"
-  uio[2]: "io2"
-  uio[3]: "io3"
-  uio[4]: "io4"
-  uio[5]: "io5"
-  uio[6]: "io6"
-  uio[7]: "io7"
+  uio[0]: "sometimes_true"
+  uio[1]: "no_yes_no_yes_no_yes"
+  uio[2]: "asdgfhdskaghk"
+  uio[3]: "error"
+  uio[4]: "defined_as_undefined"
+  uio[5]: "often_false"
+  uio[6]: "noise"
+  uio[7]: "trump_tarifs"
 
 # Do not change!
 yaml_version: 6

@@ -55,12 +55,12 @@ pinout:
   uio[7]: ""
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-  ua[0]: "Vin+"
-  ua[1]: "Vin-"
-  ua[2]: "Vout+"
-  ua[3]: "Vout-"
-  ua[4]: "Rgm"
-  ua[5]: "Vcm"
+  ua[0]: "Vcm"
+  ua[1]: "Vin+"
+  ua[2]: "Vin-" 
+  ua[3]: "Rgm"
+  ua[4]: "Vout+"
+  ua[5]: "Vout-"
 
 # Do not change!
 yaml_version: 6

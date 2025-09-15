@@ -1,0 +1,26 @@
+69. Printing statistics.
+
+=== tt_um_openram_top ===
+
+   Number of wires:                413
+   Number of wire bits:            448
+   Number of public wires:         176
+   Number of public wire bits:     211
+   Number of ports:                  8
+   Number of port bits:             43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                398
+     sky130_fd_sc_hd__buf_2          2
+     sky130_fd_sc_hd__conb_1        22
+     sky130_fd_sc_hd__dfrtp_2      136
+     sky130_fd_sc_hd__mux2_1       236
+     sky130_fd_sc_hd__nand2_2        1
+     sky130_sram_1rw_tiny            1
+
+   Area for cell type \sky130_sram_1rw_tiny is unknown!
+
+   Chip area for module '\tt_um_openram_top': 6329.820800
+     of which used for sequential elements: 3573.427200 (56.45%)
+

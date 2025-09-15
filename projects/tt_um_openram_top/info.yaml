@@ -1,0 +1,59 @@
+# Tiny Tapeout project information
+project:
+  title:        "Single Port OpenRAM Testchip"      # Project title
+  author:       "Jesse Cirimelli-Low"      # Your name
+  discord:      "insomnyaac"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Testchip of single port SRAM macro using two phase clocking"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     250000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "2x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_openram_top"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "defs.v"
+    - "project.v"
+    - "scan_cell_2ph.v"
+    - "scan_chain_2ph.v"
+    - "sky130_sram_1rw_tiny.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "scan_in"
+  ui[1]: "scan_enable"
+  ui[2]: "scan_mode"
+  ui[3]: "sclka"
+  ui[4]: "sclkb"
+  ui[5]: "csb"
+  ui[6]: "web"
+  ui[7]: "spare_wen"
+
+  # Outputs
+  uo[0]: "scan_reg[0]"
+  uo[1]: "scan_reg[SCAN_WIDTH-1]"
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "wmask[0]"
+  uio[1]: "wmask[1]"
+  uio[2]: "wmask[2]"
+  uio[3]: "wmask[3]"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6

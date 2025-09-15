@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/Dullbi/8bit_up-down_counter",
+  "commit": "d0e6485f4578b2b1da64d66e02ddbc277e2e7412",
+  "workflow_url": "https://github.com/Dullbi/8bit_up-down_counter/actions/runs/17579340605",
+  "sort_id": 1757919466964,
+  "openlane_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}

@@ -21,3 +21,5 @@ way up until it wraps to zero.  The speed compare is a simple EQUAL circuit and 
 Only need the 7-Segment display on the demo board.
 
 ## Trying to add a small PRISM
+
+

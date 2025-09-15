@@ -1,7 +1,3 @@
-VERSION 5.7 ;
-  NOWIREEXTENSIONATPIN ON ;
-  DIVIDERCHAR "/" ;
-  BUSBITCHARS "[]" ;
 MACRO tt_um_algofoogle_vga_matrix_dac
   CLASS BLOCK ;
   FOREIGN tt_um_algofoogle_vga_matrix_dac ;
@@ -10,6 +6,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
     PORT
       LAYER met4 ;
         RECT 143.830 224.760 144.130 225.760 ;
@@ -26,6 +23,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 141.070 224.760 141.370 225.760 ;
@@ -103,7 +101,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.485000 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met4 ;
         RECT 138.310 224.760 138.610 225.760 ;
@@ -112,7 +110,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.227500 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 135.550 224.760 135.850 225.760 ;
@@ -121,7 +119,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.742500 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met4 ;
         RECT 132.790 224.760 133.090 225.760 ;
@@ -130,7 +128,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.742500 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 130.030 224.760 130.330 225.760 ;
@@ -139,7 +137,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.485000 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 127.270 224.760 127.570 225.760 ;
@@ -148,7 +146,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.227500 ;
+    ANTENNAGATEAREA 0.213000 ;
     PORT
       LAYER met4 ;
         RECT 124.510 224.760 124.810 225.760 ;
@@ -157,7 +155,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.742500 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met4 ;
         RECT 121.750 224.760 122.050 225.760 ;
@@ -166,7 +164,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.742500 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met4 ;
         RECT 118.990 224.760 119.290 225.760 ;
@@ -175,7 +173,6 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.000000 ;
     PORT
       LAYER met4 ;
         RECT 116.230 224.760 116.530 225.760 ;
@@ -184,7 +181,6 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.000000 ;
     PORT
       LAYER met4 ;
         RECT 113.470 224.760 113.770 225.760 ;
@@ -193,7 +189,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.500000 ;
+    ANTENNAGATEAREA 0.477000 ;
     PORT
       LAYER met4 ;
         RECT 110.710 224.760 111.010 225.760 ;
@@ -202,7 +198,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 4.000000 ;
+    ANTENNAGATEAREA 0.477000 ;
     PORT
       LAYER met4 ;
         RECT 107.950 224.760 108.250 225.760 ;
@@ -211,7 +207,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 2.000000 ;
+    ANTENNAGATEAREA 0.477000 ;
     PORT
       LAYER met4 ;
         RECT 105.190 224.760 105.490 225.760 ;
@@ -220,7 +216,6 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.000000 ;
     PORT
       LAYER met4 ;
         RECT 102.430 224.760 102.730 225.760 ;
@@ -245,8 +240,8 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_oe[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNAGATEAREA 64.799995 ;
+    ANTENNADIFFAREA 595.162781 ;
     PORT
       LAYER met4 ;
         RECT 49.990 224.760 50.290 225.760 ;
@@ -255,8 +250,8 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_oe[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNAGATEAREA 64.799995 ;
+    ANTENNADIFFAREA 595.162781 ;
     PORT
       LAYER met4 ;
         RECT 47.230 224.760 47.530 225.760 ;
@@ -325,8 +320,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 72.070 224.760 72.370 225.760 ;
@@ -335,8 +329,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 69.310 224.760 69.610 225.760 ;
@@ -405,8 +398,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 94.150 224.760 94.450 225.760 ;
@@ -415,8 +407,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 91.390 224.760 91.690 225.760 ;
@@ -425,8 +416,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 88.630 224.760 88.930 225.760 ;
@@ -435,8 +425,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 85.870 224.760 86.170 225.760 ;
@@ -445,8 +434,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 83.110 224.760 83.410 225.760 ;
@@ -455,8 +443,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 80.350 224.760 80.650 225.760 ;
@@ -465,8 +452,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 77.590 224.760 77.890 225.760 ;
@@ -475,8 +461,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 36.750000 ;
-    ANTENNADIFFAREA 406.333496 ;
+    ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met4 ;
         RECT 74.830 224.760 75.130 225.760 ;
@@ -487,7 +472,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 1.000 5.000 3.000 220.760 ;
+        RECT 1.000 5.000 4.600 220.760 ;
     END
   END VDPWR
   PIN VGND
@@ -495,22 +480,46 @@ MACRO tt_um_algofoogle_vga_matrix_dac
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 4.000 5.000 6.000 220.760 ;
+        RECT 5.600 5.000 9.200 220.760 ;
+    END
+  END VGND
+  PIN VDPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 120.620 5.000 122.220 221.000 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 152.620 5.000 154.220 221.000 ;
+    END
+  END VDPWR
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 123.920 5.000 125.520 221.000 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 155.920 5.000 157.520 221.000 ;
     END
   END VGND
   OBS
       LAYER nwell ;
-        RECT 17.240 8.255 95.690 186.020 ;
+        RECT 12.200 7.135 158.190 219.465 ;
       LAYER li1 ;
-        RECT 17.430 8.255 95.300 185.830 ;
+        RECT 12.590 7.135 158.000 219.465 ;
       LAYER met1 ;
-        RECT 6.090 8.100 95.400 194.060 ;
+        RECT 12.490 6.980 159.310 222.740 ;
       LAYER met2 ;
-        RECT 6.090 8.100 148.090 218.130 ;
+        RECT 12.200 7.035 159.280 224.560 ;
       LAYER met3 ;
-        RECT 1.000 2.630 138.660 224.360 ;
+        RECT 1.000 3.250 159.310 224.560 ;
       LAYER met4 ;
-        RECT 4.000 224.360 30.270 224.760 ;
+        RECT 5.600 224.360 30.270 224.760 ;
         RECT 31.370 224.360 33.030 224.760 ;
         RECT 34.130 224.360 35.790 224.760 ;
         RECT 36.890 224.360 38.550 224.760 ;
@@ -553,11 +562,16 @@ MACRO tt_um_algofoogle_vga_matrix_dac
         RECT 139.010 224.360 140.670 224.760 ;
         RECT 141.770 224.360 143.430 224.760 ;
         RECT 144.530 224.360 146.190 224.760 ;
-        RECT 147.290 224.360 152.960 224.760 ;
-        RECT 4.000 221.160 152.960 224.360 ;
-        RECT 6.400 4.600 152.960 221.160 ;
-        RECT 4.000 1.400 152.960 4.600 ;
-        RECT 4.000 1.000 16.170 1.400 ;
+        RECT 147.290 224.360 159.085 224.760 ;
+        RECT 5.600 221.400 159.085 224.360 ;
+        RECT 5.600 221.160 120.220 221.400 ;
+        RECT 9.600 4.600 120.220 221.160 ;
+        RECT 122.620 4.600 123.520 221.400 ;
+        RECT 125.920 4.600 152.220 221.400 ;
+        RECT 154.620 4.600 155.520 221.400 ;
+        RECT 157.920 4.600 159.085 221.400 ;
+        RECT 5.600 1.400 159.085 4.600 ;
+        RECT 5.600 1.000 16.170 1.400 ;
         RECT 17.870 1.000 35.490 1.400 ;
         RECT 37.190 1.000 54.810 1.400 ;
         RECT 56.510 1.000 74.130 1.400 ;
@@ -565,6 +579,7 @@ MACRO tt_um_algofoogle_vga_matrix_dac
         RECT 95.150 1.000 112.770 1.400 ;
         RECT 114.470 1.000 132.090 1.400 ;
         RECT 133.790 1.000 151.410 1.400 ;
+        RECT 153.110 1.000 159.085 1.400 ;
   END
 END tt_um_algofoogle_vga_matrix_dac
 END LIBRARY

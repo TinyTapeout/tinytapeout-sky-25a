@@ -20,12 +20,19 @@ module tt_um_algofoogle_vga_matrix_dac (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+    wire [7:0] R;
+    wire [7:0] G;
+    wire [7:0] B;
+    wire [2:0] Rbias;
+    wire [2:0] Gbias;
+    wire [2:0] Bbias;
+
     csdac255 dac_red (
         .VPWR   (VDPWR),
         .VGND   (VGND),
         .Vbias  (ua[3]),
-        .data   (ui_in),
-        .bias   (uio_in[2:0]),
+        .data   (R),
+        .bias   (Rbias),
         .Iout   (ua[0])
     );
 
@@ -33,8 +40,8 @@ module tt_um_algofoogle_vga_matrix_dac (
         .VPWR   (VDPWR),
         .VGND   (VGND),
         // .Vbias  (ua[3]),
-        .data   (ui_in),
-        .bias   (uio_in[5:3]),
+        .data   (G),
+        .bias   (Gbias),
         .Iout   (ua[1])
     );
 
@@ -42,19 +49,30 @@ module tt_um_algofoogle_vga_matrix_dac (
         .VPWR   (VDPWR),
         .VGND   (VGND),
         // .Vbias  (ua[3]),
-        .data   (ui_in),
-        .bias   (uio_in[5:3]),
+        .data   (B),
+        .bias   (Bbias),
         .Iout   (ua[2])
     );
 
-    assign uo_out[7] = VGND;
-    assign uo_out[6] = VGND;
-    assign uo_out[5] = VGND;
-    assign uo_out[4] = VGND;
-    assign uo_out[3] = VGND;
-    assign uo_out[2] = VGND;
-    assign uo_out[1] = VGND;
-    assign uo_out[0] = VGND;
+    controller_wrapper controller_wrapper (
+        .VPWR   (VDPWR),
+        .VGND   (VGND),
+        .ui_in  (ui_in),
+        .uo_out (uo_out),
+        .uio_in2(uio_in[2]),
+        .uio_in3(uio_in[3]),
+        .uio_in4(uio_in[4]),
+        .uio_out({uio_out[1], uio_out[0]}),
+        .ena    (ena),
+        .clk    (clk),
+        .rst_n  (rst_n),
+        .R      (R),
+        .G      (G),
+        .B      (B),
+        .Rbias  (Rbias),
+        .Gbias  (Gbias),
+        .Bbias  (Bbias)
+    );
 
     assign uio_out[7] = VGND;
     assign uio_out[6] = VGND;
@@ -62,8 +80,6 @@ module tt_um_algofoogle_vga_matrix_dac (
     assign uio_out[4] = VGND;
     assign uio_out[3] = VGND;
     assign uio_out[2] = VGND;
-    assign uio_out[1] = VGND;
-    assign uio_out[0] = VGND;
 
     assign uio_oe[7] = VGND;
     assign uio_oe[6] = VGND;
@@ -71,7 +87,7 @@ module tt_um_algofoogle_vga_matrix_dac (
     assign uio_oe[4] = VGND;
     assign uio_oe[3] = VGND;
     assign uio_oe[2] = VGND;
-    assign uio_oe[1] = VGND;
-    assign uio_oe[0] = VGND;
+    assign uio_oe[1] =  VDPWR;
+    assign uio_oe[0] =  VDPWR;
 
 endmodule

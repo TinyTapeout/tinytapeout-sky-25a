@@ -124,23 +124,23 @@
 
 === tt_um_wokwi_414123795172381697 ===
 
-   Number of wires:                999
-   Number of wire bits:           1034
-   Number of public wires:         950
-   Number of public wire bits:     985
+   Number of wires:               1010
+   Number of wire bits:           1045
+   Number of public wires:         961
+   Number of public wire bits:     996
    Number of ports:                  8
    Number of port bits:             43
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                984
-     and_cell                      322
-     dff_cell                      205
+   Number of cells:                996
+     and_cell                      324
+     dff_cell                      207
      dffsr_cell                     49
-     mux_cell                       59
+     mux_cell                       62
      nand_cell                       1
-     not_cell                       21
-     or_cell                       227
+     not_cell                       23
+     or_cell                       230
      sky130_fd_sc_hd__buf_2         13
      sky130_fd_sc_hd__conb_1        60
      xor_cell                       27
@@ -177,37 +177,37 @@
 === design hierarchy ===
 
    tt_um_wokwi_414123795172381697      1
-     and_cell                      322
-     dff_cell                      205
+     and_cell                      324
+     dff_cell                      207
      dffsr_cell                     49
-     mux_cell                       59
+     mux_cell                       62
      nand_cell                       1
-     not_cell                       21
-     or_cell                       227
+     not_cell                       23
+     or_cell                       230
      xor_cell                       27
 
-   Number of wires:               4269
-   Number of wire bits:           4304
-   Number of public wires:        4073
-   Number of public wire bits:    4108
-   Number of ports:               3131
-   Number of port bits:           3166
+   Number of wires:               4319
+   Number of wire bits:           4354
+   Number of public wires:        4123
+   Number of public wire bits:    4158
+   Number of ports:               3170
+   Number of port bits:           3205
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               1336
-     sky130_fd_sc_hd__and2_2       322
+   Number of cells:               1350
+     sky130_fd_sc_hd__and2_2       324
      sky130_fd_sc_hd__buf_2         13
      sky130_fd_sc_hd__conb_1        60
      sky130_fd_sc_hd__dfbbn_2       49
-     sky130_fd_sc_hd__dfxtp_2      205
-     sky130_fd_sc_hd__inv_2        324
-     sky130_fd_sc_hd__mux2_1        59
+     sky130_fd_sc_hd__dfxtp_2      207
+     sky130_fd_sc_hd__inv_2        328
+     sky130_fd_sc_hd__mux2_1        62
      sky130_fd_sc_hd__nand2_2        1
      sky130_fd_sc_hd__nand2b_2      49
-     sky130_fd_sc_hd__or2_2        227
+     sky130_fd_sc_hd__or2_2        230
      sky130_fd_sc_hd__xor2_2        27
 
-   Chip area for top module '\tt_um_wokwi_414123795172381697': 12959.929600
+   Chip area for top module '\tt_um_wokwi_414123795172381697': 13085.049600
      of which used for sequential elements: 0.000000 (0.00%)
 

@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "TV-B-Gone-EU"    # Project title
+  title:        "TV-B-Gone-EU (ROM Macro variant)"    # Project title
   author:       "Embelon"         # Your name
   discord:      "embelon"         # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "TV-B-Gone shuts down many TVs by sending IR codes"      # One line description of what your project does

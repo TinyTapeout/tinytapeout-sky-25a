@@ -3,7 +3,7 @@ project:
   title:        "PiecewiseOrionSynth Deluxe"     # Project title
   author:       "Toivo Henningsson"       # Your name
   discord:      "possible_realities"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "4 channel chip tune/synth - deluxe version (stand alone)"      # One line description of what your project does
+  description:  "4 channel chip tune/synth - deluxe version (standalone)"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     64000000  # Clock frequency in Hz (or 0 if not applicable)
 
@@ -33,34 +33,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "data_in[0]"
+  ui[1]: "data_in[1]"
+  ui[2]: "data_in[2]"
+  ui[3]: "data_in[3]"
+  ui[4]: "data_in[4]"
+  ui[5]: "data_in[5]"
+  ui[6]: "data_in[6]"
+  ui[7]: "data_in[7]"
 
   # Outputs
-  uo[0]: "pwm_out_l"
-  uo[1]: "pwm_out_r"
-  uo[2]: "pwm_out_l"
-  uo[3]: "pwm_out_r"
-  uo[4]: "pwm_out_l"
-  uo[5]: "pwm_out_r"
-  uo[6]: "pwm_out_l"
-  uo[7]: "pwm_out_r"
+  uo[0]: "data_out[0]"
+  uo[1]: "data_out[1]"
+  uo[2]: "data_out[2]"
+  uo[3]: "data_out[3]"
+  uo[4]: "data_out[4]"
+  uo[5]: "data_out[5]"
+  uo[6]: "data_out[6]"
+  uo[7]: "data_out[7]"
 
   # Bidirectional pins
-  uio[0]: "user_interrupt"
-  uio[1]: "data_ready"
-  uio[2]: ""
-  uio[3]: "spi_miso"
-  uio[4]: "spi_cs_n"
-  uio[5]: "spi_clk"
-  uio[6]: "spi_mosi"
-  uio[7]: ""
+  uio[0]: "cmd_data_low_in"
+  uio[1]: "cmd_data_high_in"
+  uio[2]: "cmd_write_in"
+  uio[3]: "cmd_read_in"
+  uio[4]: "read_sel_in"
+  uio[5]: "read_pending_out"
+  uio[6]: "pwm_out_l"
+  uio[7]: "pwm_out_r"
 
 # Do not change!
 yaml_version: 6

@@ -1,8 +1,9 @@
 {
   "app": "custom_gds action",
   "repo": "https://github.com/Low-Power-Circuits-IoT-Systems-Group/LPCAS_TP1",
-  "commit": "745846a9718420e1c0f8611591cdc4ba36bdd5c4",
-  "workflow_url": "https://github.com/Low-Power-Circuits-IoT-Systems-Group/LPCAS_TP1/actions/runs/17439408309",
+  "commit": "dd22d4c8fad88564bd828dd0b86552047deaa75a",
+  "workflow_url": "https://github.com/Low-Power-Circuits-IoT-Systems-Group/LPCAS_TP1/actions/runs/18502589150",
+  "project_id": 2619,
   "sort_id": 1756916427136,
   "analog": true
 }

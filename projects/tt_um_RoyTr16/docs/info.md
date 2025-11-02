@@ -52,21 +52,11 @@ Responsible for checking whether a specific direction has a winning combination.
 #### `pwrup_synchronizer.v`
 This module implements a power-up synchronizer circuit that provides synchronized reset release functionality. This module generates a clean, synchronized reset signal that is released after the clock becomes stable during power-up sequences.
 
-
-
-
 ## How to test
-
-<div style="display: flex; align-items: flex-start;">
-<div style="flex: 1; margin-right: 20px;">
 
 Connect the external hardware according to the specified pinout, and play the connect four game. The floating piece cursor above the board represents the column which the piece will be dropped to. There is one key for moving the cursor left, one for moving it right, and one for dropping the piece. The game ends when one player has 4 consecutive pieces vertically, horizontally, or diagonally.
 
-</div>
-<div style="flex-shrink: 0;">
-<img src="connect-four.jpg" width=120>
-</div>
-</div>
+![Photo of display output via VGA](connect-four.jpg){width=33%}
 
 ## External hardware
 
@@ -99,4 +89,4 @@ Optionally, a passive buzzer may be connected to play sound effects (NOTE: the b
 #### VGA Display
 Connect a standard VGA module to the designated VGA output pins for display functionality.
 
-<img src="keys.jpg">
+![VGA pinout illustration](keys.jpg)

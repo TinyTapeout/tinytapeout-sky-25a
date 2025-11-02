@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "12 bit DAC"      # Project title
-  author:       "KEVIN ZHOU"      # Your name
+  author:       "Kevin Zhou"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "converts digital input to analog pwm output with 12 bit resolution"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc

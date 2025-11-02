@@ -17,6 +17,6 @@ To test the fuzzy logic system,simulate different conditions by changing the inp
 
 ## External hardware
 
-8 switches connected to the input ui_in[7:0] pins 
-1 switch to the uio_in[0] pin
-8 bit LED is needed to show the output values uo_out[7:0]
+- 8 switches connected to the input ui_in[7:0] pins 
+- 1 switch to the uio_in[0] pin
+- 8 bit LED is needed to show the output values uo_out[7:0]

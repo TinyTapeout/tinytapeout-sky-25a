@@ -15,14 +15,13 @@ This chip has a CPU and a program memory.
 It has three modes; "Load", "Read" and "Execution".
 The mode can be selected with ui_in[6] & ui_in[7].
 
-_Truth table for mode select_
-
 | ui_in[6]: Read | ui_in[7]: Execution | Operating mode |
 | -------------- | ------------------- | -------------- |
 | 0              | 1                   | Execution      |
 | 0              | 0                   | Load           |
 | 1              | 1                   | Execution      |
 | 1              | 0                   | Read           |
+Table: Truth table for mode select
 
 For every operating mode, each pin has a different function; for detailed pin assignments, refer to `info.yaml`
 

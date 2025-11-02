@@ -6,9 +6,6 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
-
-# info.md for tt_um_pwen
-
 ## Credits
 
 We gratefully acknowledge the Center of Excellence (CoE) in Integrated Circuits and Systems (ICAS) and the Department of Electronics and Communication Engineering (ECE) for providing the necessary resources and guidance. Special thanks to Dr. K R Usha Rani (Associate Dean - PG), Dr. H V Ravish Aradhya (HOD-ECE), Dr. K. S. Geetha (Vice Principal) and Dr. K. N. Subramanya (Principal) for their constant encouragement and support to carry out this Tiny Tapeout SKY25A submission.
@@ -120,7 +117,6 @@ Use the following `$monitor` statement in the testbench:
 
 ```verilog
 initial begin
-  $monitor("Time=%0t | start=%b enable=%b data_in=%b | pulse_out=%b done=%b",
-           $time, ui_in[0], ui_in[1], ui_in[5:2], pulse_out, done);
+  $monitor("Time=%0t | start=%b enable=%b data_in=%b | pulse_out=%b done=%b", $time, ui_in[0], ui_in[1], ui_in[5:2], pulse_out, done);
 end
-
+```

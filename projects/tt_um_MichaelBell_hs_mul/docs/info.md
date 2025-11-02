@@ -30,7 +30,3 @@ Send 8b10b encoded data streams, check the outputs.
 While in reset, the inputs are presented on the outputs and bidirs as differential pairs, with `out[0] = in[0]`, `out[1] = ~in[0]`, `out[2] = in[1]`, etc.
 
 If not in reset, the output enables on the bidirectional pins are controlled by `in[7]`.
-
-## External hardware
-
-None required

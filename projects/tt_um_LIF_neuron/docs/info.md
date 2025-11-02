@@ -6,8 +6,6 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
-# Approximate computing based Leaky-Integrate-Fire Neuron Model
-
 ## How it works
 This AFM-based LIF neuron model implementation features:
 - 16-bit membrane potential
@@ -17,10 +15,9 @@ This AFM-based LIF neuron model implementation features:
 - 8 neurons in one structure
 
 The equition of AFM based LIF neuron model is:
-$$ 
-V[t+1] = AFM\!\left(e^{-\frac{1}{\tau}}, V[t]-E_{rest}\right) + E_{rest} + I \\
-\text{if } V[t] \leq V_{th}, \text{ then } V[t+1] = E_{rest}
-$$
+
+$$V[t+1] = AFM\!\left(e^{-\frac{1}{\tau}}, v[t]-E_{rest}\right) + E_{rest} + I$$
+$$\text{if } V[t] \leq V_{th}, \text{ then } V[t+1] = E_{rest}$$
 
 The execution of this architecture consists of three phases:
 1. Parameter initialization  
@@ -29,24 +26,20 @@ The execution of this architecture consists of three phases:
 
 ## How to test
 
-#### 1. Reset (Low to reset, rst_n = 0)
+1. Reset (Low to reset, rst_n = 0)
+    - All the parameter and membrane potential reset to 0.
 
-- All the parameter and membrane potential reset to 0.
+2. Parameter initialization  
+    1. **E_REST** requires two cycles of input.  
+    2. **e_tau** requires one cycle of input.
+    3. **v_th** requires two cycles of input.  
 
-#### 2. Parameter initialization  
-1. **E_REST** requires two cycles of input.  
-2. **e_tau** requires one cycle of input.
-3. **v_th** requires two cycles of input.  
+3. Neuron initialization  
+    - The initial membrane potentials of 8 neurons are input in sequence.  
+    - After waiting for **2.5 clock cycles**, the initial currents are input sequentially.
+    - Each neuron requires **1 clock cycle** for initialization.
 
-#### 3. Neuron initialization  
-- The initial membrane potentials of 8 neurons are input in sequence.  
-- After waiting for **2.5 clock cycles**, the initial currents are input sequentially.
-- Each neuron requires **1 clock cycle** for initialization.
-
-#### 4. Normal operation
-- Input currents sequentially  
-- Each neuron computation takes **1 clock cycle**  
-- 8 neurons require **8 clock cycles** in tot
-
-## External hardware
-None required - all the operation of this design can be done through digital I/O
+4. Normal operation
+    - Input currents sequentially  
+    - Each neuron computation takes **1 clock cycle**  
+    - 8 neurons require **8 clock cycles** in total

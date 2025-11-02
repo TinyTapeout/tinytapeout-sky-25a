@@ -44,7 +44,7 @@ The two following figures contain the logic circuits handling the transfer signa
 
 The final module also processes SPI signals but is used for debugging purposes. This time the SCLK and CSB are driven by the debugging device and the MISO and MOSI signals are inverted. The figure below shows how the module is built.
 
-![The debuging module](spi_debug.PNG)
+![The debugging module](spi_debug.PNG)
 
 To communicate, the debugging device sends two bits of data, and depending on these bits, the CPU will output a specific value:
 

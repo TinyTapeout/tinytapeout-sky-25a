@@ -6,8 +6,6 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
-# AXI4-Lite Top Project
-
 ##  Overview
 This project implements a **self-contained AXI4-Lite system** with a master and a slave connected inside a top-level wrapper (`axi4lite_top`).  
 It exposes a **simple control interface** so that reads and writes can be performed without directly driving AXI signals.  

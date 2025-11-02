@@ -1,7 +1,4 @@
-# VGA Music Visualizer - Project Documentation
-
 ## How it works
-
 This project drives a VGA monitor to display a 'Hello World' message along with synchronized audio and changing colors. 
 
 ## How to test

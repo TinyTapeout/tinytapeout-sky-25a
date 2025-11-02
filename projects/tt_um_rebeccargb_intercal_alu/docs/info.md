@@ -27,25 +27,21 @@ Operations 0 and 1 simply return the current value of the A or B register, respe
 
 Operations 2 through 7 correspond to INTERCAL's unary AND, unary OR, and unary XOR operators, represented by ampersand (&), book (V), and what (?), respectively. From the INTERCAL manual:
 
-<blockquote>
-These operators perform their respective logical operations on all pairs of adjacent bits, the result from the first and last bits going into the first bit of the result. The effect is that of rotating the operand one place to the right and ANDing, ORing, or XORing with its initial value. Thus, <code>#&77</code> (binary = 1001101) is binary 0000000000000100 = 4, <code>#V77</code> is binary 1000000001101111 = 32879, and <code>#?77</code> is binary 1000000001101011 = 32875.
-</blockquote>
+
+> These operators perform their respective logical operations on all pairs of adjacent bits, the result from the first and last bits going into the first bit of the result. The effect is that of rotating the operand one place to the right and ANDing, ORing, or XORing with its initial value. Thus, `#&77` (binary = 1001101) is binary 0000000000000100 = 4, `#V77` is binary 1000000001101111 = 32879, and `#?77` is binary 1000000001101011 = 32875.
+
 
 Operations 2, 4, and 6 work on the 16-bit halves of the A register independently, while operations 3, 5, and 7 work on the 32-bit whole of the A register.
 
 Operations 8 and 9 correspond to INTERCAL's *interleave* (also called *mingle*) operator, represented by big money (&#36;). From the INTERCAL manual:
 
-<blockquote>
-The interleave operator takes two 16-bit values and produces a 32-bit result by alternating the bits of the operands. Thus, <code>#65535&#36;#0</code> has the 32-bit binary form 101010....10 or 2863311530 decimal, while <code>#0&#36;#65535</code> = 0101....01 binary = 1431655765 decimal, and <code>#255&#36;#255</code> is equivalent to <code>#65535</code>.
-</blockquote>
+>The interleave operator takes two 16-bit values and produces a 32-bit result by alternating the bits of the operands. Thus, `#65535&#36;#0` has the 32-bit binary form 101010....10 or 2863311530 decimal, while #`0&#36;#65535` = 0101....01 binary = 1431655765 decimal, and `#255&#36;#255` is equivalent to `#65535`.
 
 Operation 8 returns the interleave of the lower halves of A and B, while operation 9 returns the interleave of the upper halves of A and B. (Should the chip fabrication process allow for it, operation 8½ will, of course, return the interleave of the middle halves of A and B.)
 
 Operations 10 and 11 correspond to INTERCAL's *select* operator, represented by sqiggle (~). From the INTERCAL manual:
 
-<blockquote>
-The select operator takes from the first operand whichever bits correspond to 1's in the second operand, and packs these bits to the right in the result. Both operands are automatically padded on the left with zeros. […] For example, <code>#179~#201</code> (binary value 10110011~11001001) selects from the first argument the 8th, 7th, 4th, and 1st from last bits, namely, 1001, which = 9. But <code>#201~#179</code> selects from binary 11001001 the 8th, 6th, 5th, 2nd, and 1st from last bits, giving 10001 = 17. <code>#179~#179</code> has the value 31, while <code>#201~#201</code> has the value 15.
-</blockquote>
+>The select operator takes from the first operand whichever bits correspond to 1's in the second operand, and packs these bits to the right in the result. Both operands are automatically padded on the left with zeros. […] For example, `#179~#201` (binary value 10110011~11001001) selects from the first argument the 8th, 7th, 4th, and 1st from last bits, namely, 1001, which = 9. But `#201~#179` selects from binary 11001001 the 8th, 6th, 5th, 2nd, and 1st from last bits, giving 10001 = 17. `#179~#179` has the value 31, while `#201~#201` has the value 15.
 
 To help understand the select operator, the INTERCAL manual also provides a helpful [circuitous diagram](https://www.muppetlabs.com/~breadbox/intercal-man/figure1.html).
 

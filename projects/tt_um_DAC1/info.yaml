@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "tt_um_DAC1"      # Project title
-  author:       "cicciopanza&lorij"      # Your name
+  author:       "cicciopanza & lorij"      # Your name
   discord:      "dac"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "dac4bit"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc

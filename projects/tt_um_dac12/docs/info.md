@@ -17,5 +17,4 @@ Plug in pins to esp32-wroom-s3 controller with GPIO 1-3 for clk, rst-n, and ena 
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
 esp32-wroom-s3

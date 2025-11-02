@@ -1,5 +1,3 @@
-# tt_um_galaguna_PostSys: A Post's Machine CPU Based
-
 ## How it works
 
 A small architecture for practical implementation of a central processing unit (CPU) is proposed based on an improved Post's Machine. The Post's Machine is like Turing's machine but with minor complexity because of a shortest instruction set. The proposed Post’s Machine project has potential as teaching resource, to experiment and verify the fundamental concepts of a simple computer architecture with its instruction set (in this case, only eight instructions). 
@@ -12,29 +10,53 @@ Secondly, the code space is implemented by Nx4 memory (i.e. N four-bit registers
 
 The proposed instruction set is composed of eight instructions that can be conveniently codified with nibbles (i.e. 4 bits tuples). In the case of the jump instructions, unconditional and conditional, every instruction code is followed by two additional nibbles with absolute addressing information. Specifically, the first address nibble includes the most significant bits (MSB) while the second the least significant bits (LSB). The following table summarizes the proposed instruction codification:
 
-![Figure-1](Instruction_Set.png)
+| Instruction | Mnemonic | Nibble 1 (Op Code) | Nibble 2 (ADD MSB) | Nibble 3 (ADD LSB) |
+| :---------- | :------: | :----------------: | :----------------: | :----------------: |
+| No operation | `nop`   | `0x0`              |                    |                    |
+| Increment DP | `incdp` | `0x1`              |                    |                    |
+| Decrement DP | `decdp` | `0x2`              |                    |                    |
+| Set          | `set`   | `0x3`              |                    |                    |
+| Clear        | `clr`   | `0x4`              |                    |                    |
+| Jump         | `jump`  | `0x5`              | `Add [7:4]`        | `Add [3:0]`        |
+| Jump if zero | `jz`    | `0x6`              | `Add [7:4]`        | `Add [3:0]`        |
+| Stop         | `stop`  | `0x7`              |                    |                    |
+Table: Instruction Set
+
+<!-- ![Figure-1](Instruction_Set.png) -->
 
 Specifically, given the coding for the instruction set where the destination addresses are composed by 8 bits, this means that in the proposed architecture up to 256 registers (either code or data) can be accessed. Thus, the code space is implemented by a 256x4-bit memory (i.e. 256 four-bit registers) while the data space is implemented by a 256x1 bit memory (i.e. 256 one-bit registers). 
  
 Because the proposed logical design includes an instruction pointer and a data pointer, it results in a Harvard architecture. A block diagram for the proposed digital CPU architecture, with minimal functional blocks, is presented in the following figure:  
 
-![Figure-2](Post_architecture.png)
+![Proposed CPU architecture block diagram](Post_architecture.png)
 
 To enable user access to both code and data memory spaces, before and after the execution of any program, the processing system includes a slave SPI communication block. In the following figure, a schematic with the main functional blocks of the project is presented:
 
-![Figure-3](Post_sys_4Tiny_schematic.png)
+![Main functional block diagram](Post_sys_4Tiny_schematic.png)
  
 The multiplexors are controlled by MODE signal to set the operation mode (programming/execution). Additionally, RUN signal is dedicated to start the code execution. 
 
 In practice, to work with the input and output ports of the Tiny Tapeout template, the entire system has been packaged in the Post_sys_4Tiny module, which is represented schematically below:
 
-![Figure-4](Post_sys_4Tiny_module.png)
+![Module fitted inside `Post_sys_4Tiny`](Post_sys_4Tiny_module.png)
 
 In the Post_sys_4Tiny module, the input bus OUT_CTRL is used to select the internal signal buses that will be available at the output ports OUT8B and OUT3B, according to the following table:
 
-![Figure-5](OUT_Ctrl_Table.png)
+| `OUT_CTRL` (3 bit input) | `OUT8B` (8 bit output) | `OUT3B` (3 bit output) |
+| :----------------------: | :--------------------: | :--------------------: |
+| `0`                      | `spi2rom_add`          | `spi2rom_din[2:0]`     |
+| `1`                      | `spi2rom_add`          | `spi2rom_dout[2:0]`    |
+| `2`                      | `spi2ram_add`          | `{2'b00, spi2ram_din}` |
+| `3`                      | `spi2ram_add`          | `{2'b00, spi2ram_dout}` |
+| `4`                      | `cpu2rom_add`          | `cpu2rom_dout[2:0]`    |
+| `5`                      | `cpu2rom_add`          | `cpu2rom_dout[2:0]`   |
+| `6`                      | `cpu2ram_add`          | `{2'b00, cpu2ram_din}` |
+| `7`                      | `cpu2ram_add`          | `{2'b00, cpu2ram_dout}`|
+Table: `OUT_Ctrl` table encoding
 
-For mor details, see the HDL code Post_sys_4Tiny.v.
+<!-- ![Figure-5](OUT_Ctrl_Table.png) -->
+
+For more details, see the HDL code Post_sys_4Tiny.v.
 
 ## How to test
 
@@ -42,11 +64,11 @@ The CPU system must be programed before a code execution. The RAM and ROM loads 
 
 To program the code space and access the data space, SPI transfers are used. The SPI word size is 16 bits with the following format:
 
-![Figure-6](SPI_transfer_words.png)
+![SPI transfer words](SPI_transfer_words.png)
 
 The bit 15 (MSB) is set to specify a read operation. The address field specifies the location being accessed and de data field contains the information to be written or read. In the following figure, the SPI addressing map is presented:
 
-![Figure-7](SPI_Address_MAP.png)
+![SPI address map](SPI_Address_MAP.png){height=35%}
   
 
 For SPI transfers, the following specification is assumed:
@@ -61,7 +83,7 @@ Within the slave_spi4post module, the SCK frequency is assumed as CLK/8. For exa
 
 As reference, in the following figure, the timing diagram with the SPI transfers for a write/read sequence is illustrated:
 
-![Figure-8](SPI_WRRD_ROM_0x0A59_0x8A5F.png)
+![SPI write/read timing diagram](SPI_WRRD_ROM_0x0A59_0x8A5F.png)
 
 The showed SPI write/read sequence includes:
 

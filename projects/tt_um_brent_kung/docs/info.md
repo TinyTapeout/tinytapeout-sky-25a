@@ -4,9 +4,10 @@
  - 4bit input_B
  - 1bit Cin
 
-1 ouput
+1 output
  - 5bit out
 
 ## How to test
+```bash
 iverilog brent-kung.v test.v && ./a.out && gtkwave signal_brent_kung.vcd
-
+```

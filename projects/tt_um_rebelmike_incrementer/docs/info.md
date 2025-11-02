@@ -14,7 +14,3 @@ You can also include images in this folder and reference them in the markdown. E
 ## How to test
 
 Provide a clock signal on clk.  in0 is the input to the LSB of the counter, so the counter will increment only if in0 is high.  The count is reset when rst_n is low.
-
-## External hardware
-
-None

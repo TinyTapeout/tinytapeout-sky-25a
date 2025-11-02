@@ -1,10 +1,6 @@
-# Izhikevich Neuron Model equations implemented in 22-Bit on Verilog
-
 The project implements neuron behaviors based on the Izhikevich equation. The internal operations work on a 22-bit Q3.18 fixed format. To achieve accurate neuron behavior, the original equations have been modified as shown below.
 
----
-
-
+***
 
 ## How it works
 
@@ -36,11 +32,11 @@ U \leftarrow U_{old}
 
 ```
 
-As a result, the following schematic was implemented. The SELECT pins function as a multiplexer, allowing the neuron behavior to be set to one of the options described in the 'Parameter Selection' section. The other five input pins represent a current, I, which is mapped from 0.0066 to 0.994. The sixteen output pins include eight that represent the membrane potential, V_out, in a fixed Q0.7 format, as well as another eight output bits for the membrane recovery variable.![schematic](IZLAYOUT.png)
+As a result, the following schematic was implemented. The SELECT pins function as a multiplexer, allowing the neuron behavior to be set to one of the options described in the 'Parameter Selection' section. The other five input pins represent a current, I, which is mapped from 0.0066 to 0.994. The sixteen output pins include eight that represent the membrane potential, V_out, in a fixed Q0.7 format, as well as another eight output bits for the membrane recovery variable.
+
+![Project schematic](IZLAYOUT.png)
 
 ## Parameter selection
-
-
 
 | Select | a    | b    | c    | d    | U    | V    |
 | ------ | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -62,11 +58,12 @@ In the testbench, it is only necessary to set the operating frequency (10 MHz)
 ![Salida del spike](RESULTS.png)
 
 ---
+
 ## External hardware
 
 To externally observe the signals, it is necessary to invert the outputs `V_out` and `U_out` using NOT gates and connect them to an oscilloscope capable of performing bit-level measurements.
 
-## 📑 "References (cited in the text)"
+## 📑 References (cited in the text)
 
 This model was proposed by Izhikevich (2003), and allows simulating various types of neurons by changing only the parameters a, b, c, and d.
 

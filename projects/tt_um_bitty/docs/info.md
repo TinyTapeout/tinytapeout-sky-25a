@@ -6,7 +6,7 @@ This project implements a custom 16-bit processing system, including hardware mo
 
 ### Core Components
 
-![Без имени](https://github.com/user-attachments/assets/89a714ac-a5bf-4ce8-848c-53a10e8f25c2)
+![Без имени](images/1.jpg)
 
 
 1. **Program Counter (PC)**:
@@ -29,7 +29,7 @@ This project implements a custom 16-bit processing system, including hardware mo
    - Validates the outputs and internal states of the hardware implementation.
    - Includes: Control Unit, registers, ALU, mux
 
-![Bitty Top Module](https://github.com/user-attachments/assets/014e15a3-a683-4d05-b81a-df736bac68e0)
+![Bitty Top Module](images/2.png)
   
 
 ### Memory Map
@@ -57,7 +57,7 @@ The processor's instruction set enables dynamic memory interactions, conditional
 The processor supports both register-to-register and immediate operations, enabling developers to perform computations efficiently.
 
 #### Register-to-Register Instructions:
-![изображение](https://github.com/user-attachments/assets/b1454521-2a92-45fc-b547-fbd8fe1f2261)
+![изображение](images/3.png)
 
 1. **add rx, ry**: Adds the value in `ry` to `rx`.  
    - **Operation**: `rx = rx + ry`  
@@ -87,7 +87,7 @@ The processor supports both register-to-register and immediate operations, enabl
      - `rx = 2` if `rx < ry`
 
 #### Immediate Instructions:
-![изображение](https://github.com/user-attachments/assets/80d8e5af-8566-4012-aac6-4c6a7dfcd78e)
+![изображение](images/4.png)
 
 1. **addi rx, #i**: Adds the immediate value `#i` to `rx`.  
    - **Operation**: `rx = rx + #i`  
@@ -121,7 +121,7 @@ The processor supports both register-to-register and immediate operations, enabl
 ## Memory Operations
 
 ### Load and Store Instructions:
-![изображение](https://github.com/user-attachments/assets/2c9b7a5f-7767-4e89-ab02-ae14c18b3f13)
+![изображение](images/5.png)
 
 1. **ld rx, (ry)**: Loads the value from the memory address stored in `ry` into register `rx`.  
    - **Operation**: `rx = mem[ry]`  
@@ -143,7 +143,7 @@ The processor supports both register-to-register and immediate operations, enabl
 The processor supports conditional branching with a dedicated encoding format for efficient control flow.
 
 ### Conditional Branch Instructions:
-![изображение](https://github.com/user-attachments/assets/8477fef7-e53d-4435-add6-718fb6975fca)
+![изображение](images/6.png)
 
 1. **bie addr**: Branch if equal (condition flag `EQ` is set).  
 2. **big addr**: Branch if greater (condition flag `GT` is set).  

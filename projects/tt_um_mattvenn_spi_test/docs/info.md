@@ -18,8 +18,6 @@ The first read/write register also drives the 7 segment display.
 
 ## How to test
 
-## How to test
-
 Use SPI1 Master peripheral in RP2040 to start communication on SPI interface towards this design. Remember to configure the SPI mode using the switches in DIP switch (if you'd like to have CPOL=1 and CPHA=1). Alternatively, don't use the DIP switches and use the RP2040 GPIOs to configure the SPI mode in the desired mode.
 
 Example code to initialize SPI in REPL:
@@ -54,7 +52,3 @@ The result should be 0xA5 or whatever you wrote to address[0].
 
 Not required.
 Write to the first register to set the LEDs on the demoboard.
-
-## External hardware
-
-Nothing required.

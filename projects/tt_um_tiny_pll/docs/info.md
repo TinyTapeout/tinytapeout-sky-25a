@@ -1,40 +1,40 @@
-<a name="toc"></a>
-# Table of contents
+<!-- <a name="toc"></a> -->
+## Table of contents
 
-### [Circuit design](#circuit)
-* [PLL](#pll)
-	* [Divider](#pll_divider)
-	* [Phase-frequency detector (PFD)](#pll_pfd)
-	* [Charge pump](#pll_cp)
-	* [Loop filter](#pll_lf)
-	* [Voltage-controlled oscillator (VCO)](#pll_vco)
-	* [Bias generator](#pll_bias)
-* [ADC](#adc)
-	* [Opamp](#adc_opamp)
-	* [Integrator](#adc_int)
-	* [Comparator](#adc_comp)
-	* [Bias generator](#adc_bias)
-	* [Reference voltage generator](#adc_vref)
-### [Simulation results](#sim)
-* [Top level](#sim_top)
-* [PLL](#sim_pll)
-	* [VCO](#sim_pll_vco)
-	* [Divider](#sim_pll_divider)
-	* [Bias generator](#sim_pll_bias)
-* [ADC](#sim_adc)
-	* [Opamp](#sim_adc_opamp)
-	* [Bias generator](#sim_adc_bias)
-	* [Comparator](#sim_adc_comp)
-### [Control interface](#control)
-* [Pinout and CSR address map](#control_overview)
-* [Allowable output frequencies](#combo)
-### [Physical design](#pd)
-* [Analog layout](#pd_analog)
-* [Digital synthesis](#pd_digital)
+[Circuit design]()
+* [PLL]()
+	* [Divider]()
+	* [Phase-frequency detector (PFD)]()
+	* [Charge pump]()
+	* [Loop filter]()
+	* [Voltage-controlled oscillator (VCO)]()
+	* [Bias generator]()
+* [ADC]()
+	* [Opamp]()
+	* [Integrator]()
+	* [Comparator]()
+	* [Bias generator]()
+	* [Reference voltage generator]()
+[Simulation results]()
+* [Top level]()
+* [PLL]()
+	* [VCO]()
+	* [Divider]()
+	* [Bias generator]()
+* [ADC]()
+	* [Opamp]()
+	* [Bias generator]()
+	* [Comparator]()
+[Control interface]()
+* [Pinout and CSR address map]()
+* [Allowable output frequencies]()
+[Physical design]()
+* [Analog layout]()
+* [Digital synthesis]()
 
-<a name="circuit"></a>
-# Circuit design
-[Return to top](#toc)
+<!-- <a name="circuit"></a> -->
+## Circuit design
+<!-- [Return to top](#toc) -->
 
 This project showcases `tiny_pll`, a completely self-contained fractional-N
 frequency synthesizer using less than 6% of the area of a 1x1 TinyTapeout tile.
@@ -73,11 +73,12 @@ custom layout was done using `klayout` with the Efabless `sky130` PDK; digital
 synthesis and PnR was done using a custom OpenROAD flow; and `magic` and
 `netgen` were used for LVS, DRC and parasitic extraction.
 
-<a name="pll"></a>
-## PLL
-[Return to top](#toc)
+<!-- <a name="pll"></a> -->
+### PLL
+<!-- [Return to top](#toc) -->
 
 The top-level schematic of `tiny_pll` is shown below:
+
 ![PLL schematic](images/pll_sch.png)
 
 The PLL uses a standard fractional-N architecture, where an input and output
@@ -92,9 +93,9 @@ bulk terminals of all PMOS and NMOS devices, respectively. This is done to
 ensure the corresponding terminals of the standard cell instances at each level
 of hierarchy are propagated to the top level and connected to VPWR and VGND.
 
-<a name="pll_divider"></a>
-### Divider
-[Return to top](#toc)
+<!-- <a name="pll_divider"></a> -->
+#### Divider
+<!-- [Return to top](#toc) -->
 
 ![Divider schematic](images/pll_div_sch.png)
 
@@ -118,9 +119,9 @@ which implies a division ratio from `clk_in` to `clk_out` between 2 and 30.
 The tie cell `sky130_fd_sc_hd__conb_1` is used when gates must be connected to
 VPWR or VGND to avoid potential ESD issues.
 
-<a name="pll_pfd"></a>
-### Phase-frequency detector (PFD)
-[Return to top](#toc)
+<!-- <a name="pll_pfd"></a> -->
+#### Phase-frequency detector (PFD)
+<!-- [Return to top](#toc) -->
 
 ![PFD schematic](images/pll_pfd_sch.png)
 
@@ -134,9 +135,9 @@ tied to VPWR.
 A NAND followed by an inverter is used instead of a single AND to slightly
 increase the minimum output pulse width and avoid charge pump glitches.
 
-<a name="pll_cp"></a>
-### Charge pump
-[Return to top](#toc)
+<!-- <a name="pll_cp"></a> -->
+#### Charge pump
+<!-- [Return to top](#toc) -->
 
 ![Charge pump schematic](images/pll_cp_sch.png)
 
@@ -147,9 +148,9 @@ switches use nearly minimum width to reduce area, and minimum length to reduce
 capacitance. The PMOS switch uses 2x the W/L of the NMOS switch to ensure
 roughly equal drain-source saturation voltages (VDSAT).
 
-<a name="pll_lf"></a>
-### Loop filter
-[Return to top](#toc)
+<!-- <a name="pll_lf"></a> -->
+#### Loop filter
+<!-- [Return to top](#toc) -->
 
 ![Loop filter schematic](images/pll_lf_sch.png)
 
@@ -205,9 +206,9 @@ capacitance multiplier was additionally seen to have poor high-frequency
 response compared to a MOS or MIM capacitor, which resulted in unacceptably high
 control voltage ripple.
 
-<a name="pll_vco"></a>
-### Voltage-controlled oscillator (VCO)
-[Return to top](#toc)
+<!-- <a name="pll_vco"></a> -->
+#### Voltage-controlled oscillator (VCO)
+<!-- [Return to top](#toc) -->
 
 ![VCO schematic](images/pll_vco_sch.png)
 
@@ -222,9 +223,9 @@ frequency of 10 MHz, which helps ensure the maximum output frequency can be met
 across process variations. Four "keeper" devices (`MNEN1`, `MNEN2`, `MNEN3` and
 `MPEN`) are included to disable the circuit with zero static power consumption.
 
-<a name="pll_bias"></a>
-### Bias generator
-[Return to top](#toc)
+<!-- <a name="pll_bias"></a> -->
+#### Bias generator
+<!-- [Return to top](#toc) -->
 
 ![Bias generator schematic](images/pll_bias_sch.png)
 
@@ -239,9 +240,9 @@ the mirror is active, `MNSU1` pulls `kick` low and disables the startup circuit.
 Multiple "keeper" devices are included to disable the circuit with zero static
 power consumption.
 
-<a name="adc"></a>
-## ADC
-[Return to top](#toc)
+<!-- <a name="adc"></a> -->
+### ADC
+<!-- [Return to top](#toc) -->
 
 `tiny_adc` is a 1-bit, continuous-time, delta-sigma ADC. It is used to monitor
 the control voltage of one of the `tiny_pll` instances without consuming an
@@ -262,9 +263,9 @@ simple voltage divider with included bypass capacitance. A roughly
 temperature-independent 1 uA bias current is created by `XBIAS`, which is used
 in the opamps and comparators.
 
-<a name="adc_opamp"></a>
-### Opamp
-[Return to top](#toc)
+<!-- <a name="adc_opamp"></a> -->
+#### Opamp
+<!-- [Return to top](#toc) -->
 
 ![Opamp schematic](images/adc_opamp_sch.png)
 
@@ -311,9 +312,9 @@ load at its output is due to wiring parasitics over a fairly short distance. The
 integrator only drives the input of the comparator, which uses minimum-length
 devices with 1-2 fF of gate capacitance each.
 
-<a name="adc_int"></a>
-### Integrator
-[Return to top](#toc)
+<!-- <a name="adc_int"></a> -->
+#### Integrator
+<!-- [Return to top](#toc) -->
 
 ![Integrator schematic](images/adc_int_sch.png)
 
@@ -329,9 +330,9 @@ for a maximum output frequency of 33 MHz. As this implies a pulse width of 15
 ns, the 28 ns pulse width used here should be comfortably within the limits of
 the I/O cells.
 
-<a name="adc_comp"></a>
-### Comparator
-[Return to top](#toc)
+<!-- <a name="adc_comp"></a> -->
+#### Comparator
+<!-- [Return to top](#toc) -->
 
 ![Comparator schematic](images/adc_comp_sch.png)
 
@@ -346,9 +347,9 @@ hysteresis of roughly 1 V in simulation. To ensure a similar slew rate to that
 of the opamp, a 2 uA tail current was chosen, which is generated by the bias
 generator.
 
-<a name="adc_bias"></a>
-### Bias generator
-[Return to top](#toc)
+<!-- <a name="adc_bias"></a> -->
+#### Bias generator
+<!-- [Return to top](#toc) -->
 
 ![Bias generator schematic](images/adc_bias_sch.png)
 
@@ -369,9 +370,9 @@ asserting `rst_n` at the top level, then writing `4'b0000` to CSR address
 `4'h8`, since the default state of the CSRs disables all the PLLs after `rst_n`
 is asserted.
 
-<a name="adc_vref"></a>
-### Reference voltage generator
-[Return to top](#toc)
+<!-- <a name="adc_vref"></a> -->
+#### Reference voltage generator
+<!-- [Return to top](#toc) -->
 
 ![Reference generator schematic](images/adc_vref_sch.png)
 
@@ -384,18 +385,18 @@ divider. The implied bandwidth of the RC filter is 32 MHz. A power switch is
 included to allow the circuit to be powered down with zero static power
 consumption.
 
-<a name="sim"></a>
-# Simulation results
-[Return to top](#toc)
+<!-- <a name="sim"></a> -->
+## Simulation results
+<!-- [Return to top](#toc) -->
 
 This section details simulation results for `tt_um_tiny_pll`. Due to time
 constraints, not every block was simulated across PVT corners. Consequently,
 results are only reported here at the TT process corner with `VDD = 1.8 V` and
 `T = 27 C`.
 
-<a name="sim_top"></a>
-## Top level
-[Return to top](#toc)
+<!-- <a name="sim_top"></a> -->
+### Top level
+<!-- [Return to top](#toc) -->
 
 To verify top-level functionality, a simulation was performed of the full Tiny
 Tapeout tile using extracted parasitics. The netlist used for this simulation
@@ -457,9 +458,9 @@ simulation speed could be increased by increasing the maximum timestep from
 100ps to 1ns, this was found to result in incorrect operation of the PLL due to
 the short reset pulse used by this block internally.
 
-<a name="sim_pll"></a>
-## PLL
-[Return to top](#toc)
+<!-- <a name="sim_pll"></a> -->
+### PLL
+<!-- [Return to top](#toc) -->
 
 To verify functionality of the `tiny_pll` tile, a transient simulation was
 performed using an extracted SPICE netlist. The results of this simulation are
@@ -481,9 +482,9 @@ consumption. The PLL was disabled at 30 us by deasserting `enb` and consumed
 less than 1 uA thereafter. The power consumption in this condition is likely
 dominated by leakage through the digital gates.
 
-<a name="sim_pll_vco"></a>
-### VCO
-[Return to top](#toc)
+<!-- <a name="sim_pll_vco"></a> -->
+#### VCO
+<!-- [Return to top](#toc) -->
 
 The VCO was characterized by measuring its output frequency while sweeping the
 control voltage. The incremental voltage-to-frequency gain `df/dV` was also
@@ -530,9 +531,9 @@ Care must be taken to ensure the correct breakpoint is removed, since `ngspice`
 only allows referencing breakpoints by ID, which is a counter that begins at 1
 and increases with the creation of each subsequent breakpoint.
 
-<a name="sim_pll_divider"></a>
-### Divider
-[Return to top](#toc)
+<!-- <a name="sim_pll_divider"></a> -->
+#### Divider
+<!-- [Return to top](#toc) -->
 
 The frequency divider was simulated using an extracted netlist to ensure correct
 operation:
@@ -547,9 +548,9 @@ completeness. The supply current was roughly 120 uA with 10 fF load capacitance.
 Since the layout of the feedback and output dividers is slightly different due
 to asymmetry, these simulations were repeated using both extracted layouts.
 
-<a name="sim_pll_bias"></a>
-### Bias generator
-[Return to top](#toc)
+<!-- <a name="sim_pll_bias"></a> -->
+#### Bias generator
+<!-- [Return to top](#toc) -->
 
 The bias generator was simulated using an extracted netlist to verify output
 current and startup transients:
@@ -557,7 +558,7 @@ current and startup transients:
 ![PLL bias generator simulation](images/tb_pll_bias_gen.png)
 
 Here, `i(viout)` and `i(vipwr)` are the output and supply currents,
-respectively. As shown in the [schematic above](#pll_bias), the PMOS diode
+respectively. As shown in the [schematic above](), the PMOS diode
 devices `MPSU1` and `MPSU2` are included to charge the `kick` node to VPWR.
 Consequently, this bias generator can start up without requiring a pulse on `en`
 like the ADC bias generator.
@@ -571,9 +572,9 @@ tile would replace this bias generator with the one used in the ADC, which does
 not use a resistor, and thus offers lower variation across corners and reduced
 area.
 
-<a name="sim_adc"></a>
-## ADC
-[Return to top](#toc)
+<!-- <a name="sim_adc"></a> -->
+### ADC
+<!-- [Return to top](#toc) -->
 
 Schematic-only simulations were performed for `tiny_adc` to verify
 functionality. Results of this simulation are shown below:
@@ -589,9 +590,9 @@ supplies. The comparator output at `xdut.cmp_out` was measured to ensure the
 comparator slew rate was adequate to cause the output to transition at the
 minimum output pulse width.
 
-<a name="sim_adc_opamp"></a>
-### Opamp
-[Return to top](#toc)
+<!-- <a name="sim_adc_opamp"></a> -->
+#### Opamp
+<!-- [Return to top](#toc) -->
 
 Results of an extracted simulation of `tiny_adc_opamp` are shown below:
 
@@ -621,9 +622,9 @@ the worst-case common-mode input of roughly VPWR/2. This simulation is likely
 pessimistic relative to the in-circuit conditions, since the load capacitance
 seen by each opamp is likely to be less than 10 fF.
 
-<a name="sim_adc_bias"></a>
-### Bias generator
-[Return to top](#toc)
+<!-- <a name="sim_adc_bias"></a> -->
+#### Bias generator
+<!-- [Return to top](#toc) -->
 
 The ADC bias generator was simulated using an extracted netlist to verify
 startup behavior:
@@ -649,9 +650,9 @@ more than 10% from 0 to 100 degrees C. While this would be significant for a
 precision circuit, it is less than half the variation of the PLL bias generator,
 which is more than sufficient for this application.
 
-<a name="sim_adc_comp"></a>
-### Comparator
-[Return to top](#toc)
+<!-- <a name="sim_adc_comp"></a> -->
+#### Comparator
+<!-- [Return to top](#toc) -->
 
 A transient, schematic-only simulation was performed on the ADC comparator to
 characterize hysteresis:
@@ -665,16 +666,16 @@ because it allows a larger swing at the output of the integrator, which in turn
 means a smaller integrator capacitance is required to guarantee a given minimum
 pulse width.
 
-<a name="control"></a>
-# Control interface
-[Return to top](#toc)
+<!-- <a name="control"></a> -->
+## Control interface
+<!-- [Return to top](#toc) -->
 
 This section gives details of the digital control interface for the top-level
 tile.
 
-<a name="control_overview"></a>
-## Pinout and CSR address map
-[Return to top](#toc)
+<!-- <a name="control_overview"></a> -->
+### Pinout and CSR address map
+<!-- [Return to top](#toc) -->
 
 The control interface for `tiny_pll` is implemented using an array of 4-bit
 control/status registers (CSRs). Pin assignments for the tile are as follows:
@@ -710,7 +711,7 @@ of `clk_csr`. There are 13 CSRs:
 CSR addresses above `0xC` are not used. The `csr_clk_*_sel` registers are used
 to select the reference clock source for each of the PLL channels. This feature
 allows multiple PLL channels to be connected in series, which enables a wider
-range of [possible output frequencies](#combo). Each PLL can be driven either by
+range of [possible output frequencies](). Each PLL can be driven either by
 the external reference clock input, or by the output of any of the other 3 PLL
 channels. In particular, for `csr_clk_0_sel`:
 
@@ -753,9 +754,9 @@ should not be used. Note that this implementation allows the creation of
 unstable loops where a PLL indirectly feeds its own input. This condition should
 also be avoided.
 
-<a name="combo"></a>
-## Allowable output frequencies
-[Return to top](#toc)
+<!-- <a name="combo"></a> -->
+### Allowable output frequencies
+<!-- [Return to top](#toc) -->
 
 This section will detail the range of output frequencies that can be achieved
 using various combinations of the 4 PLL tiles. For simplicity, we will normalize
@@ -822,16 +823,16 @@ It should be noted that the tuning range is not linear: the achievable output
 frequencies are densest near `f = 1`, with the tuning steps becoming larger near
 the extremes.
 
-<a name="pd"></a>
-# Physical design
-[Return to top](#toc)
+<!-- <a name="pd"></a> -->
+## Physical design
+<!-- [Return to top](#toc) -->
 
 This section details the design and synthesis of the Tiny Tapeout tile for this
 project.
 
-<a name="pd_analog"></a>
-## Analog layout
-[Return to top](#toc)
+<!-- <a name="pd_analog"></a> -->
+### Analog layout
+<!-- [Return to top](#toc) -->
 
 Layout of the custom blocks in this project was performed using `klayout`. The
 top-level layout of `tiny_pll` is shown below:
@@ -865,9 +866,9 @@ them. All analog blocks were designed to fit on the `sky130_fd_sc_hd` standard
 cell routing grid with a 2.72 um cell height. The routing grid uses a horizontal
 pitch of 0.46 um and a vertical pitch of 0.34 um.
 
-<a name="pd_digital"></a>
-## Digital synthesis
-[Return to top](#toc)
+<!-- <a name="pd_digital"></a> -->
+### Digital synthesis
+<!-- [Return to top](#toc) -->
 
 While there is greater support in the `sky130` community for OpenLANE,
 mixed-signal submissions such as this project require a high degree of

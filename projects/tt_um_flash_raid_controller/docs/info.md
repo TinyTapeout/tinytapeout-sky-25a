@@ -1,5 +1,3 @@
-# Flash RAID Controller
-
 A dual SPI flash controller ASIC that acts between hosts and flash memory chips, providing address-based routing and runtime configuration for flash redundancy and load balancing.
 
 ## How it works
@@ -59,30 +57,30 @@ The management interface uses a 14-register map accessed via SPI commands 0x02 (
   | 0x0C | CONTROL_REG | R/W | Control Register | 0x00 |
   | 0x0D | STATUS_REG | R | Status Register | 0x00 |
 
-  #### Control Register (0x0C) Bit Definitions
-  - **Bits [1:0]**: Flash Mode
-    - `00`: MAIN - Only main flash active
-    - `01`: SECONDARY - Only secondary flash active
-    - `10`: SHARE - Both flashes active, address-based MISO selection
-    - `11`: Reserved
-  - **Bit [2]**: Range 0 Enable (0=disabled, 1=enabled)
-  - **Bit [3]**: Range 1 Enable (0=disabled, 1=enabled)
-  - **Bit [4]**: Range 0 Flash Select (0=main flash, 1=secondary flash)
-  - **Bit [5]**: Range 1 Flash Select (0=main flash, 1=secondary flash)
-  - **Bit [6]**: Host Select (0=main host, 1=secondary host)
-  - **Bit [7]**: Reserved
+#### Control Register (0x0C) Bit Definitions
+- **Bits [1:0]**: Flash Mode
+  - `00`: MAIN - Only main flash active
+  - `01`: SECONDARY - Only secondary flash active
+  - `10`: SHARE - Both flashes active, address-based MISO selection
+  - `11`: Reserved
+- **Bit [2]**: Range 0 Enable (0=disabled, 1=enabled)
+- **Bit [3]**: Range 1 Enable (0=disabled, 1=enabled)
+- **Bit [4]**: Range 0 Flash Select (0=main flash, 1=secondary flash)
+- **Bit [5]**: Range 1 Flash Select (0=main flash, 1=secondary flash)
+- **Bit [6]**: Host Select (0=main host, 1=secondary host)
+- **Bit [7]**: Reserved
 
-  #### Status Register (0x0D) Bit Definitions
-  - **Bit [0]**: SPI Transaction Active (management interface busy)
-  - **Bit [1]**: Last Command was Read (0x03 detected)
-  - **Bit [2]**: Last Command was Write (0x02 detected)
-  - **Bits [7:3]**: Reserved
+#### Status Register (0x0D) Bit Definitions
+- **Bit [0]**: SPI Transaction Active (management interface busy)
+- **Bit [1]**: Last Command was Read (0x03 detected)
+- **Bit [2]**: Last Command was Write (0x02 detected)
+- **Bits [7:3]**: Reserved
 
-  #### SPI Protocol
-  - **Write Command**: 0x02 [Address] [Data]
-  - **Read Command**: 0x03 [Address] → [Data]
-  - **SPI Mode**: Mode 0 (CPOL=0, CPHA=0)
-  - **Clock Speed**: Up to 1 MHz recommended
+#### SPI Protocol
+- **Write Command**: 0x02 [Address] [Data]
+- **Read Command**: 0x03 [Address] → [Data]
+- **SPI Mode**: Mode 0 (CPOL=0, CPHA=0)
+- **Clock Speed**: Up to 1 MHz recommended
 
 ## How to test
 
@@ -136,38 +134,38 @@ The management interface uses a 14-register map accessed via SPI commands 0x02 (
    - Can be same microcontroller with multiple SPI interfaces
    - Or separate microcontroller/SPI bridge device
 
-  ### Wiring Connections
+### Wiring Connections
 
-  Main Host Interface:
-    ui[0] (main_host_sclk)     → Host SPI Clock
-    ui[1] (main_host_cs_n)     → Host SPI Chip Select#
-    ui[2] (main_host_mosi)     → Host SPI MOSI (Data Out)
-    uo[0] (main_host_miso)     → Host SPI MISO (Data In)
+| Main Host Interface:
+|   ui[0] (main_host_sclk)     → Host SPI Clock
+|   ui[1] (main_host_cs_n)     → Host SPI Chip Select#
+|   ui[2] (main_host_mosi)     → Host SPI MOSI (Data Out)
+|   uo[0] (main_host_miso)     → Host SPI MISO (Data In)
 
-  Secondary Host Interface:
-    ui[3] (secondary_host_sclk) → Secondary Host SPI Clock
-    ui[4] (secondary_host_cs_n) → Secondary Host SPI Chip Select#
-    ui[5] (secondary_host_mosi) → Secondary Host SPI MOSI (Data Out)
-    uo[1] (secondary_host_miso) → Secondary Host SPI MISO (Data In)
+| Secondary Host Interface:
+|   ui[3] (secondary_host_sclk) → Secondary Host SPI Clock
+|   ui[4] (secondary_host_cs_n) → Secondary Host SPI Chip Select#
+|   ui[5] (secondary_host_mosi) → Secondary Host SPI MOSI (Data Out)
+|   uo[1] (secondary_host_miso) → Secondary Host SPI MISO (Data In)
 
-  Management Interface:
-    ui[6] (mgmt_sclk)          → Management SPI Clock
-    ui[7] (mgmt_cs_n)          → Management SPI Chip Select#
-    uio[0] (mgmt_mosi)         → Management SPI MOSI (Data Out)
-    uo[2] (mgmt_miso)          → Management SPI MISO (Data In)
+| Management Interface:
+|   ui[6] (mgmt_sclk)          → Management SPI Clock
+|   ui[7] (mgmt_cs_n)          → Management SPI Chip Select#
+|   uio[0] (mgmt_mosi)         → Management SPI MOSI (Data Out)
+|   uo[2] (mgmt_miso)          → Management SPI MISO (Data In)
 
-  Main Flash Connection:
-    uo[3] (main_flash_sclk)    → Main Flash SPI Clock
-    uo[4] (main_flash_cs_n)    → Main Flash SPI Chip Select#
-    uo[5] (main_flash_mosi)    → Main Flash SPI MOSI (Data In)
-    uio[1] (main_flash_miso)   → Main Flash SPI MISO (Data Out)
+| Main Flash Connection:
+|   uo[3] (main_flash_sclk)    → Main Flash SPI Clock
+|   uo[4] (main_flash_cs_n)    → Main Flash SPI Chip Select#
+|   uo[5] (main_flash_mosi)    → Main Flash SPI MOSI (Data In)
+|   uio[1] (main_flash_miso)   → Main Flash SPI MISO (Data Out)
 
-  Secondary Flash Connection:
-    uo[6] (secondary_flash_sclk) → Secondary Flash SPI Clock
-    uo[7] (secondary_flash_cs_n) → Secondary Flash SPI Chip Select#
-    uio[3] (secondary_flash_mosi) → Secondary Flash SPI MOSI (Data In)
-    uio[2] (secondary_flash_miso) → Secondary Flash SPI MISO (Data Out)
-    uio[4] (secondary_flash_wp_n) → Secondary Flash Write Protect# (tied high)
+| Secondary Flash Connection:
+|   uo[6] (secondary_flash_sclk) → Secondary Flash SPI Clock
+|   uo[7] (secondary_flash_cs_n) → Secondary Flash SPI Chip Select#
+|   uio[3] (secondary_flash_mosi) → Secondary Flash SPI MOSI (Data In)
+|   uio[2] (secondary_flash_miso) → Secondary Flash SPI MISO (Data Out)
+|   uio[4] (secondary_flash_wp_n) → Secondary Flash Write Protect# (tied high)
 
 ### Example Test Setup
 

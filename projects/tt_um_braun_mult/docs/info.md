@@ -1,4 +1,3 @@
-# 8x8 Braun Array Multiplier
 A complete VLSI implementation of an 8-bit × 8-bit unsigned integer multiplier using Braun array architecture designed for SKY130 PDK.
 
 ## Overview
@@ -124,9 +123,5 @@ This multiplier demonstrates:
 - **Energy per Operation**: < 125pJ per multiplication
 - **Area Efficiency**: 2.8 kGates/mm²
 - **Yield**: > 95% across process variations
-
-## Author
-
-**Rakesh Somayajula**
 
 This project showcases professional VLSI design practices and serves as a comprehensive educational reference for digital multiplier implementation using industry-standard tools and methodologies.

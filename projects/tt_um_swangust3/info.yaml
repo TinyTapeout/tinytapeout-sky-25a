@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "posit8_div"      # Project title
+  title:        "Posit <8,0> Division"      # Project title
   author:       "Gustaf Swansen"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Division circuit for <8,0> posit numbers"      # One line description of what your project does

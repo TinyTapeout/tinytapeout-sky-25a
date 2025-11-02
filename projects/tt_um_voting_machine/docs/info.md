@@ -41,8 +41,3 @@ Reset again: Verify all counters clear back to zero.
 | `01` (Counting)     | Show result | One-hot winner                | `1`                           | Total votes % 8       |
 | `10` (Reset)        | Clear all   | `0000`                        | `0`                           | `000`                 |
 | `11` (Test)         | Debug only  | `0000`                        | `0`                           | Total votes % 8       |
-
-
-## External hardware
-
-None

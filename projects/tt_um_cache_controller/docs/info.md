@@ -18,8 +18,3 @@ The design fits within Tiny Tapeout SkyWater 130nm process constraints with 8 in
 To test the design, drive the input pins (`ui_in`) with the address and read/write control bits. For example, set the MSB high to indicate a write operation and provide the lower address bits for caching. Then observe the output pins (`uo_out`) for read data results. 
 
 Simulation testbench and cocotb tests are included to verify basic cache operations like read hits, write hits, and read misses.
-
-## External hardware
-
-No external hardware is required for this design. The project targets the Tiny Tapeout chip fabrication program and is tested purely via simulation and chip fabrication.
-

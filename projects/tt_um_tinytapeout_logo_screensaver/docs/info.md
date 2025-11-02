@@ -11,7 +11,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 Displays a bouncing Tiny Tapeout logo on the screen, with animated color gradient.
 
-![Tiny Tapeout screensaver](screensaver.jpg)
+![Tiny Tapeout screensaver](screensaver.jpg){width=60%}
 
 ## How to test
 

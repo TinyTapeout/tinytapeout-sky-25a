@@ -29,9 +29,7 @@ The peripheral's architecture is a 4-stage pipeline designed for stable, high-sp
 3. **Multiplier Stage**: A configurable 8×8 block that produces a 16‑bit product, supporting both signed and unsigned modes.
 4. **Accumulator Stage**: A 17‑bit adder with `clear_and_mult` control. It accumulates results and sets an overflow flag if the result exceeds the 16-bit range.
 
-### Block Diagram
-
-![](https://files.manuscdn.com/user_upload_by_module/markdown/310419663031347111/zXbeUKkcmInOrsEt.png)
+![Block diagram](images/1.png)
 
 ## Pinout
 

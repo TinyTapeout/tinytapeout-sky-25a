@@ -17,7 +17,7 @@ After loading the operands, the ALU transitions to a compute state and executes 
 
 After the final byte is transmitted, the ALU clears the done signal and returns to the idle state.
 
-More information about the design, including block diagrams and timing diagrams, is available here: https://docs.google.com/document/d/13MREwZHKNEruEFnfJ9VPStozTlr_zDc9eXlc8Hb1F6M/edit?usp=sharing
+More information about the design, including block diagrams and timing diagrams, is available here: <https://docs.google.com/document/d/13MREwZHKNEruEFnfJ9VPStozTlr_zDc9eXlc8Hb1F6M/edit?usp=sharing>
 
 ## How to test
 

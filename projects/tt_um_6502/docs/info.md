@@ -24,7 +24,7 @@ Overall though, our intention is for our 6502 to remain relatively authentic.
 ## How it works
 This project implements a custom 8-bit microprocessor inspired by the 6502 architecture. The design is built around a central Arithmetic Logic Unit (ALU), a collection of registers, and a microcoded instruction decoder that executes a subset of the 6502 instruction set.
 
-![block diagram](6502BlockDiagram.png)
+![6502 block diagram](6502BlockDiagram.png)
 
 ### Core Architecture
 
@@ -58,7 +58,7 @@ The processor operates on a classic **Fetch-Decode-Execute** cycle controlled by
 
 ## IO Pattern/Clock pattern
 
-![clock diagram](clock_diagram.png)
+![Clock diagram](clock_diagram.png){width=80%}
 
 A unique characteristic of this design is its clocking scheme. The internal CPU logic runs at **half the frequency of the external `clk` input**.
 
@@ -181,6 +181,7 @@ This mode provides faster memory access by using a single byte to specify an add
     *   **Cycle 5 (Transfer to Buffer):** The output value from the ALU is loaded into the `Data Bus Buffer` 
     *   **Cycle 6 (Writeback to Memory):** The HB of the address (`$00`) is placed on the address bus, and the `Data Bus Buffer` content is written to the IO Bus.
     *   **Cycle 7 (Write Address LB to address bus):** The LB of the address (`$44`) is placed on the address bus, and the IO Bus content is written to memory(this step is mostly off chip)
+
 ---
 
 ### 6. Absolute Addressing
@@ -323,124 +324,149 @@ This program correctly follows all guidelines: it starts with a `NOP` at `$0000`
 
 ## Addendum 1
 
-Table of Supported Instructions:
+Tables of Supported Instructions.
+
+### Arithmetic ZPG Instructions
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
+|-----------------------------------|--------------------|-----------------|---------------|
+|ASL ZPG (Arithmatic Shift Left)    | 06 addr-lb         | 7               |  `N Z C - - -`  |
+|LSR ZPG (Logical Shift Right)      | 46 addr-lb         | 7               |  `0 Z C - - -`  |
+|ROL ZPG (Roll Byte Left)           | 26 addr-lb         | 7               |  `N Z C - - -`  |
+|ROR ZPG (Roll Byte Right)          | 46 addr-lb         | 7               |  `N Z C - - -`  |
+|INC ZPG (Increment Byte)           | e6 addr-lb         | 7               |  `N Z - - - -`  |
+|DEC ZPG (Decrement Byte)           | c6 addr-lb         | 7               |  `N Z - - - -`  |
+|AND ZPG (AND Byte with Acc)        | 35 addr-lb         | 6               |  `N Z - - - -`  |
+|ORA ZPG (OR Byte with Acc)         | 05 addr-lb         | 6               |  `N Z - - - -`  |
+|EOR ZPG (XOR Byte with Acc)        | 55 addr-lb         | 6               |  `N Z - - - -`  |
+|ADC ZPG (Add Byte with Acc)        | 65 addr-lb         | 6               |  `N Z C - - -`  |
+|SBC ZPG (Subtract Byte with Acc)   | e5 addr-lb         | 6               |  `N Z C - - -`  |
+
+### Store ZPG Instructions
 
 |Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|ARITHMETIC ZPG INSTRUCTIONS                                                               |
+|STY ZPG (Store Y)                  | 84 addr-lb         | 7               |  `- - - - - -`  |
+|STA ZPG (Store Accumulator)        | 85 addr-lb         | 7               |  `- - - - - -`  |
+|STX ZPG (Store X)                  | 86 addr-lb         | 7               |  `- - - - - -`  |
+
+### Load ZPG Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|ASL ZPG (Arithmatic Shift Left)    | 06 addr-lb         | 7               |  N Z C - - -  |
-|LSR ZPG (Logical Shift Right)      | 46 addr-lb         | 7               |  0 Z C - - -  |
-|ROL ZPG (Roll Byte Left)           | 26 addr-lb         | 7               |  N Z C - - -  |
-|ROR ZPG (Roll Byte Right)          | 46 addr-lb         | 7               |  N Z C - - -  |
-|INC ZPG (Increment Byte)           | e6 addr-lb         | 7               |  N Z - - - -  |
-|DEC ZPG (Decrement Byte)           | c6 addr-lb         | 7               |  N Z - - - -  |
-|AND ZPG (AND Byte with Acc)        | 35 addr-lb         | 6               |  N Z - - - -  |
-|ORA ZPG (OR Byte with Acc)         | 05 addr-lb         | 6               |  N Z - - - -  |
-|EOR ZPG (XOR Byte with Acc)        | 55 addr-lb         | 6               |  N Z - - - -  |
-|ADC ZPG (Add Byte with Acc)        | 65 addr-lb         | 6               |  N Z C - - -  |
-|SBC ZPG (Subtract Byte with Acc)   | e5 addr-lb         | 6               |  N Z C - - -  |
+|LDY ZPG (Load Y)                   | a4 addr-lb         | 6               |  `- - - - - -`  |
+|LDA ZPG (Load Accumulator)         | a5 addr-lb         | 6               |  `- - - - - -`  |
+|LDX ZPG (Load X)                   | a6 addr-lb         | 6               |  `- - - - - -`  |
+
+### Compare Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|STORE ZPG INSTRUCTIONS                                                                    |
+|CPX ZPG (Compare X with ZPG)       | e4 addr-lb         | 6               |  `N Z C - - -`  |
+|CPX ABS (Compare X with ABS)       | ec addr-lb addr-hb | 7               |  `N Z C - - -`  |
+|CPX IMM (Compare X with IMM)       | e0 imm             | 5               |  `N Z C - - -`  |
+|CMP ZPG (Compare Acc with ZPG)     | c5 addr-lb         | 6               |  `N Z C - - -`  |
+|CMP ABS (Compare Acc with ABS)     | cd addr-lb addr-hb | 7               |  `N Z C - - -`  |
+|CMP IMM (Compare Acc with IMM)     | c9 imm             | 5               |  `N Z C - - -`  |
+|CPY ZPG (Compare Y with ZPG)       | c4 addr-lb         | 6               |  `N Z C - - -`  |
+|CPY ABS (Compare Y with ABS)       | cc addr-lb addr-hb | 7               |  `N Z C - - -`  |
+|CPY IMM (Compare Y with IMM)       | c0 imm             | 5               |  `N Z C - - -`  |
+
+### Branch Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|STY ZPG (Store Y)                  | 84 addr-lb         | 7               |  - - - - - -  |
-|STA ZPG (Store Accumulator)        | 85 addr-lb         | 7               |  - - - - - -  |
-|STX ZPG (Store X)                  | 86 addr-lb         | 7               |  - - - - - -  |
+|BPL REL (Branch if Negative flag is 0)       | 10 rel             | 4     |  `- - - - - -`  |
+|BMI REL (Branch if Negative flag is 1)       | 30 rel             | 4     |  `- - - - - -`  |
+|BCC REL (Branch if Carry flag is 0)       | 90 rel             | 4        |  `- - - - - -`  |
+|BCS REL (Branch if Carry flag is 1)       | b0 rel             | 4        |  `- - - - - -`  |
+|BNE REL (Branch if Zero flag is 0)       | d0 rel             | 4         |  `- - - - - -`  |
+|BEQ REL (Branch if Zero flag is 1)       | f0 rel             | 4         |  `- - - - - -`  |
+
+### Transfer Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|LOAD ZPG INSTRUCTIONS                                                                     |
+|TXA (Transfer from X to Acc)       | 8a                 | 2               |  `- - - - - -`  |
+|TYA (Transfer from Y to Acc)       | 98                 | 2               |  `- - - - - -`  |
+|TAX (Transfer from Acc to X)       | aa                 | 2               |  `- - - - - -`  |
+|TAY (Transfer from Acc to Y)       | a8                 | 2               |  `- - - - - -`  |
+
+### Arithmetic ABS Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|LDY ZPG (Load Y)                   | a4 addr-lb         | 6               |  - - - - - -  |
-|LDA ZPG (Load Accumulator)         | a5 addr-lb         | 6               |  - - - - - -  |
-|LDX ZPG (Load X)                   | a6 addr-lb         | 6               |  - - - - - -  |
+|ASL ABS (Arithmatic Shift Left)    | 0e addr-lb addr-hb | 8               |  `N Z C - - -`  |
+|LSR ABS (Logical Shift Right)      | 4e addr-lb addr-hb | 8               |  `0 Z C - - -`  |
+|ROL ABS (Roll Byte Left)           | 2e addr-lb addr-hb | 8               |  `N Z C - - -`  |
+|ROR ABS (Roll Byte Right)          | 4e addr-lb addr-hb | 8               |  `N Z C - - -`  |
+|INC ABS (Increment Byte)           | ce addr-lb addr-hb | 8               |  `N Z - - - -`  |
+|DEC ABS (Decrement Byte)           | ee addr-lb addr-hb | 8               |  `N Z - - - -`  |
+|AND ABS (AND Byte with Acc)        | 3d addr-lb addr-hb | 7               |  `N Z - - - -`  |
+|ORA ABS (OR Byte with Acc)         | 0d addr-lb addr-hb | 7               |  `N Z - - - -`  |
+|EOR ABS (XOR Byte with Acc)        | 5d addr-lb addr-hb | 7               |  `N Z - - - -`  |
+|ADC ABS (Add Byte with Acc)        | 6d addr-lb addr-hb | 7               |  `N Z C - - V`  |
+|SBC ABS (Subtract Byte with Acc)   | ed addr-lb addr-hb | 7               |  `N Z C - - V`  |
+
+### Store ABS Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|COMPARE INSTRUCTIONS                                                                      |
+|STY ABS (Store Y)                  | 8c addr-lb addr-hb | 8               |  `- - - - - -`  |
+|STA ABS (Store Accumulator)        | 8d addr-lb addr-hb | 8               |  `- - - - - -`  |
+|STX ABS (Store X)                  | 8e addr-lb addr-hb | 8               |  `- - - - - -`  |
+
+### Load ABS Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|CPX ZPG (Compare X with ZPG)       | e4 addr-lb         | 6               |  N Z C - - -  |
-|CPX ABS (Compare X with ABS)       | ec addr-lb addr-hb | 7               |  N Z C - - -  |
-|CPX IMM (Compare X with IMM)       | e0 imm             | 5               |  N Z C - - -  |
-|CMP ZPG (Compare Acc with ZPG)     | c5 addr-lb         | 6               |  N Z C - - -  |
-|CMP ABS (Compare Acc with ABS)     | cd addr-lb addr-hb | 7               |  N Z C - - -  |
-|CMP IMM (Compare Acc with IMM)     | c9 imm             | 5               |  N Z C - - -  |
-|CPY ZPG (Compare Y with ZPG)       | c4 addr-lb         | 6               |  N Z C - - -  |
-|CPY ABS (Compare Y with ABS)       | cc addr-lb addr-hb | 7               |  N Z C - - -  |
-|CPY IMM (Compare Y with IMM)       | c0 imm             | 5               |  N Z C - - -  |
+|LDY ABS (Load Y)                   | ac addr-lb addr-hb | 7               |  `- - - - - -`  |
+|LDA ABS (Load Accumulator)         | ad addr-lb addr-hb | 7               |  `- - - - - -`  |
+|LDX ABS (Load X)                   | ae addr-lb addr-hb | 7               |  `- - - - - -`  |
+
+### Arithmetic IMM Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-BRANCH INSTRUCTIONS                                                                |
+|ASL IMM (Arithmatic Shift Left)    | 09 imm             | 5               |  `N Z C - - -`  |
+|LSR IMM (Logical Shift Right)      | 49 imm             | 5               |  `0 Z C - - -`  |
+|ROL IMM (Roll Byte Left)           | 29 imm             | 5               |  `N Z C - - -`  |
+|ROR IMM (Roll Byte Right)          | 49 imm             | 5               |  `N Z C - - -`  |
+|SBC IMM (Subtract Byte against Acc)| e9 imm             | 5               |  `N Z C - - V`  |
+
+### Load IMM Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|BPL REL (Branch if Negative flag is 0)       | 10 rel             | 4               |  - - - - - -  |
-|BMI REL (Branch if Negative flag is 1)       | 30 rel             | 4               |  - - - - - -  |
-|BCC REL (Branch if Carry flag is 0)       | 90 rel             | 4               |  - - - - - -  |
-|BCS REL (Branch if Carry flag is 1)       | b0 rel             | 4               |  - - - - - -  |
-|BNE REL (Branch if Zero flag is 0)       | d0 rel             | 4               |  - - - - - -  |
-|BEQ REL (Branch if Zero flag is 1)       | f0 rel             | 4               |  - - - - - -  |
+|LDY IMM (Load Y)                   | a0 imm             | 5               |  `- - - - - -`  |
+|LDA IMM (Load Accumulator)         | a9 imm             | 5               |  `- - - - - -`  |
+|LDX IMM (Load X)                   | a2 imm             | 5               |  `- - - - - -`  |
+
+### INC/DEC Register Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|TRANSFER INSTRUCTIONS                                                                     |
+|INX (Increment X)                  | e8                 | 4               |  `- - - - - -`  |
+|INY (Increment Y)                  | c8                 | 4               |  `- - - - - -`  |
+|DEX (Decrement X)                  | ca                 | 4               |  `- - - - - -`  |
+|DEY (Decrement Y)                  | 88                 | 4               |  `- - - - - -`  |
+
+### Arithmetic ACC Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|TXA (Transfer from X to Acc)       | 8a                 | 2               |  - - - - - -  |
-|TYA (Transfer from Y to Acc)       | 98                 | 2               |  - - - - - -  |
-|TAX (Transfer from Acc to X)       | aa                 | 2               |  - - - - - -  |
-|TAY (Transfer from Acc to Y)       | a8                 | 2               |  - - - - - -  |
+|ASL A (Arithmatic Shift Left Acc)  | 0a                 | 4               |  `N Z C - - -`  |
+|LSR A (Logical Shift Right Acc)    | 4a                 | 4               |  `N Z C - - -`  |
+|ROL A (Roll Byte Left Acc)         | 2a                 | 4               |  `N Z C - - -`  |
+|ROR A (Roll Byte Right Acc)        | 6a                 | 4               |  `N Z C - - -`  |
+
+### Other Instructions
+
+|Instruction Name                   | Instruction Format | Time Taken      | Flags Changed |
 |-----------------------------------|--------------------|-----------------|---------------|
-|ARITHMETIC ABS INSTRUCTIONS                                                               |
-|-----------------------------------|--------------------|-----------------|---------------|
-|ASL ABS (Arithmatic Shift Left)    | 0e addr-lb addr-hb | 8               |  N Z C - - -  |
-|LSR ABS (Logical Shift Right)      | 4e addr-lb addr-hb | 8               |  0 Z C - - -  |
-|ROL ABS (Roll Byte Left)           | 2e addr-lb addr-hb | 8               |  N Z C - - -  |
-|ROR ABS (Roll Byte Right)          | 4e addr-lb addr-hb | 8               |  N Z C - - -  |
-|INC ABS (Increment Byte)           | ce addr-lb addr-hb | 8               |  N Z - - - -  |
-|DEC ABS (Decrement Byte)           | ee addr-lb addr-hb | 8               |  N Z - - - -  |
-|AND ABS (AND Byte with Acc)        | 3d addr-lb addr-hb | 7               |  N Z - - - -  |
-|ORA ABS (OR Byte with Acc)         | 0d addr-lb addr-hb | 7               |  N Z - - - -  |
-|EOR ABS (XOR Byte with Acc)        | 5d addr-lb addr-hb | 7               |  N Z - - - -  |
-|ADC ABS (Add Byte with Acc)        | 6d addr-lb addr-hb | 7               |  N Z C - - V  |
-|SBC ABS (Subtract Byte with Acc)   | ed addr-lb addr-hb | 7               |  N Z C - - V  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|STORE ABS INSTRUCTIONS                                                                    |
-|-----------------------------------|--------------------|-----------------|---------------|
-|STY ABS (Store Y)                  | 8c addr-lb addr-hb | 8               |  - - - - - -  |
-|STA ABS (Store Accumulator)        | 8d addr-lb addr-hb | 8               |  - - - - - -  |
-|STX ABS (Store X)                  | 8e addr-lb addr-hb | 8               |  - - - - - -  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|LOAD ABS INSTRUCTIONS                                                                     |
-|-----------------------------------|--------------------|-----------------|---------------|
-|LDY ABS (Load Y)                   | ac addr-lb addr-hb | 7               |  - - - - - -  |
-|LDA ABS (Load Accumulator)         | ad addr-lb addr-hb | 7               |  - - - - - -  |
-|LDX ABS (Load X)                   | ae addr-lb addr-hb | 7               |  - - - - - -  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|ARITHMETIC IMM INSTRUCTIONS                                                               |
-|-----------------------------------|--------------------|-----------------|---------------|
-|ASL IMM (Arithmatic Shift Left)    | 09 imm             | 5               |  N Z C - - -  |
-|LSR IMM (Logical Shift Right)      | 49 imm             | 5               |  0 Z C - - -  |
-|ROL IMM (Roll Byte Left)           | 29 imm             | 5               |  N Z C - - -  |
-|ROR IMM (Roll Byte Right)          | 49 imm             | 5               |  N Z C - - -  |
-|SBC IMM (Subtract Byte against Acc)| e9 imm             | 5               |  N Z C - - V  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|LOAD IMM INSTRUCTIONS                                                                     |
-|-----------------------------------|--------------------|-----------------|---------------|
-|LDY IMM (Load Y)                   | a0 imm             | 5               |  - - - - - -  |
-|LDA IMM (Load Accumulator)         | a9 imm             | 5               |  - - - - - -  |
-|LDX IMM (Load X)                   | a2 imm             | 5               |  - - - - - -  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|INC/DEC REGISTER INSTRUCTIONS                                                             |
-|-----------------------------------|--------------------|-----------------|---------------|
-|INX (Increment X)                  | e8                 | 4               |  - - - - - -  |
-|INY (Increment Y)                  | c8                 | 4               |  - - - - - -  |
-|DEX (Decrement X)                  | ca                 | 4               |  - - - - - -  |
-|DEY (Decrement Y)                  | 88                 | 4               |  - - - - - -  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|ARITHMETIC ACC INSTRUCTIONS                                                               |
-|-----------------------------------|--------------------|-----------------|---------------|
-|ASL A (Arithmatic Shift Left Acc)  | 0a                 | 4               |  N Z C - - -  |
-|LSR A (Logical Shift Right Acc)    | 4a                 | 4               |  N Z C - - -  |
-|ROL A (Roll Byte Left Acc)         | 2a                 | 4               |  N Z C - - -  |
-|ROR A (Roll Byte Right Acc)        | 6a                 | 4               |  N Z C - - -  |
-|-----------------------------------|--------------------|-----------------|---------------|
-|OTHER INSTRUCTIONS                                                                        |
-|-----------------------------------|--------------------|-----------------|---------------|
-|NOP (No Op)                        | ea                 | 2               |  - - - - - -  |
-|JMP ABS (Jump)                     | 4c addr-lb addr-hb | 4               |  - - - - - -  |
-|CLC REL (Clear Carry Flag)       | 18              | 2               |  - - 0 - - -  |
-|SEC REL (Set Carry Flag)       | 38              | 2               |  - - 1 - - -  |
+|NOP (No Op)                        | ea                 | 2               |  `- - - - - -`  |
+|JMP ABS (Jump)                     | 4c addr-lb addr-hb | 4               |  `- - - - - -`  |
+|CLC REL (Clear Carry Flag)       | 18              | 2                    |  `- - 0 - - -`  |
+|SEC REL (Set Carry Flag)       | 38              | 2                      |  `- - 1 - - -`  |
 
 
 

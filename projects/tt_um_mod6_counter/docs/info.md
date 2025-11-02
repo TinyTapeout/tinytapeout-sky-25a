@@ -21,7 +21,3 @@ You can test the design using either:
    - Use the included `tb.v` testbench.  
    - It generates a clock and asserts reset, allowing you to monitor outputs.  
    - You can dump signals to a VCD file (`tb.vcd`) for visualization in GTKWave.
-
-## External hardware
-
-This project **does not require any external hardware**. It is purely digital and designed to run on-chip in the Tiny Tapeout framework.  

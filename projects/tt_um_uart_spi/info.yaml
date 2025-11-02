@@ -47,17 +47,17 @@ pinout:
   uo[4]: "SPI Rx valid"
   uo[5]: "SPI Rx done"
   uo[6]: "SPI sclk"
-  uo[7]: "NC"
+  uo[7]: ""
 
   # Bidirectional pins
   uio[0]: "SPI slave Rx start"
   uio[1]: "SPI slave Tx start"
-  uio[2]: "NC"
-  uio[3]: "NC"
-  uio[4]: "NC"
-  uio[5]: "NC"
-  uio[6]: "NC"
-  uio[7]: "NC"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
 
 # Do not change!
 yaml_version: 6

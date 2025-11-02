@@ -1,5 +1,3 @@
-# 8-bit Up/Down Counter
-
 ## How it works
 This project implements an 8-bit up/down counter in Verilog. The counter increments or decrements its value between 0 and 255 based on the `up_down` control signal:  
 - `up_down = 1` → counts up  
@@ -23,5 +21,4 @@ The counter only updates on the rising edge of the `clk` signal when the `enable
 Simulation can be performed using any Verilog simulator (e.g., Icarus Verilog, ModelSim, or TinyTapeout simulation environment).  
 
 ## External hardware
-This project does not require any external hardware. All logic is contained within the TinyTapeout tile.  
 Optionally, the output bus `uo_out` can be connected to LEDs, a logic analyzer, or other display modules to visualize the count.

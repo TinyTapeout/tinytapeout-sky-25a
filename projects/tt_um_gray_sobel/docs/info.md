@@ -13,7 +13,7 @@ This project performs grayscale conversion and Sobel filtering with the aim of d
 
 Below is a block diagram of the implementation:
 
-![arc](arch.png)
+![Block diagram of the module](arch.png)
 
 ## How to test
 

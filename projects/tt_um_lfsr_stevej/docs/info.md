@@ -16,6 +16,3 @@ To reset the shift register, reset the chip, or set the 'write_enable' pin high 
 
 Read several bytes from `ui_in`, they should each be different.
 
-## External hardware
-
-No external hardware needed other than to read the pins.

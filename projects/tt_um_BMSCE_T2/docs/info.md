@@ -1,4 +1,3 @@
-# Choreo8
 An 8-LED visual effects controller with multiple animated patterns, speed control, and pause functionality implemented in Verilog for ASIC fabrication.
 
 ## What it does

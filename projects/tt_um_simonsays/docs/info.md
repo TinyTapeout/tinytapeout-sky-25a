@@ -75,33 +75,23 @@ Upon powering up the chip:
 
 During IDLE state, LFSR takes seed and produces shifted outputs. The outputs are loaded into the 32bit memory 8 bits at a time. See LFSR_SEED, LFSR_out, MEM_OUT signals. <br>
 
-![](lfsr_load_mem.png)<br>
+![Timing diagram: LFSR load memory](lfsr_load_mem.png)
 
 During Display the sequence in memory is decoded and asserts on the output lines. See uo[3:0]. signal. Note, for simulation, the delay between displayed colours is significantly reduced. When played by the user, each colour display holds for 500ms.<br>
 
-![](display.png)<br>
+![Timing diagram: Display output](display.png)
 
 During Wait and check, the user inputs are recorded and compared against the generated sequence. In this case, the sequence matches and thus game_complete goes to 1. See colour_val, colour_in signals, sequence_match, and game_complete signals.<br>
 
-![](wait_and_check.png)<br>
+![Timing diagram: Wait and check](wait_and_check.png)
 
-STATES:
+![State: IDLE](./Timing_Diagram_States/idle.png)
 
-IDLE:
+![State: DISPLAY](./Timing_Diagram_States/display_state.png)
 
-![](./Timing_Diagram_States/idle.png)<br>
+![State: WAIT](./Timing_Diagram_States/wait_state.png)
 
-DISPLAY:
-
-![](./Timing_Diagram_States/display_state.png)<br>
-
-WAIT:
-
-![](./Timing_Diagram_States/wait_state.png)<br>
-
-CHECK:
-
-![](./Timing_Diagram_States/check.png)<br>
+![State: CHECK](./Timing_Diagram_States/check.png)
 
 ## How to test
 
@@ -137,7 +127,7 @@ CSV Contents:
 
 Results:
 
-![](./test_simon.png)<br>
+![CocoTB testbenches passing](./test_simon.png)<br>
 
 ### Gameplay Functionality
 

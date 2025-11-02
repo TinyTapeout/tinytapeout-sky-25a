@@ -14,8 +14,3 @@ This is a sort of 4-bit ALU that can do addition, subtraction, negatives, multip
 ## How to test
 
 To use it, put in the number values into the input pins and the number result will come out of the output pins.
-
-
-## External hardware
-
-There isn't really any external hardware needed.

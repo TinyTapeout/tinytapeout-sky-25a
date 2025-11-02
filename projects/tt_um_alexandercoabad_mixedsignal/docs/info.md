@@ -11,9 +11,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 An inverter is biased for linear mode operation. 
 
-<p align="center">
-  <img src="linear_mode_operation.jpg" alt="Inverter Linear Mode Operation" width="400"/>
-</p>
+<!-- {width=400} -->
+![Inverter Linear Mode Operation](linear_mode_operation.jpg)
 
 A multiplexer (MUX) is connected in parallel with the feedback resistor (R2 = 300 kΩ).  
 - By default, no additional resistor is connected in parallel.  
@@ -37,9 +36,8 @@ The possible R2 effective values are:
 4. Change the MUX selection (3 kΩ, 30 kΩ, or 100 kΩ) using the digital input pins (ui_in[0] and ui_in[1]) to vary the gain by changing the parallel resistance with R2.  
 5. You may use the **mixedsignal_sym_tb.sch** testbench as a guide for the setup. 
 
-<p align="center">
-  <img src="circuit_setup.png" alt="Circuit setup" width="1200"/>
-</p>
+<!-- {width=1200} -->
+![Circuit setup](circuit_setup.png)
 
 
 ## External hardware
@@ -50,24 +48,20 @@ The possible R2 effective values are:
 ## Results
 S1 = 0 & S2 = 0
 
-<p align="center">
-  <img src="output_00.jpg" alt="Inverter Linear Mode Operation" width="1200"/>
-</p>
+<!-- {width=1200} -->
+![Inverter Linear Mode Operation](output_00.jpg)
 
 S1 = 0 & S2 = 1
 
-<p align="center">
-  <img src="output_01.jpg" alt="Inverter Linear Mode Operation" width="1200"/>
-</p>
+<!-- {width=1200} -->
+![Inverter Linear Mode Operation](output_01.jpg)
 
 S1 = 1 & S2 = 0
 
-<p align="center">
-  <img src="output_10.jpg" alt="Inverter Linear Mode Operation" width="1200"/>
-</p>
+<!-- {width=1200} -->
+![Inverter Linear Mode Operation](output_10.jpg)
 
 S1 = 1 & S2 = 1
 
-<p align="center">
-  <img src="output_11.jpg" alt="Inverter Linear Mode Operation" width="1200"/>
-</p>
+<!-- {width=1200} -->
+![Inverter Linear Mode Operation](output_11.jpg)

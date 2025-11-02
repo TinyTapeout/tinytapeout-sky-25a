@@ -1,5 +1,3 @@
-
-# Game Of Life - (John Conway) remake on ASIC
 ## How it works
 The registers are randomized, and then the algorithm for the game of like is run.
 

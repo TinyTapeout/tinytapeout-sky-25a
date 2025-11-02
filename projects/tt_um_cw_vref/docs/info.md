@@ -58,8 +58,8 @@ Testing the reference current.
 Multimeter to measure voltage and current.
 
 Optional: 
-Osciloscope to measure startup waveform.
-Precise power supply for VAPWR
-SMU for precission bias current.
-Oven to measure temperature stabililty.
+- Osciloscope to measure startup waveform.
+- Precise power supply for VAPWR
+- SMU for precission bias current.
+- Oven to measure temperature stabililty.
 

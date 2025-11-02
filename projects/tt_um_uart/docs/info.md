@@ -1,5 +1,3 @@
-# Tiny Tapeout UART Module Documentation
-
 ## Project Overview
 
 This project implements a full-featured UART (Universal Asynchronous Receiver-Transmitter) controller designed specifically for the Tiny Tapeout platform. The UART enables bidirectional serial communication with configurable parameters and includes interrupt generation capabilities.

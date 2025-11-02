@@ -112,8 +112,4 @@ This processor demonstrates:
 - **Area**: Fits in 1x1 TinyTapeout tile
 - **I/O**: 16 output pins for ALU observation
 
-## Author
-
-**Kishore Netheti**
-
 This project showcases a complete working processor implementation suitable for educational purposes and silicon demonstration.

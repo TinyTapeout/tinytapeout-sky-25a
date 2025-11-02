@@ -9,7 +9,7 @@
 
 The code provided is a Verilog module that implements a 16-bit logarithmic approximate floating-point multiplier. This module utilizes logarithmic approximation techniques to perform floating-point multiplication efficiently, reducing computational complexity while maintaining accuracy. It incorporates a state machine that processes the LSB(lower 8 bits) of the inputs in the first cycle and the MSB(upper 8 bits) in the next cycle, subsequently producing the LSB(lower 8 bits) of the output first, followed by the MSB(upper 8 bits) in the next cycle.
 
-Key Components
+## Key Components
 
 The Logarithmic Approximate Floating-Point Multiplier (LAFPM) is a hardware-efficient multiplier that processes two 16-bit floating-point numbers using logarithmic approximation techniques. Instead of traditional multiplication, this design reduces complexity by leveraging logarithmic transformations, shifts, and additions. This approach significantly lowers power consumption and area, making it ideal for resource-constrained applications such as machine learning accelerators and embedded systems.
 The multiplier operates using a finite state machine (FSM) that progresses through several key states:
@@ -40,7 +40,6 @@ The multiplier operates using a finite state machine (FSM) that progresses throu
 
 **clk** operates at a 50 MHz frequency.
 
-Table: State Transition for FP-16 Multiplication of (0x43BC)*(0x4190)
 | **Time (ns)** | **ui_in (Input A)** | **uio_in (Input B)**      | **Reset** | **State**            | **uo_out (Output)** | **Clock** |
 |---------------|---------------------|---------------------------|-----------|----------------------|---------------------|-----------|
 | 0             | `00000000`          | `00000000`                |  0        | Reset                | `xxxxxxxx`          |0          |
@@ -60,13 +59,15 @@ Table: State Transition for FP-16 Multiplication of (0x43BC)*(0x4190)
 | 220           | `01000011`          | `01000001`                |  1        | OUTPUT_1             | `01110101`          |0          |
 | 230           | `01000011`          | `01000001`                |  1        | OUTPUT_2             | `01001001`          |1          |
 | 240           | `01000011`          | `01000001`                |  1        | OUTPUT_2             | `01001001`          |0          |
+Table: State Transition for FP-16 Multiplication of (0x43BC)*(0x4190)
 
 
 Other Operands can also given as follows:
-Table: Multiple Operands with Expected output
-| **Input A** | **Input B** | **Output**  |
+
+| **Input A**  | **Input B**  | **Output** |
 |--------------|--------------|------------|
 | `0x4871`     | `0x482e`     | `0x54a6`   |
 | `0x41bd`     | `0x46ef`     | `0x4d31`   |
-| `0x436c`   | `0x45aa`     | `0x4d4c`   |
-| `ox44df`     | `0x483d`     | `50x12c`  |
+| `0x436c`     | `0x45aa`     | `0x4d4c`   |
+| `ox44df`     | `0x483d`     | `50x12c`   |
+Table: Multiple Operands with Expected output

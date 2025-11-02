@@ -17,7 +17,3 @@ There's a 4-bit wide interface to the registers, a write enable for each registe
 
 To write a register set its WEN high and clock data in over 8 cycles.
 To read a register select its address on one of the read ports and observe the data on the appropriate output over 4 cycles.
-
-## External hardware
-
-None

@@ -27,22 +27,22 @@ pinout:
   # Outputs
   uo[0]: "PWM output"
   uo[1]: "PWM output copy"
-  uo[2]: "Unused"
-  uo[3]: "Unused"
-  uo[4]: "Unused"
-  uo[5]: "Unused"
-  uo[6]: "Unused"
-  uo[7]: "Unused"
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: "Unused"
-  uio[1]: "Unused"
-  uio[2]: "Unused"
-  uio[3]: "Unused"
-  uio[4]: "Unused"
-  uio[5]: "Unused"
-  uio[6]: "Unused"
-  uio[7]: "Unused"
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
 
 # Do not change!
 yaml_version: 6

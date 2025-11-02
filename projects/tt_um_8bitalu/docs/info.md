@@ -206,8 +206,4 @@ Potential improvements for future versions:
 
 ***
 
-**Project Repository**: https://github.com/pathanrehman/tt_um_8bitALU
-**Author**: Pathan Rehman Ahmed Khan  
-**License**: Apache-2.0  
-
 This 8-bit ALU demonstrates how efficient arithmetic processing can be implemented within Tiny Tapeout's constraints while maintaining educational value and practical functionality for 8-bit computing applications.

@@ -14,20 +14,16 @@ This project aims to logically design the Intel 4004 (CPU), the centerpiece of t
 system, the world’s first microcomputer, using Verilog HDL, implement it on an TinyTapeout Chip,
 and ultimately recreate the historic Busicom 141-PF calculator.
 
-<img alt="4004" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/01_BirthOfMicro/Figure/Outline_4004.png" width="25%"><br>
-4004 CPU Chip (http://www.intel-vintage.info/intelmcs.htm)<br>
+![4004 CPU Chip (http://www.intel-vintage.info/intelmcs.htm)](images/1.png){width=50%}
 
-<img alt="4004 PinOut" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/02_MCS4ChipSet/Figure/Pinout4004.png" width="75%"><br>
-4004 CPU Pinout<br>
+![4004 CPU Pinout](images/2.png){width=75%}
 
 ### Works with companion FPGA
 The peripheral chips of the MCS-4 system—4001 (ROM), 4002 (RAM), and 4003 (Shift Register)—along with the 141-PF calculator’s associated circuitry, are implemented on an FPGA. These components interface with the TinyTapeout Chip to function as a complete working calculator.
 
-<img alt="141-PF" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/01_BirthOfMicro/Figure/Busicom_141-PF.png" width="25%"><br>
-Busicom Caculator 141-PF (http://www.dentaku-museum.com/calc/calc/10-busicom/busicomd/busicomd.html)<br>
+![Busicom Caculator 141-PF (http://www.dentaku-museum.com/calc/calc/10-busicom/busicomd/busicomd.html)](images/3.png){width=40%}
 
-<img alt="141-PF in FPGA" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/00_Front/Figure/141PFonFPGA.jpg" width="50%"><br>
-Busicom Caculator 141-PF in FPGA<br>
+![Busicom Caculator 141-PF in FPGA](images/4.jpg){width=40%}
 
 ### User Interface of the Calculator
 Unlike modern calculators that display results on LCDs, VFDs, or LEDs, the Busicom 141-PF printed output directly onto paper. It employed the Shinshu Seiki (now Seiko Epson) Model 102 printer.
@@ -36,15 +32,12 @@ The calculator received signals indicating the position of the rotating drum. Fr
 As a result, the printed output didn’t appear from left to right. Instead, characters were imprinted in non-linear order across the row—ultimately completing the full result in a surprisingly elegant manner. This was a highly efficient method for maximizing printing speed with drum-style printers, a testament to the ingenuity of early engineers.
 The ink ribbon used a nostalgic black-and-red dual-color scheme, similar to those found in mechanical typewriters. By shifting the ribbon vertically, the calculator enabled two-color printing. In the case of the 141-PF calculator, negative numbers were rendered in red.
 
-<img alt="Printing Mechanism of 141-PF" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/06_Busicom141PF/Figure/PrintingMechanism.png" width="75%"><br>
-Printing Mechanism of 141-PF<br>
+![Printing Mechanism of 141-PF](images/5.png)
 
 ### User Interface via RISC-V
 Both the keyboard and printer interface are managed by a RISC-V subsystem embedded within the same FPGA. The calculator supports interaction via serial terminals as well as a touch-enabled LCD panel. Using the touchscreen panel gives the experience of operating a truly authentic vintage calculator.
 
-<img alt="Block Diagram of the System" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/06_Busicom141PF/Figure/MCS4SystemBlockDiagram.png" width="75%"><br>
-Block Diagram of the System<br>
-
+![Block Diagram of the System](images/6.png)
 
 ## How to test
 
@@ -77,8 +70,7 @@ Among these, Case B and Case C share an identical logical structure, differing o
 
 When receiving the TinyTapeout chip, the Case C should be used in a system connection shown in below. The "tt_multiplexer" signals, used to select this project of the MPW chip, can be generated from RISC-V subsystem integrated in the FPGA.<br>
 
-<img alt="TinyTapeout Debug System" src="https://github.com/munetomo-maruyama/MCS4_SYSTEM/blob/main/doc/TexLive/06_Busicom141PF/Figure/TinyTapeoutSystem.png" width="50%"><br>
-TinyTapeout Debug System<br>
+![TinyTapeout Debug System](images/7.png){width=50%}
 
 ## Technical Information
 

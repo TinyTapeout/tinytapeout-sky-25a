@@ -25,7 +25,3 @@ When ui_in[0]=1, you'll freeze all output pins to whatever values they had. That
 
 ui_in[7:1] can be set to wire the output to other instances of number generators. Maybe they don't all have the same behavior !
 Valid numbers range from 0 to 34.
-
-## External hardware
-
-No external hardware required !

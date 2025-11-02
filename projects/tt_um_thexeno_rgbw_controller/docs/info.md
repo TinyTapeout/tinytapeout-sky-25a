@@ -10,7 +10,7 @@ You can also include images in this folder and reference them in the markdown. E
 ## How it works
 Color generator for RGBW LEDs, with generation of hue, tint and intensity based on a color index. Is also a direct SPI to 4 PWM channels converter, making it flexible to any different kind of use. The system block diagram is as follow:
 
-![block diagram image](./block_diagram.PNG "RGBW controller block diagram")
+![RGBW controller block diagram](./block_diagram.PNG)
 
 It is an SPI slave in Mode 0, with SPI protocol consisting of 8 byte long command, discriminated with a preamble sequence (see Protocol and Test for the description).
 
@@ -42,7 +42,7 @@ Therefore any SPI transaction can take place after at least 128 clock cycles aft
 
 The logic datapath of the CwPU is shown below:
 
-![SCwPU datapath](./cwpu_datapath.PNG "cwpu_datapath")
+![SCwPU datapath](./cwpu_datapath.PNG)
 
 The CwPU has all the data width of 8 bit, and the energy intensive color discrimination path is active when non in bypass mode only. When active will take the index. Starting from zero, increments the hue progression and compares against this index (i.e. rotates the color wheel) to process at run time with no LUT, the corresponding requested hue. During the rotation, the RGB internal values will also change, increasing and decreasing the hue components to sweep all the combinations to match the requested one. The final value will be used for the next step, which is the tint.
 
@@ -58,11 +58,11 @@ When in bypass mode, the CwPU will only replicate the same RGBW info in input to
 
 SPI is Mode 0 as shown in this timing diagram, highlighting the preable and first byte transfer:
 
-![SPI transaction image, bit detail](./bit_transaction.png "SPI transaction, bit detail")
+![SPI transaction image, bit detail](./bit_transaction.png)
 
 While a whole packet must be compliant with the following diagram:
 
-![SPI transaction image, whole packet structure](./full_transaction.png "SPI transaction, packet structure")
+![SPI transaction image, whole packet structure](./full_transaction.png)
 
 Which contains: 
 
@@ -81,7 +81,7 @@ Therefore, if the bus gets corrupted, sending any data without preamble with mor
 ## How to test
 
 This is normally tested with a micropython script to be interpreted directly from the REPL interface of the TT08 demoboard (see https://tinytapeout.com/guides/get-started-demoboard/).
-To test the design simply setup the demoboard, and run the script in [the test folder](../test/rp2040_demoboard). It means it can be simply copy/pasted into the REPL terminal.
+To test the design simply setup the demoboard, and run the script in [the test folder](https://github.com/thexeno/ttsky-rgbw-controller/tree/main/test/rp2040_demoboard). It means it can be simply copy/pasted into the REPL terminal.
 
 To see an output, is suggested to wire some LEDs to the output of the demoboard being careful to not overload the output pins. If you don't know what you are doing, then is better to get like 4x of these for the 4 LEDs [tindie.com/products/aleadesigns](https://www.tindie.com/products/aleadesigns/glighter-a-40w-hysteretic-led-driver) or any other LED controller that **won't load** more than 4mA on the TT08 chip output pads (see [pad spec here](https://tinytapeout.com/specs/gpio/)).
 
@@ -115,5 +115,5 @@ In this mode, the data provided via SPI is the data taken by the PWM modulator a
 
 While we're working at a PMOD right now, the external hardware are 4 LEDs, one per each color, connected to the outputs. Be aware that the outputs cannot take more than 4mA!!! So a dedicated circuit is needed (but will be provided soon). Stay tuned.
 
-To control the design, no external controller is needed since it uses the internal RP2040 of the demoboard, see the [documentation here](../test/README.md) of the test and the REPL [script here](../test/rp2040_demoboard/bringup_test_pico.py).
-Alternatively, a custom firmware and another dedicated python script is provided with the relative [STM32 based project](../test/stm32), briefly [documented here](../test/README.md).
+To control the design, no external controller is needed since it uses the internal RP2040 of the demoboard, see the [documentation here](https://github.com/thexeno/ttsky-rgbw-controller/tree/main/test/README.md) of the test and the REPL [script here](https://github.com/thexeno/ttsky-rgbw-controller/tree/main/test/rp2040_demoboard/bringup_test_pico.py).
+Alternatively, a custom firmware and another dedicated python script is provided with the relative [STM32 based project](https://github.com/thexeno/ttsky-rgbw-controller/tree/main/test/stm32), briefly [documented here](https://github.com/thexeno/ttsky-rgbw-controller/tree/main/test/README.md).

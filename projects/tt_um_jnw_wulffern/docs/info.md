@@ -20,7 +20,6 @@ A detailed description by the students can be seen in chapters below.
 - GR06: Set ui_in[0] high. When you set ui_in[0] low there will be a single pulse on uo_out[2] with a duration 
 that is inversly proportional to temperature.
 
-## External hardware
 
 ## JNW\_GR06\_SKY130A
 
@@ -50,7 +49,8 @@ In this schematic, the PTAT (1) is created inside the block called
 temp\_affected\_current. 
 The converting to digital happens with the OTA and the capasitor in the middle bottom. 
 
-![Top level](images/JNW_GR06.svg)
+![Top level schematic](images/JNW_GR06.svg)
+
 Nodes to remember: 
 V(cap) is at node CAP
 V(OUT) is at the node OUT
@@ -115,13 +115,14 @@ output goes high again. The counter's output then provides a digital value corre
 
 In the picture below one can see how it is in the simulator. The capacitor voltage is the orange curve, the red is a counter value, the green the output voltage of the OTA. The blue is the reset signal.
 
-![Simulation](images/sim.png)
+![Circuit simulation diagram](images/sim.png)
 
 
 ### Layout
 Layout of the top level:
 
-![Layout](images/layout.png)
+![PTAT circuit layout](images/layout.png)
+
 On the left is the temperature to current circuit. In the middle/right one can see the capacitor that is 
 being charged. On the right is the OTA comparator that creates the output signal. 
 VDD is on metal1(orange) and VSS is on locali(Blue).
@@ -169,14 +170,14 @@ This is a temperature measurement circuit. It is built up of two blocks:
 
 The system is depicted below
 
-![system](images/SystemBlock.png)
+![System diagram](images/SystemBlock.png){width=60%}
 
 ### Temperature to Current, PTAT
 
 The PTAT circuit can be found in "**design/JNW_GR07_SKY130A/temp_to_current.sch**", and is shown
 in the figure below. 
 
-![ptat_circuit](images/PTAT.png)
+![PTAT circuit diagram](images/PTAT.png){width=60%}
 
 The circuit exploits the temperature (T) dependency and size difference (N)
 of diode 1 and diode 2 to create a current I(T) dependent on temperature. The voltage over diode 1
@@ -195,7 +196,7 @@ creating $I(T)$ and used as an output.
 The current to PWM circuit can be found in "**design/JNW_GR07_SKY130A/temp_to_pwm_RA.sch**", and is shown
 in the figure below.
 
-![PWM_circuit](images/TempToPWM.png)
+![PWM circuit diagram](images/TempToPWM.png){width=80%}
 
 The circuit used the input current $I(T)$ to charge a capacitor. The voltage across the capacitor is used as input voltage of the positive
 node of a comparator, $V^+ = V_C$. The negative node is connected to a reference voltage $V^- = V_{ref}$, created by a voltage divider consisting of two resistors, $R_2$ and $R_3$.
@@ -211,22 +212,11 @@ It can be shown using previous formulas (found in section "**Temp to Current, PT
 meaning that a higher T results in lower $t_0$. This means that higher temperatures results in a PWM signal with higher mean voltage (RMS). This is depicted
 the figure below, where temperature $T1 > T0$.
 
-![timing_diagram](images/TimingDiagram.png)
+![Timing diagram](images/TimingDiagram.png){width=80%}
 
 ### Layout of PWM circuit 
 
 The layout of the PWM circuit can be found in "**design/JNW_GR07_SKY130A/JNW_GR07.mag**", 
 and is depicted below 
 
-![layout](images/LayoutDescription3.png)
-
-
-
-
-
-
-
-
-
-
-
+![PWM circuit layout](images/LayoutDescription3.png)

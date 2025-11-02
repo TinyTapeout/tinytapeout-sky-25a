@@ -112,3 +112,4 @@ initial begin
     $monitor("Time=%0t | Start=%b Addr=%d DataIn=0x%0h ReadBack=0x%0h | Done=%b Fail=%b",
               $time, ui_in[7], addr, ui_in[3:0], mem[addr], uo_out[7], uo_out[6]);
 end
+```

@@ -27,7 +27,3 @@ The testbench stimulates the `ui_in` lines with various binary inputs and simula
 Note that due to the nature of a small-sized BNN, the accuracy for tests won't be very high throughout all tests. However, cocotb tests demonstrate its potential when more hardware is incorporated into the system.
 
 Verilog simulations and waveform viewer will be available via commands `make sim` and `gtkwave dump.vcd`.
-
-## External hardware
-
-No additional hardware is used in this project.

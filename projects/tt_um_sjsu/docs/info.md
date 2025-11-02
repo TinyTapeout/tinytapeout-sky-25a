@@ -13,7 +13,8 @@ Simple VGA demo for SJSU bitmap. I/P 1 will invert the colors
 
 ## How to test
 
-Tested on VGA playground 
+Tested on VGA playground
+
 ## External hardware
 
 VGA PMOD

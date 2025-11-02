@@ -65,6 +65,7 @@ The `tt_um_customalu` is a 4-bit custom Arithmetic Logic Unit (ALU) with two ope
 Inputs are sampled synchronously on the rising clock edge. Operations are executed based on the selected `Opcode` and `Mode`.
 
 ---
+
 On every rising edge of `clk`:
 
 - **A** = `ui_in[3:0]` (Operand A)
@@ -158,10 +159,3 @@ This ensures safe and deterministic startup and operation.
 | `1101`       | `0xD`        | BITWISE WEIGHTED SUM    | Weighted sum: `A[3]*4 + A[2]*3 + A[1]*2 + A[0]*1`                 |
 | `1110`       | `0xE`        | QUADRATIC NEURON        | `(A * A + B) % 16`                                                |
 | `1111`       | `0xF`        | BINARY CLASSIFICATION   | `1` if `A > B`, else `0`                                          |
-
-
-
-## External hardware
-
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any

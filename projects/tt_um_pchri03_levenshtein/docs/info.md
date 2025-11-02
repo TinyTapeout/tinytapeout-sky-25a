@@ -11,7 +11,7 @@ The overall architecture is a Wishbone Classic system with two masters (The leve
 Using the SPI interface, you store a dictionary and some bitvectors representing a search word in SRAM and then configures and activates the engine. The engine will then read the dictionary and bitvectors from the SRAM and,
 ultimately store the index and distance of the word in the dictionary with the lowest levenshtein distance in registers which can be read by the user.
 
-![image](design.png)
+![Architecture diagram](design.png){height=45%}
 
 ### SPI
 
@@ -160,7 +160,7 @@ ignoring Asian alphabets, a list of words usually don't contain more than 254 di
 
 The levenshtein module is a state machine with 8 states:
 
-![image](statemachine.png)
+![Levenshtein module state machine diagram](statemachine.png)
 
 ### `STATE_READ_DICT_BASE + n`
 

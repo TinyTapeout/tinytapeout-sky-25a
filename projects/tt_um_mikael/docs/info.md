@@ -14,7 +14,3 @@ This works by trial and error. Enjoy! (:
 ## How to test
 
 Don't worry about that. We tested it with APyTypes (:
-
-## External hardware
-
-None.

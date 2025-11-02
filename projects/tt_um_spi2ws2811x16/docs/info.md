@@ -22,12 +22,21 @@ Connect any microcontroler capable of SPI at ~14MHz, send entrelaced pixel data 
 Example of frame:
 
 ```
-R[0]R[1]R[2]R[3]R[4]R[5]R[6]R[7]G[0]G[1]G[2]G[3]G[4]G[5]G[6]G[7]B[0]B[1]B[2]B[3]B[4]B[5]B[6]B[7]\0\0\0\0\0\0\0\0
-^Red data for the 8 strips      ^Green data for the 8 strips    ^Blue data for the 8 strips     ^Null bytes to keep the clock running
+R[0]R[1]R[2]R[3]R[4]R[5]R[6]R[7]
+^Red data for the 8 strips
+
+G[0]G[1]G[2]G[3]G[4]G[5]G[6]G[7]
+^Green data for the 8 strips
+
+B[0]B[1]B[2]B[3]B[4]B[5]B[6]B[7]
+^Blue data for the 8 strips
+
+\0\0\0\0\0\0\0\0
+^Null bytes to keep the clock running
 ```
 
-Just add more R[0..7]G[0..7]B[0..7] data before the null bytes to drive more than a single LED on each strip.
+Just add more `R[0..7]G[0..7]B[0..7]` data before the null bytes to drive more than a single LED on each strip.
 
 ## External hardware
 
-IceStick for testing and chceking if the output is fine.
+IceStick for testing and checking if the output is fine.

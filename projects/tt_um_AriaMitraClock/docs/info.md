@@ -17,5 +17,4 @@ To test, you have to have a clock signal, reset signal, and ena signal going in 
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
 There isn't any notable external hardware unless you want to connect it to an LED display to see the time/output.

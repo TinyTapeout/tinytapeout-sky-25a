@@ -22,7 +22,7 @@ the *Enigma I*[^3] used by the German Army and Air Force; it comes with 3 rotor
 slots, the 5 original Rotors, the UKW-B Reflector, and plugboard.  The only
 limitation is **that the plugboard only supports 3 wires**, whereas the actual
 wartime procedure was to use up to 10 wires.  **This limits the key length of 
-this implementation to 52-bits**.  The calculation is shown [below](#key-length-calculation).
+this implementation to 52-bits**.  The calculation is shown below.
 
 [^1]: https://piotte13.github.io/enigma-cipher/
 [^2]: https://www.dcode.fr/enigma-machine-cipher
@@ -126,54 +126,54 @@ The machine accepts the following 8 commands:
 At some point, I'll have some code ready for running on the RPi on the PC, but for now, here
 is the pseudo code for setting up and scrambling/descrambling with this machine:
 ```python
-    # Install the rotors
-    send_command(SET_ROTORS, 0)   # Set slot 0 to Rotor I
-    send_command(SET_ROTORS, 1)   # Set slot 0 to Rotor II
-    send_command(SET_ROTORS, 2)   # Set slot 0 to Rotor III
+# Install the rotors
+send_command(SET_ROTORS, 0)   # Set slot 0 to Rotor I
+send_command(SET_ROTORS, 1)   # Set slot 0 to Rotor II
+send_command(SET_ROTORS, 2)   # Set slot 0 to Rotor III
 
-    # Dial start position of the rotors
-    send_command(LOAD_START, 15)  # Set rotor 0 start position to P
-    send_command(LOAD_START, 5)   # Set rotor 1 start position to F
-    send_command(LOAD_START, 1)   # Set rotor 2 start position to B
+# Dial start position of the rotors
+send_command(LOAD_START, 15)  # Set rotor 0 start position to P
+send_command(LOAD_START, 5)   # Set rotor 1 start position to F
+send_command(LOAD_START, 1)   # Set rotor 2 start position to B
 
-    # Dial ring position of the rotors
-    send_command(LOAD_RING, 18)  # Set rotor 0 start position to S
-    send_command(LOAD_RING, 5)   # Set rotor 1 start position to F
-    send_command(LOAD_RING, 24)  # Set rotor 2 start position to Y
+# Dial ring position of the rotors
+send_command(LOAD_RING, 18)  # Set rotor 0 start position to S
+send_command(LOAD_RING, 5)   # Set rotor 1 start position to F
+send_command(LOAD_RING, 24)  # Set rotor 2 start position to Y
 
-    # Set up the plugboard
-    # First, configure the plugboard default configuration with 
-    # no swizzling of letters
-    for i in range(26):
-        send_command(LOAD_PLUG_ADDR, i)
-        send_command(LOAD_PLUG_DATA, i)
+# Set up the plugboard
+# First, configure the plugboard default configuration with 
+# no swizzling of letters
+for i in range(26):
+    send_command(LOAD_PLUG_ADDR, i)
+    send_command(LOAD_PLUG_DATA, i)
 
-    # Now, plug in three wires
-    send_command(LOAD_PLUG_ADDR, 0)    # connect A -> N
-    send_command(LOAD_PLUG_DATA, 13)
+# Now, plug in three wires
+send_command(LOAD_PLUG_ADDR, 0)    # connect A -> N
+send_command(LOAD_PLUG_DATA, 13)
 
-    send_command(LOAD_PLUG_ADDR, 13)   # connect N -> A
-    send_command(LOAD_PLUG_DATA, 0)
+send_command(LOAD_PLUG_ADDR, 13)   # connect N -> A
+send_command(LOAD_PLUG_DATA, 0)
 
-    send_command(LOAD_PLUG_ADDR, 3)    # connect D -> E
-    send_command(LOAD_PLUG_DATA, 4)
+send_command(LOAD_PLUG_ADDR, 3)    # connect D -> E
+send_command(LOAD_PLUG_DATA, 4)
 
-    send_command(LOAD_PLUG_ADDR, 4)   # connect E -> D
-    send_command(LOAD_PLUG_DATA, 3)
+send_command(LOAD_PLUG_ADDR, 4)   # connect E -> D
+send_command(LOAD_PLUG_DATA, 3)
 
-    send_command(LOAD_PLUG_ADDR, 25)    # connect Z -> B
-    send_command(LOAD_PLUG_DATA, 1)
+send_command(LOAD_PLUG_ADDR, 25)    # connect Z -> B
+send_command(LOAD_PLUG_DATA, 1)
 
-    send_command(LOAD_PLUG_ADDR, 1)   # connect B -> Z
-    send_command(LOAD_PLUG_DATA, 25)
+send_command(LOAD_PLUG_ADDR, 1)   # connect B -> Z
+send_command(LOAD_PLUG_DATA, 25)
 
-    # Now, enter letters into the machine and watch the coded char
-    # appear on the display
-    send_command(SCRAMBLE, 11)  # 'L' -> 'X'
-    send_command(SCRAMBLE, 14)  # 'O' -> 'K'
-    .
-    .
-    .
+# Now, enter letters into the machine and watch the coded char
+# appear on the display
+send_command(SCRAMBLE, 11)  # 'L' -> 'X'
+send_command(SCRAMBLE, 14)  # 'O' -> 'K'
+.
+.
+.
 ```
 
 
@@ -181,7 +181,7 @@ is the pseudo code for setting up and scrambling/descrambling with this machine:
 
 ### Control FSM
 
-![alt text](images/fsm.png)
+![Control finite state machine](images/fsm.png)
 
 The state machine diagram source can be found on github[^8].
 

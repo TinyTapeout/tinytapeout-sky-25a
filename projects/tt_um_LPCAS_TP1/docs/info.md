@@ -1,7 +1,3 @@
-## Author
-Nithin P, Kartikay Mani Tripathi, Prof. Madhav K Pathak
-
-
 ## Description
 This is a Higher order Temperature Compensated Voltage Reference with a High PSRR designed by Low-Power Circuits & Systems Lab of IIT Gandhinagar under the supervision of Prof. Madhav Pathak.
 
@@ -29,5 +25,5 @@ Equipment Required:
 4. High Impedance Probes
 5. Oscilloscope
 
-## language   
+## Language   
 Python

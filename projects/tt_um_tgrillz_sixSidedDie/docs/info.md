@@ -24,11 +24,9 @@ Test by varying timing of dipswitch 0's (LSB) input to on and off.
 Uses on board dipswitches, and 7 segment display.
 
 ## Fun Images
-sixSidedDie Dot File
-![alt text](https://github.com/tgrillz/tt_um_sixSidedDie/blob/main/docs/sixSidedDie-Dot.png?raw=true)
 
-eightBitlfsr Dot File
-![alt text](https://github.com/tgrillz/tt_um_sixSidedDie/blob/main/docs/eighytBitlfsr-Dot.png?raw=true)
+![sixSidedDie Dot File](images/1.png)
 
-sevenSeg Dot Files
-![alt text](https://github.com/tgrillz/tt_um_sixSidedDie/blob/main/docs/sevenSeg-Dot.png?raw=true)
+![eightBitlfsr Dot File](images/2.png)
+
+![sevenSeg Dot Files](images/3.png)

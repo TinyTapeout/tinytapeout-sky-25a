@@ -6,8 +6,6 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
-# Posit <8,0> Addition
-  
 ## How it works
 
 This project is a fully combinatorial <8,0> Posit multiplication circuit. Posits are a format for representing fractional numbers similar to floats. More information about the posit format can be found [here](https://posithub.org/docs/BeatingFloatingPoint.pdf). The <8,0> means, 8 bits wide with _es_=0. The circuit functions by breaking down the multiplication operation into the following stages. First, it decodes the posit inputs into [fixed point](https://en.wikipedia.org/wiki/Fixed-point_arithmetic) numbers and a scaling factor. Then it aligns the two fixed point numbers based on their relative scales. Following this it re-scales and rounds their product. Finally it re-encodes the fixed point number back into the posit format.  

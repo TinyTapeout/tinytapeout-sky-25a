@@ -1,17 +1,16 @@
-## Trivium-lite Stream Cipher
-
 ## Credits
 
 We gratefully acknowledge the Center of Excellence (CoE) in Integrated Circuits and Systems (ICAS) and the Department of Electronics and Communication Engineering (ECE) for providing the necessary resources and guidance. Special thanks to Dr. K R Usha Rani (Associate Dean - PG), Dr. H V Ravish Aradhya (HOD-ECE), Dr. K. S. Geetha (Vice Principal) and Dr. K. N. Subramanya (Principal) for their constant encouragement and support to carry out this Tiny Tapeout SKY25a submission.
 
 ---
-### How it works
+
+## How it works
 
 This design implements *Trivium-lite*, a minimalistic variant of the Trivium stream coder using three 64-bit shift registers (`s1`, `s2`, `s3`) as internal state. The coder produces a keystream by iteratively updating these registers with a custom linear feedback shift register (LFSR) logic and XORing the output with the plaintext.
 
 ---
 
-### Internal State
+## Internal State
 
 - `s1`, `s2`, `s3`: 64-bit registers acting as LFSRs.
 - `temp_keystream`: 8-bit buffer to collect keystream bits.
@@ -20,7 +19,7 @@ This design implements *Trivium-lite*, a minimalistic variant of the Trivium str
 
 ---
 
-### Process Overview
+## Process Overview
 
 1. **Seeding Phase (IDLE)**  
    When `uio_in` is a valid 8-bit seed (≠ 0x00, ≠ 0xFF), the FSM transitions to `RUN`. The seed is expanded into initial values for the 64-bit registers via concatenation and bitwise transformations:
@@ -53,7 +52,7 @@ A single keystream bit is generated each cycle as `s1[0] ^ s2[0] ^ s3[0]` and sh
 
 ---
 
-### Inputs
+## Inputs
 
 - `ui_in[7:0]`: data byte (plaintext or coded text)  
 - `uio_in[7:0]`:  
@@ -66,27 +65,27 @@ A single keystream bit is generated each cycle as `s1[0] ^ s2[0] ^ s3[0]` and sh
 
 ---
 
-### Outputs
+## Outputs
 
 - `uo_out[7:0]`: coded and decoded byte  
 - `uio_out[7:0]`, `uio_oe[7:0]`: unused (tied to zero)  
 
 ---
 
-### Symmetry and Reuse
+## Symmetry and Reuse
 
-Due to the symmetric nature of, applying the same seed followed by the same encoded text reproduces the original plaintext.
+Due to the symmetric nature of the design, applying the same seed followed by the same encoded text reproduces the original plaintext.
 
 ---
 
-### How to test
+## How to test
 
-You can test this design either using a Verilog testbench or via a Cocotb Python-based test. See: [How to test](test/README.MD)
+You can test this design either using a Verilog testbench or via a Cocotb Python-based test. See: [How to test](https://github.com/RVCE-ECE/TT10_TSC/tree/main/test/README.MD)
 
 All inputs/outputs are internal to the digital logic and tested in simulation. The design is fully self-contained and does not require external PMODs, displays, or peripherals. 
 
 ---
 
-### How to use: 
+## How to use
 
 Modify the test.py to test the cipher by passing textfiles or images. Decode the files using same seed as used for ecncryption.

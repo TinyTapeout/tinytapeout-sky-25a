@@ -10,16 +10,11 @@ also need to set this value as the PERIPHERAL_NUM in your test script.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
-
-# PiecewiseOrionSynth
-
 ![PiecewiseOrionSynth voice architecture](PWOrionSynth-voice-deluxe.png)
-
-Author: Toivo Henningsson
 
 Peripheral index: 33
 
-<a name="overview"></a>
+<!-- <a name="overview"></a> -->
 ## Overview
 
 PiecewiseOrionSynth is a 4 channel synth that can create a superset of classic chiptune waveforms as well as some synthier sounds.
@@ -60,55 +55,55 @@ Features:
 - Designed to reduce / avoid quantization artifacts from limited PWM output resolution
 	- Piecewise linear oscillator mode more or less eliminates quantization artifacts (and gives some color change)
 
-<a name="toc"></a>
+<!-- <a name="toc"></a> -->
 ## Table of contents
 
 (See https://github.com/toivoh/ttsky25a-pwl-synth/blob/main/docs/info.md#toc for a version with clickable links.)
 
-- [Overview](#overview)
-- [Table of contents](#toc)
-- [Register map](#regmap)
-	- [Mode register fields](#mode_fields)
-	- [Sweep register fields](#sweep_fields)
-	- [Config register fields](#cfg_fields)
-	- [Register differences between channels](#channel_differences)
-- [IO pins](#io_pins)
-- [Basic synth functions](#basic_functions)
-	- [Setting the note frequency](#note_freq)
-	- [Waveform shaping](#wf_shaping)
-	- [Detuning](#detuning)
-	- [Noise](#noise)
-	- [Sweeping parameter values](#sweeping)
-- [Additional synth functions](#additional_functions)
-	- [Stereo mode](#stereo_mode)
-	- [Frequency multipliers](#freq_mults)
-	- [Common saturation](#common_sat)
-	- [4 bit mode](#4bit_mode)
-	- [Orion Wave](#orion_wave)
-	- [Sample playback](#sample_output)
-	- [Oscillator sync](#osc_sync)
-	- [PWL oscillator](#pwl_osc)
-- [Additional considerations](#additional_considerations)
-	- [Avoiding audible clicks](#click_avoidance)
-	- [Implementing envelopes](#envelopes)
-	- [Low frequency notes](#low_freq_notes)
-	- [The `counter` and `dcounter` registers](#oct_counter)
-- [How it works](#how_it_works)
-	- [ALU](#alu)
-	- [Program](#program)
-	- [Register file using latches](#regfile)
-	- [Oscillators](#oscillators)
-	- [Sigma-delta conversion](#sigma_delta)
-	- [PWM output](#pwm_output)
-	- [Stereo output](#stereo_output)
-	- [Avoiding race conditions between internal and external register writes](#write_collision)
-	- [*Linear noise interpolation (deluxe version)*](#lin_noise)
-	- [Space saving hacks that depend on peripheral interface specifics](#space_hacks)
-- [Tests used in development](#dev_tests)
-- [How to test](#how_to_test)
-- [External hardware](#ext_hw)
+- [Overview]()
+- [Table of contents]()
+- [Register map]()
+	- [Mode register fields]()
+	- [Sweep register fields]()
+	- [Config register fields]()
+	- [Register differences between channels]()
+- [IO pins]()
+- [Basic synth functions]()
+	- [Setting the note frequency]()
+	- [Waveform shaping]()
+	- [Detuning]()
+	- [Noise]()
+	- [Sweeping parameter values]()
+- [Additional synth functions]()
+	- [Stereo mode]()
+	- [Frequency multipliers]()
+	- [Common saturation]()
+	- [4 bit mode]()
+	- [Orion Wave]()
+	- [Sample playback]()
+	- [Oscillator sync]()
+	- [PWL oscillator]()
+- [Additional considerations]()
+	- [Avoiding audible clicks]()
+	- [Implementing envelopes]()
+	- [Low frequency notes]()
+	- [The `counter` and `dcounter` registers]()
+- [How it works]()
+	- [ALU]()
+	- [Program]()
+	- [Register file using latches]()
+	- [Oscillators]()
+	- [Sigma-delta conversion]()
+	- [PWM output]()
+	- [Stereo output]()
+	- [Avoiding race conditions between internal and external register writes]()
+	- [*Linear noise interpolation (deluxe version)*]()
+	- [Space saving hacks that depend on peripheral interface specifics]()
+- [Tests used in development]()
+- [How to test]()
+- [External hardware]()
 
-<a name="regmap"></a>
+<!-- <a name="regmap"></a> -->
 ## Register map
 
 All of the four channels have the same register layout, starting at offsets that are multiples of 16. There are also a few global registers (listed last):
@@ -169,14 +164,13 @@ All of the four channels have the same register layout, starting at offsets that
 
 The synth operates in a loop, computing a new sample every clock 64 cycles. Reads can only be performed at a specific point at the end of each loop (reads of the sample counter are performed a few cycles earlier in the loop), so reads may be delayed by up to 64 clock cycles before they can start. A side effect is that a read of any register will synchronize the CPU to the synth's timing.
 
-<a name="mode_fields"></a>
+<!-- <a name="mode_fields"></a> -->
 ### Mode register fields
 The layouts of the mode registers is
 
-| 11             | 10:9       | 8     | 7            | 6:4                 | 3     |        2:0   |
-|----------------|------------|-------|--------------|---------------------|-------|--------------|
-| `detune_frac`  | `osc_sync` | `wf1` | `common_sat` | `freq_mults`        | `wf0` | `detune_exp` |
-|                |            |       |              | / `stereo_pos`      |       |              |
+| 11             | 10:9       | 8     | 7            | 6:4                         | 3     |        2:0   |
+|----------------|------------|-------|--------------|-----------------------------|-------|--------------|
+| `detune_frac`  | `osc_sync` | `wf1` | `common_sat` | `freq_mults` / `stereo_pos` | `wf0` | `detune_exp` |
 
 *The deluxe version has some additional mode register bits:*
 
@@ -198,7 +192,7 @@ The `waveform` field consists of the two bits mode register bits `{wf1, wf0}`. T
 |                        | 2     | Hard sync                           |
 |                        | 3     | Soft sync                           |
 
-<a name="sweep_fields"></a>
+<!-- <a name="sweep_fields"></a> -->
 ### Sweep register fields
 The sweep registers are laid out according to
 
@@ -212,7 +206,7 @@ The sweep registers are laid out according to
 | `sweep_ws`     | `pwm_offset`:     | `pwm_offset`:      | X | slopes:     | slopes:      | slopes:      |
 |                | sign              | rate               |   | `dir`       | sign         | rate         |
 
-<a name="cfg_fields"></a>
+<!-- <a name="cfg_fields"></a> -->
 ### Config register fields
 The `cfg` register controls the mono/stereo modes:
 
@@ -226,7 +220,7 @@ The `cfg` register controls the mono/stereo modes:
 |----------------|----------------|-----------------|----------------|
 | `cfg`          | `lin_noise_en` | `dcounter_step` | `quant_fix_en` |
 
-<a name="channel_differences"></a>
+<!-- <a name="channel_differences"></a> -->
 ### Register differences between channels
 The 4 channels work mostly the same, but some functionalities are only available for some of them, and the noise function has two versions:
 
@@ -247,7 +241,7 @@ If a function is unsupported for a given channel, the channel behaves as if the 
 - `common_sat` is only supported as a mode bit for channel 0, but in stereo mode, it will cause common saturation between channels 0 and 1
 - `osc_sync` can make a channel's oscillator be affected by the previous channel's oscillator. The previous channel doesn't need to have `osc_sync` support for this to work.
 
-<a name="io_pins"></a>
+<!-- <a name="io_pins"></a> -->
 ## IO pins
 
 The synth produces two output signals: `pwm_out_l` and `pwm_out_r`. These are PWM signals representing the synth's left and right outputs (pulse frequency = `fs`).
@@ -305,10 +299,10 @@ When a write command is registered, the address is stored into the address regis
 
 `read_sel_in` control a multiplexer that chooses which half of the read data that is output to `data_out`.
 
-<a name="basic_functions"></a>
+<!-- <a name="basic_functions"></a> -->
 ## Basic synth functions
 
-<a name="note_freq"></a>
+<!-- <a name="note_freq"></a> -->
 ### Setting the note frequency
 
 The frequency of each channel is set using a simple floating point format, with a 3 bit exponent to control the octave:
@@ -348,7 +342,7 @@ which gives a noise sampling period of 8 to 2047 samples.
 At `fs = 1 MHz`, the range for the noise sampling frequency goes from 488 Hz to 125 kHz.
 *In linear noise mode (`lin_noise_en = 1`), the noise frequency is one octave lower, with a sampling period from 16 to 4094 samples, or a frequency range from 244 Hz to 62.5 kHz at `fs = 1 MHz`.*
 
-<a name="wf_shaping"></a>
+<!-- <a name="wf_shaping"></a> -->
 ### Waveform shaping
 
 ![PiecewiseOrionSynth voice architecture](PWOrionSynth-voice-deluxe.png)
@@ -440,7 +434,7 @@ The calculations for the default signal path can be described according to the f
 	y = clamp(y, -amp_s, amp_s)
 	# y = output waveform, -1 <= y <= 1
 
-<a name="detuning"></a>
+<!-- <a name="detuning"></a> -->
 ### Detuning
 
 Detuning is used to create a small frequency difference between the two sub-channels. When the two waveforms are added together, the resulting beating effect adds depth to the sound.
@@ -486,11 +480,11 @@ This allows tweaking the beat frequency:*
 
 The beat frequency is also proportional to the sampling frequency `fs`, and thus to the clock frequency.
 
-<a name="noise"></a>
+<!-- <a name="noise"></a> -->
 ### Noise
 
 A Linear Feedback Shift Register (LFSR) can be used to replace a channel's oscillator output with noise.
-Some channels use an 18-bit LFSR and some use an 11 bit (see [Register differences between channels](#channel_differences)).
+Some channels use an 18-bit LFSR and some use an 11 bit (see [Register differences between channels]()).
 
 In the default noise mode, bottom 11 bits of the LFSR are used as the oscillator output. This results in a certain amount of filtering since the LFSR state is shifted left one step at each output, so consecutive outputs have some correlation. The noise output is held constant within each noise sample.
 
@@ -510,7 +504,7 @@ In this mode,
 The two noise modes sound similar for high noise frequencies, but at lower sampling frequencies, the linear noise contains less high frequency components.
 The slope parameters can be used to increase the slope of the linear noise waveform, returning to a piecewise constant noise output when the slope is high enough.
 
-<a name="sweeping"></a>
+<!-- <a name="sweeping"></a> -->
 ### Sweeping parameter values
 
 Sweep parameters can be used to make their corresponding parameters increase or decrease at a steady rate.
@@ -540,11 +534,11 @@ The rising and falling slope values `slope_r` and `slope_f` share a common sweep
 | 2'b10 | Sweep `slope_f` only                                                      |
 | 2'b00 | Sweep both slopes in opposite directions, flipping the sign for `slope_f` |
 
-<a name="additional_functions"></a>
+<!-- <a name="additional_functions"></a> -->
 ## Additional synth functions
-These functions alter the waveform calculations in the synth in various ways relative to the voice architecture diagram in the [waveform shaping](#wf_shaping) section.
+These functions alter the waveform calculations in the synth in various ways relative to the voice architecture diagram in the [waveform shaping]() section.
 
-<a name="stereo_mode"></a>
+<!-- <a name="stereo_mode"></a> -->
 ### Stereo mode
 
 Setting `stereo_en = 1` in the `cfg` register enables stereo mode. In this mode, the outputs of the two sub-channels of each channel are split so that sub-channel 0 contributes to the left output `pwm_out_l`, and sub-channel 1 contributes to the right output `pwm_out_r`.
@@ -566,7 +560,7 @@ In this case, the `freq_mults` / `stereo_pos` field in the `mode` register sets 
 
 For the cases where "Stereo voice: no" is specified above, both sub-channels alternate the sign of detuning every sample. This causes beating between the two detuned frequencies in the left and right outputs (as in the mono case), but looses the stereo voice effect. There is no option for "Stereo voice: yes" for the left (0) and right (4) positions, since the same effect can be achieved by disabling detuning (`detune_exp = detune_frac = 0`).
 
-<a name="freq_mults"></a>
+<!-- <a name="freq_mults"></a> -->
 ### Frequency multipliers
 
 When `stereo_pos_en = 0`, the `freq_mults` / `stereo_pos` field in the `mode` register can be used to apply different frequency multipliers to the two sub-channels.
@@ -591,7 +585,7 @@ Sub-channel 0 is unaffacted by detuning in all cases except `(1x, 1x)`.
 When `freq_mults[0] = 1` (3x mode) and `detune_frac = 1`, a 5x multiplier is used instead of the 3x multiplier, giving access to a just intonation major third (5x, 4x). (This was a bit of a spurious feature caused by how the `detune_frac` and 3x features are implemented.)
 Since detuning is applied to sub-channel 1 before the frequency multiplier, the detuning frequency will scale with the sub-channel's frequency multiplier.
 
-<a name="common_sat"></a>
+<!-- <a name="common_sat"></a> -->
 ### Common saturation
 
 ![Signal flow changes when common_sat = 1](PWOrionSynth-voice-deluxe-common_sat.png)
@@ -603,7 +597,7 @@ This effect creates distortion between the combined signals. It is probably most
 In the mono case, this ratio can be achieved with `freq_mults` plus detuning.
 In the stereo case, the frequency ratio is of course controlled by setting frequencies for channels 0 and 1 individually. Detuning is still useful to make the left and right outputs differ, but will not affect the frequency ratio in the distortion effect.
 
-<a name="4bit_mode"></a>
+<!-- <a name="4bit_mode"></a> -->
 ### 4 bit mode
 
 When `osc_sync = 1` in the `mode register`, the output of the slope step is quantized to 4 bits before going to the amplitude clamp step.
@@ -615,7 +609,7 @@ This can be used to imitate the triangle wave channel of the NES, which uses a 4
 When used with common saturation, 4 bit quantization will not be applied to the first term in the saturating sum, only the second.
 *In the deluxe version, you can set `quant_fix_en=1` in the `cfg` register to make quantized mode apply quantization to both terms individually. Independently, you can set `common_quant=1` in the `mode` register to apply quantization to the output value from common saturation mode.*
 
-<a name="orion_wave"></a>
+<!-- <a name="orion_wave"></a> -->
 ### Orion Wave
 
 ![Orion Wave example](orion-wave.png)
@@ -657,7 +651,7 @@ The core idea is to take the incoming phase, shuffle the bits, add an offset, an
 	- Reducing `pwm_offset` down to zero will cause the first and second halves to become identical, creating a brighter but less complex sound
 - The mask stored in `slope_f` can be used to choose which of the shuffled bits to use. More unmasked bits create a more complex sound.
 
-<a name="sample_playback"></a>
+<!-- <a name="sample_playback"></a> -->
 ### Sample playback
 
 The Orion Wave can be used to output a 6-bit sample that is fed to the synth by writing consecutive samples to `slope_r`.
@@ -676,7 +670,7 @@ To reverse the effects of the multiplication by 3, set
 
 where `sample` is the desired output value (6 bit signed). (`3*43 = 129 = 1 (mod 64)`)
 
-<a name="osc_sync"></a>
+<!-- <a name="osc_sync"></a> -->
 ### Oscillator sync
 
 Channels 0 and 3 support two types of oscillator sync: hard and soft, controlled by the `osc_sync` field in the `mode` register.
@@ -689,7 +683,7 @@ When soft sync is used with a waveform that has `slope_r = slope_f`, inverting t
 
 Oscillator sync can be used with all kinds of waveforms including noise waveforms, but it will not affect the top 7 bits of the state of the 18 LFSR.
 
-<a name="pwl_osc"></a>
+<!-- <a name="pwl_osc"></a> -->
 ### PWL oscillator
 
 ![Linear phase and PWL phase comparison](pwl-phase.png)
@@ -701,7 +695,7 @@ Both produce a sawtooth-wave-like phase output with a period controlled by `f_pe
 - The linear phase oscillator tries to output a sawtooth wave with constant slope, but except for a few note frequencies, it will have to alernate between steps of two different sizes to reach a total phase increase of 4096 over one period.
 - The PWL oscillator instead begins each half period with a lower slope of `2^n` phase steps/sample (for some integer `n`), switching to twice the slope at the point needed to produce the desired period.
 
-The main motivation for the PWL oscillator is that it can be used to more or less eliminate quantization artifacts caused by the limited 10 bit PWM output resolution. This is explored more in the [Low frequency notes](#low_freq_notes) section.
+The main motivation for the PWL oscillator is that it can be used to more or less eliminate quantization artifacts caused by the limited 10 bit PWM output resolution. This is explored more in the [Low frequency notes]() section.
 
 One effect of switching to the PWL oscillator is that it changes (usually brightens) the tone color, more for some periods than others. Periods that are powers of 2 are not affected, while periods that are right in between two powers of 2 are affected the most. If the change in brightness is not desired, it should be possible to counteract it to a certain extent by increasing the slope more for the frequencies that are brightened less.
 
@@ -709,10 +703,10 @@ The change in brightness might be useful as a musical effect. Suppose that we ha
 
 The reason that the PWL oscillator was made to switche slopes back and forth twice over a period is to reduce the impact on odd-harmonic waveforms such as square and triangle waves. With the half-period pattern, a waveform that has only odd harmonics using linear phase should still have only odd harmonics using PWL phase.
 
-<a name="additional_considerations"></a>
+<!-- <a name="additional_considerations"></a> -->
 ## Additional considerations
 
-<a name="click_avoidance"></a>
+<!-- <a name="click_avoidance"></a> -->
 ### Avoiding audible clicks
 
 Most parameter changes can cause a discontinuity in the waveform when they are applied. This can create an audible click, especially when turning off a waveform.
@@ -728,7 +722,7 @@ Even an instrument that should turn on and off more or less instantly should pro
 When detuning is off, it could be possible to avoid clicks when turning on a channel by
 initializing the phase to a value where the output waveform is zero, and then setting `amp` to the desired value as soon as possible.
 
-<a name="envelopes"></a>
+<!-- <a name="envelopes"></a> -->
 ### Implementing envelopes
 
 The sweep parameters can be used to implement parameter envelopes, e g, by periodically updating the sweep parameters and/or the swept parameters.
@@ -745,7 +739,7 @@ Some possible ways to handle the limited number of rate values could be:
 The slowest sweep rate is once every 2^16 cycles. At a sample rate of `fs = 1 MHz`, this results in an update rate of roughly 15 times per second.
 If you need a slower sweep rate, update the parameters directly instead.
 
-<a name="low_freq_notes"></a>
+<!-- <a name="low_freq_notes"></a> -->
 ### Low frequency notes
 
 The synth produces waveforms that are _piecewise linear_, i e, they can be divided into line segments with constant slope.
@@ -789,7 +783,7 @@ Another way to handle the case when `octave + slope_exp < 3` is to turn on 4 bit
 This will further reduce `n` by 3, causing the stairsteps to be 8 times bigger and longer, whichs starts to fill in the harmonics between the fundamental and the high frequencies, making the stairstep artifacts less objectionable.
 *In the deluxe version, the quantization level can be varied from keeping 7 bits to keeping a single bit using the `quantization_level` field in the `mode` register. This provides additional options for playing with the size of the stairsteps for low notes.*
 
-<a name="oct_counter"></a>
+<!-- <a name="oct_counter"></a> -->
 ### The `counter` and `dcounter` registers
 
 The synth has a 24 bit `counter` register, which increments by one for each sample produced (usually, once every 64 clock cycles).
@@ -805,7 +799,7 @@ Since the `counter` register is used for several core synth functions, writing t
 
 *In the deluxe version, the detune oscillator is based on the `dcounter` register instead, which increases by `dcounter_step` each sample. The detune oscillator's phase is calculated as `(dcounter >> 8) >> (13 - detune_exp)`, so the delta frequencies used for detuning will be the same as in the peripheral version when the default value of `dcounter_step` is used. The `dcounter` register can be written to change the current detuning phase.*
 
-<a name="how_it_works"></a>
+<!-- <a name="how_it_works"></a> -->
 ## How it works
 
 The synth is based on a few core components:
@@ -814,7 +808,7 @@ The synth is based on a few core components:
 - A repeating 64 cycle program that controls the ALU and register file to calculate each sample
 - A PWM output
 
-<a name="alu"></a>
+<!-- <a name="alu"></a> -->
 ### ALU
 
 The ALU has a few registers in FFs:
@@ -843,7 +837,7 @@ Calculations are done using
 - 11 bits signed for waveforms (starting from the output of the triangle step)
 - up to 13 bits to sweep some parameters including `f_period`, or when reading them back to the user
 
-<a name="program"></a>
+<!-- <a name="program"></a> -->
 ### Program
 
 The synth runs in a 64-cycle loop that calculates a single sample:
@@ -879,7 +873,7 @@ The program has a few variations:
 		- Additional steps: (8 cycles)
 - If `common_sat = 1` when `stereo_en = 1`, the program change for `common_sat` is applied during both the sub-channel 0 and 1 passes, using the first and second (channel, sub-channel) that are calculated in the respective pass.
 
-<a name="regfile"></a>
+<!-- <a name="regfile"></a> -->
 ### Register file using latches
 
 The register file uses P latches (transparent when the clock is high).
@@ -917,7 +911,7 @@ The registers are all initialized to zero at reset, by letting `pwls_shared_data
 
 For RTL simulation, a (hopefully) equivalent model of the registers is used, based on FFs. To handle the fact that FFs have one cycle of delay more than the P latches used in the actual implementation, the register model needs an extra input that provides the write data one cycle in advance. This is basically the D input to the FFs whose output will feed the P latches, but the muxing between internal and external write data must also be taken into account.
 
-<a name="oscillators"></a>
+<!-- <a name="oscillators"></a> -->
 ### Oscillators
 
 To reduce the effects of aliasing artifacts, the synth's oscillators use only periods that are an whole number of samples. This means that a steady note will be perfectly periodic, and any aliasing artifacts will affect existing harmonics of the waveform, where they are much less noticeable and objectionable compared to inharmonic aliasing. The synth needs to use a high sample rate to be able to reach high note frequencies with a decent frequency resolution (this also helps to reduce harmonic aliasing effects).
@@ -945,7 +939,7 @@ There is not much point in using a sample rate for the noise that is much higher
 
 The same mechanism to choose between small and big steps is used for the noise case as in the other cases, but the phase step is always one since there is no point in trying to go faster. The LFSR state still passes through all `2^n` states over one period, so the mantissa controls the period in the same way, but the pattern of big and small steps will be spread out a bit more randomly compared to the sawtooth oscillator case.
 
-<a name="sigma_delta"></a>
+<!-- <a name="sigma_delta"></a> -->
 ### Sigma-delta conversion
 
 As described above, the synth needs to use a high sample rate to reduce aliasing artifacts.
@@ -962,7 +956,7 @@ In this way, even a small 10 bit output value will have an effect over 16 cycles
 The output accumulator `out_acc` actually needs 11 bits of resolution, since the left over fractional bits can push the result over 1023.
 When it does, the PWM's duty cycle becomes 64, so the PWM needs to use 7 bits for its duty cycle.
 
-<a name="pwm_output"></a>
+<!-- <a name="pwm_output"></a> -->
 ### PWM output
 
 The 7-bit `pwm_counter` register normally samples the value of `out_acc` at the beginning of each new sample, reading `out_acc[10:4]` produced for the last sample.
@@ -970,7 +964,7 @@ The `pwm_counter` register then counts up by one every cycle until it reaches 64
 
 When `out_acc[10:4]` is sampled, it should contain an unsigned value between 0 and 64. To get the right range, `out_acc[10:4]` is reset to 32 at the beginning of each new sample, since the sub-channels add signed contributions to `out_acc`. Eight 7 bit signed sub-channel contributions add up to a 10 bit output value.
 
-<a name="stereo_output"></a>
+<!-- <a name="stereo_output"></a> -->
 ### Stereo output
 
 The stereo output is optimized to save space by reusing the single `pwm_counter` register to produce both the left and right stereo outputs. This comes at the cost of reducing the output resolution for either output to 9 bits, and halving the output swing (the duty cycle goes between approximately 25% and 75%).
@@ -984,7 +978,7 @@ While the produced PWM signal starts low and ends high, a background PWM signal 
 When `pwm_counter` produces an output for the left PWM output, the right PWM output uses the background PWM signal, and vice versa.
 The pulse frequency is kept at 64 cycles, since the two parts switch in opposite directions.
 
-<a name="write_collision"></a>
+<!-- <a name="write_collision"></a> -->
 ### Avoiding race conditions between internal and external register writes
 
 During the calculation of a sample, the synth performs a few updates on registers in the register file:
@@ -997,7 +991,7 @@ In these read-modify-write (RMW) operations, the synth reads the corresponding r
 
 To resolve this race condition, external writes are given priority. When an external write occurs during an RMW operation, the synth checks if it is to the same address as the target of the current RMW operation. If so, the `write_collision` register is set, and remains set for the duration the the RMW operation. This blocks the internal write that would normally occur at the end of the operation, and the value from the external write is preserved.
 
-<a name="lin_noise"></a>
+<!-- <a name="lin_noise"></a> -->
 ### *Linear noise interpolation (deluxe version)*
 
 Linear noise interpolation exploits a number of simplifying implementation choices:
@@ -1012,7 +1006,7 @@ The two lowest bits of the LFSR state decide the two 1 bit levels that the inter
 The low bits of `counter` is used to ramp from the first level to the second level, by shifting `counter` as needed depending on the distance between the two samples.
 The triangle step is used to finish the noise signal: the signal going into the triangle step is always constant or increasing (from zero to mid-level, or from mid-level up an wrapping back to zero).
 
-<a name="space_hacks"></a>
+<!-- <a name="space_hacks"></a> -->
 ### Space saving hacks that depend on peripheral interface specifics
 
 To save some space, the implementation exploits some features of TinyQV and its peripheral interface:
@@ -1033,7 +1027,7 @@ This can cause some samples to take a few extra cycles to compute, but only duri
 The synth program only makes writes at a few time points mod 8. Once the synth has been delayed enough cycles to that writes from TinyQV happen in a cycle mod 8 when the program does not write a register, there should be no further delays.
 The exception is that changing the `stereo_en` or `common_sat` bits can cause the synth program to drift a little, because these bits change the sequencing of the program. These bits should hopefully not have to be changed so frequently that it causes audible effects due to making some samples a few cycles longer.
 
-<a name="dev_tests"></a>
+<!-- <a name="dev_tests"></a> -->
 ## Tests used in development
 
 There are a number of different aspects of the synth that need to be tested to make sure that they work:
@@ -1131,7 +1125,7 @@ The randomization is skewed so that
 
 If the model or simulation tests fail, a `vcd` file can be written with Verilator, which was very helpful for debugging.
 
-<a name="how_to_test"></a>
+<!-- <a name="how_to_test"></a> -->
 ## How to test
 
 First, connect and audio Pmod such as [Mike's audio Pmod](https://github.com/MichaelBell/tt-audio-pmod) and make sure that the synth's PWM output drives the output pin that the Pmod uses (`uo_out[7]` for Mike's audio Pmod).
@@ -1281,7 +1275,7 @@ To turn off the sweeps, use
 `pwm_offset_s` can be varied in real time for pulse width modulation. This can be used on any waveform, not just the pulse waves.
 Other effects can be achieved by increasing one slope while decreasing the other, starting at or passing through the point where the slopes are equal.
 
-<a name="ext_hw"></a>
+<!-- <a name="ext_hw"></a> -->
 ## External hardware
 
 This project needs something that can convert the PWM output into an audio signal, such as Mike's audio Pmod (https://github.com/MichaelBell/tt-audio-pmod). Make sure to configure the system to output the synth's `pwm_out` signal on the appropriate pin (`uo_out[7]` for Mike's audio Pmod).

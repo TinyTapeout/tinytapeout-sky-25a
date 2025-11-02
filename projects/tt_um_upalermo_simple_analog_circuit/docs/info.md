@@ -14,7 +14,3 @@ This is a simple NMOS current mirror. The idea is to go through the entire flow 
 ## How to test
 
 Apply a voltage to the output and measure current. Sweep voltage and plot current (IV curve).
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any

@@ -13,17 +13,16 @@ This design will take as input a Byte from a UART  receive (RX) line and produce
 The Chirp is available as 8-bit digital bus (7 is MSB, 0 is LSB).
 The produced chirp will be the digital rapresentation of the input Byte in LoRa - Style modulation at BW 125 kHz, SF8.
 
-<img src="additional/Megnevezetlen diagram.png" >
-
+![System diagram](additional/Megnevezetlen_diagram.png)
 
 ## How to test
-Connect all Hardware.
-Connect and enable the 10 MHz clock stimulus.
-Power on: assert Reset input low.
-Send a UART byte and observe the data output.
+1. Connect all Hardware.
+2. Connect and enable the 10 MHz clock stimulus.
+3. Power on: assert Reset input low.
+4. Send a UART byte and observe the data output.
 
 ## External hardware
 
-UART transceiver (TX only) -> connect to input RX
-Clock generator --> connect to clock input (10 MHz clock)
-Digital Signal Analyzer --> connect bit 7 down to 0 of output data
+- UART transceiver (TX only) -> connect to input RX
+- Clock generator --> connect to clock input (10 MHz clock)
+- Digital Signal Analyzer --> connect bit 7 down to 0 of output data

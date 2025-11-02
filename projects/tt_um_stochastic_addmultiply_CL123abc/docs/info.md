@@ -1,4 +1,3 @@
-# Stochastic add and multiply dual signal encoding
 ## How it works
 
 The data is converted from binary-weighted to a serial probability code data stream with two signals, allowing negative numbers to be processed by a stochastic computer.  Then multiple and add operations are computed and converted back into a serial binary weighted stream.

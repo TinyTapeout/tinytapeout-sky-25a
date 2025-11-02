@@ -11,6 +11,3 @@ Converts a 1.8v to 0v analog signal into an encoded 2-bit digital signal
 
 ## How to test
 You can test by taking a voltage of 0 to 1.8v to the analog pin 0 and the encoded bits come out to the dedicated outputs 0 and 1
-
-## External hardware
-N/A

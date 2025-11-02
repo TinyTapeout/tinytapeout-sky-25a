@@ -18,12 +18,11 @@ Navigate to the test/ folder.
 
 Use make to run the cocotb testbench:
 
-cd test make
+```bash
+cd test
+make
+```
 
 The testbench sets input values and verifies output through assertions.
 
 You can modify the test.py file to check different inputs and behaviors.
-
-## External hardware
-
-Not applicable — this project runs entirely in simulation and does not require external hardware.

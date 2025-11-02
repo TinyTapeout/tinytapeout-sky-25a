@@ -37,33 +37,28 @@ The expected behavior of TensorFlowE is to multiply two 2x2 matrices, resulting 
 ![Schematic](TF.png)
 
 ## Summary of test cases 
-test_tensorflow_e:
 
+### test_tensorflow_e
 Multiplies identity matrix A by matrix B and reads the result.
 
-test_tensorflow_e2:
-
+### test_tensorflow_e2
 Multiplies scaled identity matrix A (factor 2) by matrix B and reads the result.
 
-test_tensorflow_e3:
-
+### test_tensorflow_e3
 Pulses enable_accu (but then clears it) and then does two multiplications: first identity times B, then scaled identity (2) times B. Then reads the result.
 
-test_tensorflow_e4:
-
+### test_tensorflow_e4
 Pulses enable_accu, then does two multiplications (identityB and scaled identityB), then pulses clear, then does a multiplication with a different A ([[2,0],[0,0]]) and B, then reads the result.
 
-test_tensorflow_e5:
-
+### test_tensorflow_e5
 Pulses enable_accu, then does 6 multiplications (mostly identity and scaled identity with ones and scaled ones matrices). Then reads the result (which should be the accumulated result of all 6 multiplications if enable_accu was set during these operations? But note: the test pulses enable_accu only at the beginning and then sets it to 0. So unless the DUT latches the enable_accu signal, it might not accumulate. The exact behavior of the DUT is not clear from the test.)
 
-test_tensorflow_e6:
-
+### test_tensorflow_e6
 Similar to test_tensorflow_e5, but after the 6 multiplications, it pulses clear and then does one more multiplication (with A=[[2,0],[0,0]] and B=[[4,1],[2,5]]). Then reads the result.
 
-test_tensorflow_e7:
-
+### test_tensorflow_e7
 Similar to test_tensorflow_e6, but after the clear and one multiplication, it does an additional multiplication (with A=[[0,0],[0,1]] and B=[[4,1],[2,5]]). Then reads the result.
+
 ## External hardware
 Personal Computer
 

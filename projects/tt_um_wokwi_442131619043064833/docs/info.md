@@ -41,10 +41,3 @@ Optional DP (decimal point) can also be controlled.
 | 9       | 1001             | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
 
 DP can be controled with 4,5 and 7 pins using gates AND, OR with 4, 5 inputs and 7 for select.
-
-
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
-this uses default hardware, leds and logic input.

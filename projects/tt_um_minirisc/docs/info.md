@@ -33,9 +33,3 @@ The goal is to demonstrate how a minimal RISC-like processor can be built with s
    - Compare against the expected outputs (the same instruction sequence used in simulation).  
 
 This allows direct validation of the FSM processor on silicon, mirroring the cocotb verification flow.  
-
----
-
-## External hardware
-
-None

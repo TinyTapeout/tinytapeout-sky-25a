@@ -23,4 +23,4 @@ PLease note that the carry out is not latched, so it will not be stored between 
 
 ## External hardware
 
-This project uses only basic logic. The result can be verifies using LEDs.
+This project uses only basic logic. The result can be verified using LEDs.

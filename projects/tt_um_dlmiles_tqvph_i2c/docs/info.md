@@ -11,10 +11,6 @@ You can also include images in this folder and reference them in the markdown. E
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
 
-# TinyQV I2C Controller Device
-
-Author: Darryl Miles
-
 Peripheral index: Standalone TinyTapeout Project (no index TinyQ Peripheral ID)
 
 ## What it does
@@ -96,10 +92,6 @@ The RP2040 internal pull-up is probably too weak to use with faster I2C
 but rates.
 
 TODO
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
 
 
 ## TODO on next design iteration

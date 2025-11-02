@@ -14,7 +14,3 @@ You can also include images in this folder and reference them in the markdown. E
 ## How to test
 
 Input 32 weights in 4 bits and dedicate address with 3 bits layer address and 1 bit node address. Then, input 2 values to execute.
-
-## External hardware
-
-no extra hardware is needed.

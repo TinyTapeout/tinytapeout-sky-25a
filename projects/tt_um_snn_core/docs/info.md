@@ -1,5 +1,3 @@
-# Neuromorphic Hardware for SNN LSTM
-
 ## How it works
 This LSNN (Leaky Spike Neural Network) implementation features:
 - 12-bit membrane potential with configurable decay (DECAY_FACTOR = 1/4)
@@ -47,6 +45,3 @@ Testing procedure:
    - Track spike count through uio_out[6:0]
    - Verify proper threshold adjustment
    - Test different input current levels
-
-## External Hardware
-None required - all testing can be done through digital I/O

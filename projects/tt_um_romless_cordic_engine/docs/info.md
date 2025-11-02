@@ -19,11 +19,9 @@ The development of this ROM-less CORDIC engine was made possible by the engineer
 ## How it works
 Cordic-16 is a ROM-less CORDIC implementation with 16-bit signed fixed-point input Q3.16 (1 sign bit, 3 integer bits, and 12 fraction bits). This core comprises mainly (i) a single-stage CORDIC engine that operates in rotation mode for computing $cos$ and $sin$ of input angle $\theta$, and (ii) an $arctan$ generator that generates the micro-rotation angles dynamically in each clock cycle for the corresponding iteration.
 
-<p align="center">
-  <img src="./_asset/Block_Diagram.png" alt="Block Diagarm of the ROM-less CORDIC Engine" width="800"/>
-</p>
-<p align="center"><em>Figure 1: Block Diagram of the ROM-less CORDIC Engine</em></p>
-   
+<!-- {width=800} -->
+![Block Diagram of the ROM-less CORDIC Engine](_asset/Block_Diagram.png)
+
 The aforementioned CORDIC core accepts the input angle $\theta$ in radian format; since $\theta \in [0, 2\pi]$, 3 bits are sufficient to accommodate the integer part of the angle and 12 bits for the fractional part to achieve accuracy. Hence, 16-bit data width is chosen, and the CORDIC engine is iterated over 13 iterations. In this implementation, the micro-rotation angles $arctan$ were generated using Taylor series approximation to avoid the memory for storing them.
 
 ### Basic Functionality of CORDIC CORE
@@ -56,10 +54,8 @@ Note that the CORDIC core performs rotation only in Quadrants 1 and 4 (Q1 & Q4),
 
 As said, micro-rotation angles were generated using Taylor's series approximation; it is found that the mean absolute error between actual and computed value is $0.003$ for $1000$ samples. This was evaluated using MATLAB; the below figure shows the approximation of the computed value over the actual results.
 
-<p align="center">
-  <img src="./_asset/MATLAB_comparison_result.png" alt="Comparision of actual and computed value" width="800"/>
-</p>
-<p align="center"><em>Figure 2: Comparison of actual and computed value</em></p>
+<!-- {width=800} -->
+![Comparison of action and computed value](_asset/MATLAB_comparison_result.png)
 
 ## How to test
 

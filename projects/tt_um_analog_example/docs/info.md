@@ -13,8 +13,4 @@ The following circuit amplifies transconductance, high output impedance
 
 ## How to test
 
-To test, use a function generator
-
-## External hardware
-
-No external hardware
+Use a function generator

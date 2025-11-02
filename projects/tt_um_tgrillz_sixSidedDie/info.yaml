@@ -42,7 +42,7 @@ pinout:
   uo[4]: "7 segment ouput bit 4"
   uo[5]: "7 segment ouput bit 5"
   uo[6]: "7 segment ouput bit 6"
-  uo[7]: "unused - set to 0"
+  uo[7]: ""
 
   # Bidirectional pins
   uio[0]: ""

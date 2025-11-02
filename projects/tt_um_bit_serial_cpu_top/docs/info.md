@@ -17,7 +17,9 @@ Processing a single bit at a time instead of in parallel means that the CPU is m
 In this design, 16-bit width instructions are fed into the CPU over two clock cycles using the 8 TinyTapeout input signals. These instructions are decoded and the relevant operands (either immediates or stored values from a register file) are processed bit-serially from LSB to MSB and shifted into an accumulator register. The CPU supports parallel load operations to the accumulator and storing results from the accumulator to an addressable register file.
 
 ## GDS Render
-<img width="2021" height="1550" alt="gds_render" src="https://github.com/user-attachments/assets/af303a02-cf40-4cd0-9aa9-7db6f32abe07" />
+
+<!-- {width=2021 height=1550} -->
+![GDS Render](images/1.png)
 
 ##  Functional Use (Instruction Loading)
 
@@ -77,7 +79,9 @@ An edge-detected pushbutton (connected via `uio_in[0]`) triggers instruction loa
 ## Architecture
 
 ### Block Diagram
-<img width="2719" height="1014" alt="image" src="https://github.com/user-attachments/assets/c0e4eb80-4685-4eb3-b876-7a634d39eb94" />
+
+<!-- {width=2719 height=1014} -->
+![System Block Diagram](images/2.png)
 
 #### Control FSM
 The `fsm_control` module orchestrates datapath sequencing using a 5-state FSM:
@@ -154,8 +158,9 @@ A cocoTB testbench is used to run tests in Python. Each test uses the following 
 **Example**:
 - Operation: `LOADI 0x2D`
 - Expected result: `0x2D`
-<img width="1217" height="869" alt="image" src="https://github.com/user-attachments/assets/685b6ed6-9bf2-432a-b280-d606e5539934" />
 
+<!-- {width=1217 height=869} -->
+![`LOADI 0x2D` Waveform](images/3.png)
 
 #### alu_ops.py
 - **Instructions:** ADD, SUB, AND, OR, XOR, LOADI, STORE  
@@ -167,8 +172,9 @@ A cocoTB testbench is used to run tests in Python. Each test uses the following 
 - Setup: `R3` contains `0x73`, `R4` contains `0x2D`
 - Operation: `XOR R3, R4`
 - Expected result: `0x5E`
-<img width="1684" height="856" alt="image" src="https://github.com/user-attachments/assets/41db3e04-fcba-4719-9a9c-b11cd0cde3a1" />
 
+<!-- {width=1684 height=856} -->
+![`XOR R3, R4` Waveform](images/4.png)
 
 #### imm_alu_ops.py
 - **Instructions:** ADDI, SUBI, ANDI, ORI, XORI, LOADI, STORE  
@@ -180,7 +186,9 @@ A cocoTB testbench is used to run tests in Python. Each test uses the following 
 - Setup: `R3` contains `0x73`, `R4` contains `0x2D`
 - Operation: `SUBI R3, 0x2C`
 - Expected result: `0x47`
-<img width="1684" height="901" alt="image" src="https://github.com/user-attachments/assets/f4138d6a-19f4-46eb-b4e2-71315d5c8499" />
+
+<!-- {width=1684 height=901} -->
+![`SUBI R3, 0x2C` Waveform](images/5.png)
 
 Note that in this case, the bits in the I-type instruction that correspond to the `rs2` address are a value of 4. However, the mux logic correctly selects the immediate bits for use in the ALU rather than using `R4` as the second operand.
 
@@ -194,9 +202,9 @@ Note that in this case, the bits in the I-type instruction that correspond to th
 - Setup: `R6` contains `0x12`
 - Operation: `SLLI R6, 0x02`
 - Expected result: `0x48`
-<img width="1717" height="888" alt="image" src="https://github.com/user-attachments/assets/9b64fd95-4092-4d5a-bcf6-ff4758816b37" />
 
-
+<!-- {width=1717 height=888} -->
+![`SLLI R6, 0x02`](images/6.png)
 
 ### Test Results
 

@@ -25,7 +25,7 @@ def is_square_licon(p):
 
 	if abs((x_max - x_min) / (y_max - y_min) - 1.0) > 1e-2:
 		return False
-	
+
 	return True
 
 
@@ -57,7 +57,7 @@ def main(argv0, fn_input, fn_output):
 
 	# Get all URPM / RPM from flat top level
 	rpm_polys = []
-	for p in top_flat.polygons:
+	for p in top_flat.get_polygons():
 		if ((p.layer, p.datatype) == URPM) or ((p.layer, p.datatype) == RPM):
 			rpm_polys.append(p)
 
@@ -66,7 +66,7 @@ def main(argv0, fn_input, fn_output):
 	# Re-add square licons on top-level if they don't conflict with URPM / RPM
 	offending = 0
 
-	for p in top_flat.polygons:
+	for p in top_flat.get_polygons():
 		# Check it's a square licon
 		if not is_square_licon(p):
 			continue

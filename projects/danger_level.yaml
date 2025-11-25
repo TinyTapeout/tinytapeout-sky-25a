@@ -13,3 +13,9 @@
 #    level: medium
 #    reason: 'The project shorts the power rails when the "addi x0, x0, 0xdeadbeef" instruction is executed.'
 # ```
+tt_um_analog_example:
+  level: high
+  reason: 'Reversed power and ground connections'
+tt_um_adc_dac_tern_alu:
+  level: medium
+  reason: 'Missing vdd/vss connections for the bottom right compr cell'
